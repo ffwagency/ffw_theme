@@ -1,4 +1,4 @@
-* version: 0.1.1
+* version: 0.1.2
 
 # Purpose of 'ffw_theme' project
 
@@ -24,7 +24,7 @@
 ### When could this be ready to see in action?
 
 * Depends on the time dedicated to work on this.
-* Could be 1st of July 2015 (see previous one).
+* Could be 1st of July 2015 (see previous one). Update: working version is now available
 
 ---
 
@@ -32,9 +32,9 @@
 
 * SASS - we decided to use [Compass](http://compass-style.org/), need training
 * Grid system - we decided to use [Susy](http://susy.oddbird.net/), need training
-* Automation - we decided to use automation - maybe [Grunt](http://gruntjs.com/), need training
+* Automation - we decided to use automation - [Grunt](http://gruntjs.com/), need training
 * Drupal, PHP
-* CSS reset, CSS normalize, default styling for some elements
+* CSS reset - NO! CSS normalize, default styling for some elements
 * JavaScript and libraries
 * Images, icon fonts, fonts
 * FE performance optimization
@@ -55,6 +55,47 @@
 
 ---
 
+# Startup guide
+
+* Clone this repo in the desired directory
+
+```
+$ git clone git@gitlab.workingpropeople.com:svetlin/prp_theme.git ffw
+```
+
+* Enter the directory
+
+```
+$ cd ffw
+```
+
+* Checkout the desired branch e.g. drupal7
+
+```
+$ git checkout drupal7
+```
+
+* IMPORTANT: remove the local repo by removing the .git directory. You do NOT want to commit to this repo.
+
+```
+$ rm -rf .git
+```
+
+* Install Grunt related stuff
+
+```
+$ sudo npm install
+```
+
+* Start work
+
+```
+$ grunt watch
+```
+
+---
+
 # Version history
 
+* 0.1.2 - added "startup guide"
 * 0.1.0 - initial structure and files
