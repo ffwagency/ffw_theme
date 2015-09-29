@@ -1,3 +1,11 @@
 name = FFW
-description = Our default theme. See readme file.
+description = This theme uses Grunt. See README.md for software requirements. Type "grunt watch" to compile files.
 core = 7.x
+
+regions[header] = Header
+regions[highlighted] = Highlighted
+regions[help] = Help
+regions[content] = Content
+regions[sidebar_first] = Sidebar first
+regions[sidebar_second] = Sidebar second
+regions[footer] = Footer
