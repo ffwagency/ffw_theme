@@ -1,0 +1,7 @@
+global-assets:
+  version: VERSION
+  css:
+    theme:
+      compiled/styles.css: {}
+  js:
+    compiled/script.js: {}
