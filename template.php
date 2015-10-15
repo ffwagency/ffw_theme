@@ -53,7 +53,6 @@ function ffw_css_alter(&$css) {
     'modules/system/system.css' => FALSE,
     'modules/system/system.admin.css' => FALSE,
     'modules/system/system.maintenance.css' => FALSE,
-    'modules/system/system.messages.css' => FALSE,
     'modules/system/system.menus.css' => FALSE,
     'modules/system/system.theme.css' => FALSE,
     'modules/taxonomy/taxonomy.css' => FALSE,
