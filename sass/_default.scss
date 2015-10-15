@@ -26,11 +26,11 @@ img {
 a {
   color: $link-color;
   outline-color: $link-color;
-  transition: color 400ms;
+  transition: color $transition-time;
   &:hover,
   &:active {
     color: $link-hover-color;
-    transition: color 200ms;
+    transition: color ($transition-time/2);
   }
 }
 
