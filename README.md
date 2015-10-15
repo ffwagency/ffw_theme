@@ -1,4 +1,4 @@
-* version: 0.1.2
+* version: 0.1.3
 
 # Purpose of 'ffw_theme' project
 
@@ -97,5 +97,6 @@ $ grunt watch
 
 # Version history
 
+* 0.1.3 - added "clearfix" class and extend
 * 0.1.2 - added "startup guide"
 * 0.1.0 - initial structure and files
