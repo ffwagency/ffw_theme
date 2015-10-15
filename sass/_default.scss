@@ -41,8 +41,7 @@ a {
 
 /* Admin tabs and similar buttons */
 $tabs-spacing: 1em;
-.tabs ul,
-main .links.inline {
+.tabs ul {
   @extend %clearfix;
 
   padding: 0;
@@ -75,9 +74,6 @@ main .links.inline {
       }
     }
   }
-}
-main .links.inline {
-  padding-top: $tabs-spacing;
 }
 
 /* Demo (to remove!) */
