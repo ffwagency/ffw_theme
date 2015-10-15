@@ -27,6 +27,7 @@ a {
   color: $link-color;
   outline-color: $link-color;
   transition: color $transition-time;
+
   &:hover,
   &:active {
     color: $link-hover-color;
@@ -36,6 +37,47 @@ a {
 
 .clearfix {
   @extend %clearfix;
+}
+
+/* Admin tabs and similar buttons */
+$tabs-spacing: 1em;
+.tabs ul,
+main .links.inline {
+  @extend %clearfix;
+
+  padding: 0;
+  margin: 0;
+
+  li {
+    float: left;
+    margin: 0 $tabs-spacing $tabs-spacing 0;
+    list-style: none;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    a {
+      transition: all $transition-time;
+      display: block;
+      padding: ($tabs-spacing/4) ($tabs-spacing/2);
+      border: 1px solid $link-color;
+      color: $body-background-color;
+      background: $body-color;
+      text-decoration: none;
+
+      &:hover,
+      &:active {
+        border: 1px solid $link-hover-color;
+        color: $body-color;
+        background: $body-background-color;
+        transition: all ($transition-time/2);
+      }
+    }
+  }
+}
+main .links.inline {
+  padding-top: $tabs-spacing;
 }
 
 /* Demo (to remove!) */
