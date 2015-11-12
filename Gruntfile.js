@@ -52,6 +52,8 @@ module.exports = function(grunt) {
         ],
         options: {
           maxSelectors: 4000,
+          maxSelectorDepth: 5,
+          beForgiving: true
         },
       },
     },
