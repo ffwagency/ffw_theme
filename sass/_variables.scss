@@ -11,8 +11,19 @@ $susy: (
 
 $body-color: #333333;
 $body-background-color: #cccccc;
+
 $link-color: #999999;
 $link-hover-color: #333333;
+
+$input-bg: #ffffff;
+$input-border: $body-color;
+
+/* Inputs and buttons */
+
+$input-radius: 3px;
+$input-line-height: 1.5em;
+$input-padding: 0.25em;
+$input-height: $input-line-height + ($input-padding*2);
 
 /* Sizes */
 
@@ -20,8 +31,12 @@ $space: 10px;
 
 /* Font sizes */
 
-$font-normal: 16px;
+$font-normal: 15px;
 
 /* Times */
 
 $transition-time: 400ms;
+
+/* More */
+
+$disabled-opacity: 0.5;

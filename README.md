@@ -1,4 +1,4 @@
-* version: 0.1.3
+* version: 0.1.4
 
 # Purpose of 'ffw_theme' project
 
@@ -81,7 +81,7 @@ $ git checkout drupal7
 $ rm -rf .git
 ```
 
-* Install Grunt related stuff
+* Install Grunt related stuff as a super user. You might need to change "sudo" according to your OS.
 
 ```
 $ sudo npm install
@@ -97,6 +97,7 @@ $ grunt watch
 
 # Version history
 
+* 0.1.4 - added default styles for inputs and buttons
 * 0.1.3 - added "clearfix" class and extend
 * 0.1.2 - added "startup guide"
 * 0.1.0 - initial structure and files
