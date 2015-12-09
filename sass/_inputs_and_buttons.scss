@@ -1,0 +1,66 @@
+/* Buttons */
+
+input[type='submit'],
+input[type='button'],
+input[type='reset'],
+input[type='file'],
+button,
+.button {
+  @extend %button;
+  -webkit-appearance: none;
+}
+input[type='file'] {
+  height: auto;
+}
+
+/* Inputs */
+
+select,
+textarea,
+input[type='text'],
+input[type='email'],
+input[type='password'],
+input[type='number'] {
+  box-sizing: border-box;
+  height: $input-height;
+  padding: $input-padding;
+  border: 1px solid $input-border;
+  border-radius: $input-radius;
+  line-height: $input-line-height;
+  color: $body-color;
+  background-color: $input-bg;
+
+  &[disabled],
+  .disabled {
+    opacity: $disabled-opacity;
+  }
+}
+textarea {
+  height: auto;
+}
+
+input,
+textarea {
+  &::-webkit-input-placeholder {
+     color: $body-color;
+     opacity: $disabled-opacity !important;
+  }
+
+  &::-moz-placeholder {
+     color: $body-color;
+     opacity: $disabled-opacity !important;
+  }
+
+  &:-ms-input-placeholder {
+     color: $body-color;
+     opacity: $disabled-opacity !important;
+  }
+}
+
+input,
+select,
+textarea {
+  &:focus {
+    outline-color: $body-color;
+  }
+}

@@ -1,0 +1,41 @@
+/* Default */
+
+.form-submit + .form-submit {
+  margin-left: $space;
+}
+
+/* Admin tabs and some buttons */
+
+.tabs ul,
+.action-links,
+.field-collection-view-links,
+#main-wrapper .links.inline {
+  @extend %clearfix;
+
+  margin: 0;
+
+  li {
+    float: left;
+    margin: 0 $space $space 0;
+    list-style: none;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  a {
+    @extend %button;
+  }
+}
+
+.tabs ul {
+  padding: 0;
+}
+
+.action-links,
+.field-collection-view-links,
+#main-wrapper .links.inline,
+#edit-actions {
+  padding: $space 0 0 0;
+}
