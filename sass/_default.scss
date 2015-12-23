@@ -43,7 +43,7 @@ a {
 hr {
   height: 1px;
   margin: 1em 0;
-  border: 0 none;
+  border: none;
   color: $body-color;
   background-color: $body-color;
   opacity: $disabled-opacity;
@@ -57,6 +57,16 @@ fieldset {
 
 .clearfix {
   @extend %clearfix;
+}
+
+::selection {
+  color: $selection-color;
+  background: $selection-bg;
+}
+
+::-moz-selection {
+  color: $selection-color;
+  background: $selection-bg;
 }
 
 /* Demo (remove me!) */
