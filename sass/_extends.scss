@@ -41,3 +41,10 @@
     opacity: $disabled-opacity;
   }
 }
+
+%ellipsis {
+  /* Suitable only for single line */
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
