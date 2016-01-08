@@ -59,6 +59,10 @@ fieldset {
   @extend %clearfix;
 }
 
+.ellipsis {
+  @extend %ellipsis;
+}
+
 ::selection {
   color: $selection-color;
   background: $selection-bg;
