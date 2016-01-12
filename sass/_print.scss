@@ -1,6 +1,7 @@
 /* Print styles */
 
 @media print {
+
   @page {
     margin: 2cm;
   }
@@ -50,17 +51,14 @@
 
   /* Page breaks */
 
-  article {
-    page-break-before: always;
-  }
-
+  h1,
   h2,
   h3 {
     page-break-after: avoid;
   }
 
-  ul,
   img {
     page-break-inside: avoid;
   }
+
 }
