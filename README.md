@@ -1,5 +1,5 @@
 # FFW FE Theme
-* version: 0.1.5
+* version: 0.1.6
 
 ---
 
@@ -63,12 +63,13 @@ $ grunt watch
 $ git diff --word-diff
 ```
 
-* If you plan to use SVGs in the project, you should consider using [SVGO](https://github.com/svg/svgo), which is also available as a [Grunt task](https://github.com/sindresorhus/grunt-svgmin)
+* If you plan to use SVGs in the project, you should consider using [SVGO](https://github.com/svg/svgo), which is also available as a [Grunt task](https://github.com/sindresorhus/grunt-svgmin). Another solution for images is [Grunticon](https://github.com/filamentgroup/grunticon).
 
 ---
 
 ## Version history
 
+* 0.1.6 - added default print styles
 * 0.1.5 - added "ellipsis" class and extend (for single line)
 * 0.1.4 - added default styles for inputs and buttons
 * 0.1.3 - added "clearfix" class and extend
