@@ -22,3 +22,6 @@
 
 @import '_inputs_and_buttons.scss';
 @import '_default.scss';
+
+/* Print (this should be last) */
+@import '_print.scss';
