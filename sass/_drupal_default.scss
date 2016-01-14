@@ -1,7 +1,7 @@
 /* Default */
 
-.form-submit + .form-submit {
-  margin-left: $space;
+.submitted > span {
+  opacity: $disabled-opacity;
 }
 
 /* Admin tabs and some buttons */
@@ -16,7 +16,7 @@
 
   li {
     float: left;
-    margin: 0 $space $space 0;
+    margin: 0 $form-space $form-space 0;
     list-style: none;
 
     &:last-child {
@@ -35,7 +35,95 @@
 
 .action-links,
 .field-collection-view-links,
-#main-wrapper .links.inline,
-#edit-actions {
-  padding: $space 0 0 0;
+#main-wrapper .links.inline {
+  padding: $form-space 0 0 0;
+}
+
+.form-actions {
+  padding-top: $form-space;
+}
+
+/* Forms */
+
+.form-submit + .form-submit {
+  margin-left: $form-space;
+}
+
+.form-item {
+  margin-bottom: $form-space;
+
+  > label {
+    display: block;
+    padding-bottom: ($form-space/3);
+  }
+
+  .description {
+    padding-top: ($form-space/3);
+    font-style: italic;
+    opacity: $disabled-opacity;
+  }
+}
+
+/* Messages and errors */
+div.messages {
+  padding: $form-space;
+
+  ul {
+    margin: 0 0 0 $form-space;
+    padding: 0;
+  }
+}
+
+div.status {
+  border-color: $messages-ok;
+}
+div.status,
+.ok {
+  color: $messages-ok;
+}
+div.status,
+table tr.ok {
+  background-color: $messages-ok-background;
+}
+
+div.warning {
+  border-color: $messages-warn;
+}
+div.warning,
+.warning {
+  color: $messages-warn;
+}
+div.warning,
+table tr.warning {
+  background-color: $messages-warn-background;
+}
+
+div.error {
+  border-color: $messages-error;
+}
+div.error,
+.error {
+  color: $messages-error;
+}
+div.error,
+table tr.error {
+  background-color: $messages-error-background;
+}
+div.error p.error {
+  color: $body-color;
+}
+
+.marker,
+.form-required {
+  color: $messages-error;
+}
+.form-item input.error,
+.form-item textarea.error,
+.form-item select.error {
+  border: 1px solid $messages-error;
+}
+
+input.error {
+  border: 1px solid $messages-error !important;
+  background: $messages-error-background !important;
 }
