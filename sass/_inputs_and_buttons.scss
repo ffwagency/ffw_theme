@@ -60,6 +60,8 @@ textarea {
 input,
 select,
 textarea {
+  max-width: 100%;
+
   &:focus {
     outline-color: $body-color;
   }
