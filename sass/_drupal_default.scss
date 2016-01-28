@@ -4,6 +4,10 @@
   opacity: $disabled-opacity;
 }
 
+table.sticky-header {
+  background: $body-background-color;
+}
+
 /* Admin tabs and some buttons */
 
 .tabs ul,
@@ -40,37 +44,126 @@
 }
 
 .form-actions {
-  padding-top: $form-space;
+  @extend %clearfix;
+
+  input {
+    margin: $form-space $form-space 0 0;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
 }
 
 /* Forms */
 
-.form-submit + .form-submit {
-  margin-left: $form-space;
-}
-
 .form-item {
-  margin-bottom: $form-space;
+  padding: ($form-space/2) 0;
 
-  > label {
+  label {
     display: block;
-    padding-bottom: ($form-space/3);
+    padding: ($form-space/3) 0;
   }
 
   .description {
-    padding-top: ($form-space/3);
+    padding: ($form-space/3) 0;
     font-style: italic;
     opacity: $disabled-opacity;
   }
 }
 
-/* Messages and errors */
+.form-type-radio,
+.form-type-checkbox {
+  input {
+    margin: ($form-space/3) 0;
+  }
+
+  label {
+    display: inline;
+  }
+}
+
+.form-file {
+  margin-right: $form-space;
+}
+
+fieldset {
+  margin: $form-space 0;
+  padding: $form-space;
+  border: 1px solid rgba($body-color, $disabled-opacity);
+
+  legend {
+    padding: 0 $form-space;
+
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
+/* Webforms */
+
+.webform-client-form {
+  .webform-component {
+    border-bottom: 1px solid rgba($body-color, $disabled-opacity);
+  }
+
+  table {
+    th,
+    td {
+      padding: ($form-space/3);
+      border: 1px solid rgba($body-color, $disabled-opacity);
+    }
+
+    .form-item {
+      padding: 0;
+    }
+  }
+}
+
+.webform-container-inline.form-item label {
+  display: inline;
+}
+
+.webform-progressbar {
+  padding: ($form-space*2) 0;
+}
+
+.webform-confirmation {
+  padding: $form-space 0;
+
+  + .links {
+    a {
+      @extend %button;
+      margin: $form-space $form-space 0 0;
+    }
+  }
+}
+
+.form-item-submitted-component-time-ampm {
+  margin-left: ($form-space/2);
+
+  label {
+    margin-right: 0;
+  }
+}
+
+/* Messages and errors (copied from the original CSS) */
+
 div.messages {
   padding: $form-space;
 
   ul {
     margin: 0 0 0 $form-space;
     padding: 0;
+  }
+
+  p {
+    margin: 0;
+
+    + p {
+      margin-top: $form-space;
+    }
   }
 }
 

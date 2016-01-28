@@ -46,12 +46,6 @@ hr {
   opacity: $disabled-opacity;
 }
 
-fieldset {
-  border: 1px solid $body-color;
-  margin: 0;
-  padding: 1em;
-}
-
 .clearfix {
   @extend %clearfix;
 }
