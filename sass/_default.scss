@@ -47,6 +47,7 @@ hr {
 }
 
 fieldset {
+  display: table-cell;
   border: 1px solid $body-color;
   margin: 0;
   padding: 1em;
