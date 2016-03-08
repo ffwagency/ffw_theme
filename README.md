@@ -1,10 +1,8 @@
 # FFW FE Theme
 * version: 0.1.6
 
----
-
 ## Current software requirements
----
+
 * git
 * node.js
 * npm
@@ -12,15 +10,13 @@
 * sass 3.4.13
 * compass 1.0.3
 
----
-
 ## Startup guide
----
+
 * Check software requirements (listed above)
 * Clone this repo in the desired directory
 
 ```
-$ git clone git@gitlab.workingpropeople.com:svetlin/prp_theme.git ffw
+$ git clone git@github.com:ffwagency/ffw_theme.git ffw
 ```
 
 * Enter the directory
@@ -53,10 +49,8 @@ $ sudo npm install
 $ grunt watch
 ```
 
----
-
 ## Tips
----
+
 * Compare (diff) a single line in git (suitable for compressed CSS)
 
 ```
@@ -64,8 +58,6 @@ $ git diff --word-diff
 ```
 
 * If you plan to use SVGs in the project, you should consider using [SVGO](https://github.com/svg/svgo), which is also available as a [Grunt task](https://github.com/sindresorhus/grunt-svgmin). Another solution for images is [Grunticon](https://github.com/filamentgroup/grunticon).
-
----
 
 ## Version history
 
@@ -106,8 +98,6 @@ $ git diff --word-diff
 
 * Depends on the time dedicated to work on this.
 * Could be 1st of July 2015 (see previous one). Update: working version is now available
-
----
 
 ## Topics for discussion related to *ffw_theme*
 
