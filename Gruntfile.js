@@ -43,7 +43,15 @@ module.exports = function(grunt) {
         },
       },
     },
-
+    csscomb: {
+        options: {
+            // Task-specific options go here.
+            config: '.csscomb.json'
+        },
+        your_target: {
+            // Target-specific file lists and/or options go here.
+        }
+    }
     // csscount
     csscount: {
       dev: {
@@ -92,8 +100,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-notify');
+  grunt.loadNpmTasks('grunt-csscomb');
 
-  grunt.registerTask('default', ['compass', 'csscount', 'jshint', 'uglify']);
+  grunt.registerTask('default', ['compass', 'csscomb', 'csscount', 'jshint', 'uglify']);
 
   grunt.task.run('notify_hooks');
 
