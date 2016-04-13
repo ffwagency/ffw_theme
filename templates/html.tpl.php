@@ -56,25 +56,8 @@
 <body class="<?php print $classes; ?>" <?php print $attributes;?>>
 
 <?php print $page_top; ?>
-
 <?php print $page; ?>
-
-<?php
-  /* Include FE stuff with 'fe-ffw' parameter added to current URL. */
-  if (isset($_GET['fe-ffw'])) {
-    $fe_theme_path = drupal_get_path('theme', $GLOBALS['theme']);
-    $fe_html = file_get_contents($fe_theme_path . '/demo.html');
-    libxml_use_internal_errors(true);
-    $fe_dom = new DOMDocument();
-    $fe_dom->loadHTML($fe_html);
-    $fe_body = "";
-    foreach ($fe_dom->getElementsByTagName("body")->item(0)->childNodes as $fe_child) {
-      $fe_body .= $fe_dom->saveHTML($fe_child);
-    }
-    echo $fe_body;
-  }
-?>
-
 <?php print $page_bottom; ?>
+
 </body>
 </html>
