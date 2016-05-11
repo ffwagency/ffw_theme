@@ -57,6 +57,10 @@ table.sticky-header {
 
 /* Forms */
 
+.form-wrapper {
+  margin-bottom: $form-space;
+}
+
 .form-item {
   padding: ($form-space/2) 0;
 
@@ -99,6 +103,47 @@ fieldset {
       text-decoration: none;
     }
   }
+}
+
+/* Password in forms */
+
+div.password-suggestions,
+div.password-confirm {
+  display: none;
+}
+
+#field-password-add-more-wrapper .password-parent {
+  position: relative;
+}
+
+div.password-strength {
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  bottom: ($form-space/2);
+  width: 100%;
+  height: 3px;
+  margin-bottom: -5px;
+
+  .password-indicator {
+    height: 3px;
+    background-color: lighten($messages-error, 33%);
+
+    .indicator {
+      height: 3px;
+      background-color: lighten($messages-ok, 33%);
+    }
+  }
+
+  .password-strength-text,
+  .password-strength-title {
+    display: none;
+  }
+}
+
+.password-suggestions.description {
+  font-style: italic;
+  opacity: $disabled-opacity;
 }
 
 /* Webforms */
