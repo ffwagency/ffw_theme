@@ -51,7 +51,8 @@ module.exports = function(grunt) {
         your_target: {
             // Target-specific file lists and/or options go here.
         }
-    }
+    },
+
     // csscount
     csscount: {
       dev: {
@@ -92,6 +93,20 @@ module.exports = function(grunt) {
       }
     },
 
+    // kss
+    kss: {
+      options: {
+        css: '../compiled/styles.css',
+        destination: 'ffw-styleguide',
+        homepage: 'ffw-styleguide.md',
+      },
+      dist: {
+        files: {
+          'ffw-styleguide': ['sass/']
+        }
+      }
+    },
+
   });
 
   grunt.loadNpmTasks('grunt-contrib-watch');
@@ -101,6 +116,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-notify');
   grunt.loadNpmTasks('grunt-csscomb');
+  grunt.loadNpmTasks('grunt-kss');
 
   grunt.registerTask('default', ['compass', 'csscomb', 'csscount', 'jshint', 'uglify']);
 
