@@ -1,4 +1,9 @@
 /* Default values for main HTML elements */
+// Default elements
+//
+// Default elements on the site, e.g. paragraphs, links, etc.
+//
+// Style guide: defaults
 
 html {
   height: 100%;
@@ -25,6 +30,13 @@ img {
   height: auto;
 }
 
+// Link
+//
+// Markup:
+//   <a href="#">Default link</a>
+//   <a href="https://google.com">External link</a>
+//
+// Style guide: defaults.link
 a {
   color: $link-color;
   outline-color: $link-color;
@@ -63,6 +75,12 @@ fieldset {
   @extend %clearfix;
 }
 
+// Ellipsis
+//
+// Markup:
+// <div class="ellipsis" style="width:200px">Class .ellipsis to cut text that is too much</div>
+//
+// Style guide helper-classes.ellipsis
 .ellipsis {
   @extend %ellipsis;
 }
@@ -77,7 +95,27 @@ fieldset {
   background: $selection-bg;
 }
 
-/* Demo (remove me!) */
+// Grid
+//
+// Example on how the susy-grid could be used.
+//
+// Markup:
+// <div class="container">
+//   <div class="span-6-of-12">
+//     <p>Susy grid (span 6 of 12)</p>
+//   </div>
+//   <div class="span-6-of-12">
+//     <p>Susy grid (span 6 of 12)</p>
+//   </div>
+//  </div>
+//  <style>
+//    .span-6-of-12 {
+//      padding: 3px;
+//      border: 1px solid #333;
+//    }
+//  </style>
+//
+// Style guide: Grid
 .container {
   @include container;
 }
@@ -85,8 +123,4 @@ fieldset {
   @include span(6 of 12);
 
   box-sizing: border-box;
-}
-div {
-  padding: 3px;
-  border: 1px solid $body-color;
 }

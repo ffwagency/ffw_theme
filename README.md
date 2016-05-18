@@ -49,6 +49,20 @@ $ sudo npm install
 $ grunt watch
 ```
 
+## Style guide
+
+* As a style guide [kss-node](https://github.com/kss-node/kss-node) is used. After installing the node and grunt modules from the above instructions, the style guide is generated with the following command:
+
+```
+$ grunt kss
+```
+
+* For more info check [kss-node](https://github.com/kss-node/kss-node);
+
+* The style guide is located at /path/to/theme/ffw-styleguide/index.html;
+
+* How to use and create style guide components check the sass files in the theme.
+
 ## Tips
 
 * Compare (diff) a single line in git (suitable for compressed CSS)
