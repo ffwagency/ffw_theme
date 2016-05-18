@@ -57,7 +57,9 @@ $ grunt watch
 $ grunt kss
 ```
 
-* For more info check [kss-node](https://github.com/kss-node/kss-node). 
+* For more info check [kss-node](https://github.com/kss-node/kss-node);
+
+* The style guide is located at /path/to/theme/ffw-styleguide/index.html;
 
 * How to use and create style guide components check the sass files in the theme.
 
