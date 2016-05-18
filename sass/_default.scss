@@ -75,6 +75,12 @@ fieldset {
   @extend %clearfix;
 }
 
+// Ellipsis
+//
+// Markup:
+// <div class="ellipsis" style="width:200px">Class .ellipsis to cut text that is too much</div>
+//
+// Style guide helper-classes.ellipsis
 .ellipsis {
   @extend %ellipsis;
 }

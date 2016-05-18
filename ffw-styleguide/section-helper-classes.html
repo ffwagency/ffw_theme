@@ -30,14 +30,6 @@
         <a class="kss-nav__menu-link" href="section-defaults.html">
           <span class="kss-nav__ref">1</span><span class="kss-nav__name">Default elements</span>
         </a>
-            <ul class="kss-nav__menu-child">
-              <li class="kss-nav__menu-item">
-                <a class="kss-nav__menu-link" href="section-defaults.html#kssref-defaults-link">
-                  <span class="kss-nav__ref ">1.1</span
-                  ><span class="kss-nav__name">Link</span>
-                </a>
-              </li>
-            </ul>
       </li>
       <li class="kss-nav__menu-item">
         <a class="kss-nav__menu-link" href="section-grid.html">
@@ -48,6 +40,14 @@
         <a class="kss-nav__menu-link" href="section-helper-classes.html">
           <span class="kss-nav__ref">3</span><span class="kss-nav__name">helper-classes</span>
         </a>
+            <ul class="kss-nav__menu-child">
+              <li class="kss-nav__menu-item">
+                <a class="kss-nav__menu-link" href="section-helper-classes.html#kssref-helper-classes-ellipsis">
+                  <span class="kss-nav__ref ">3.1</span
+                  ><span class="kss-nav__name">Ellipsis</span>
+                </a>
+              </li>
+            </ul>
       </li>
       <li class="kss-nav__menu-item">
         <a class="kss-nav__menu-link" href="section-inputs_and_buttons.html">
@@ -59,46 +59,39 @@
 </div>
 <article role="main" class="kss-main">
 
-    <div id="kssref-defaults" class="kss-section kss-section--depth-1">
+    <div id="kssref-helper-classes" class="kss-section kss-section--depth-1">
 
       <div class="kss-style">
         <h1 class="kss-title kss-title--level-1">
-          <a class="kss-title__permalink" href="#kssref-defaults">
+          <a class="kss-title__permalink" href="#kssref-helper-classes">
             <span class="kss-title__ref">
-              1
+              3
               <span class="kss-title__permalink-hash">
-                  #defaults
+                  #helper-classes
               </span>
             </span>
-            Default elements
+            helper-classes
           </a>
         </h1>
 
-          <div class="kss-description">
-            <p>Default elements on the site, e.g. paragraphs, links, etc.</p>
-
-          </div>
 
       </div>
 
 
-        <div class="kss-source kss-style">
-          Source: <code>_default.scss</code>, line 2
-        </div>
 
     </div>
-    <section id="kssref-defaults-link" class="kss-section kss-section--depth-2">
+    <section id="kssref-helper-classes-ellipsis" class="kss-section kss-section--depth-2">
 
       <div class="kss-style">
         <h2 class="kss-title kss-title--level-2">
-          <a class="kss-title__permalink" href="#kssref-defaults-link">
+          <a class="kss-title__permalink" href="#kssref-helper-classes-ellipsis">
             <span class="kss-title__ref">
-              1.1
+              3.1
               <span class="kss-title__permalink-hash">
-                  #defaults.link
+                  #helper-classes.ellipsis
               </span>
             </span>
-            Link
+            Ellipsis
           </a>
         </h2>
 
@@ -112,18 +105,16 @@
 
 
           <div class="kss-modifier__example">
-              <a href="#">Default link</a>
-  <a href="https://google.com">External link</a>
+            <div class="ellipsis" style="width:200px">Class .ellipsis to cut text that is too much</div>
           </div>
 
         </div>
           <div class="kss-markup kss-style">
-            <pre class="prettyprint linenums lang-html"><code data-language="html">  &lt;a href&#x3D;&quot;#&quot;&gt;Default link&lt;/a&gt;
-  &lt;a href&#x3D;&quot;https://google.com&quot;&gt;External link&lt;/a&gt;</code></pre>
+            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class&#x3D;&quot;ellipsis&quot; style&#x3D;&quot;width:200px&quot;&gt;Class .ellipsis to cut text that is too much&lt;/div&gt;</code></pre>
           </div>
 
         <div class="kss-source kss-style">
-          Source: <code>_default.scss</code>, line 33
+          Source: <code>_default.scss</code>, line 78
         </div>
 
     </section>
