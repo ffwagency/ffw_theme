@@ -90,6 +90,8 @@ module.exports = function(grunt) {
         css: '../compiled/styles.css',
         destination: 'ffw-styleguide',
         homepage: 'ffw-styleguide.md',
+        builder: 'ffw-styleguide/ffw-template',
+        title: 'Style guide',
       },
       dist: {
         files: {
