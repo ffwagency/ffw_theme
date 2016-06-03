@@ -25,4 +25,6 @@ Below the example box there is the html code for that block.
 
 * Visit sitename/path/to/ffw-styleguide/index.html;
 
+* `ffw-styleguide/ffw-template` is a custom builder, which is used to customize the style guide. Currently only logo and favicon are added. Feel free to extend.
+
 * For more info on the kss style guide see [kss-node](https://github.com/kss-node/kss-node);
