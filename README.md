@@ -112,3 +112,64 @@ $ git diff --word-diff
 * Documentation and compliance with the standard
 * Directory structure
 * ...missed something? Please add here!
+
+---
+---
+---
+
+
+## Drupal 8 - Debugging, aggregation, cache
+* Place custom themes in `[root-dir]/themes/custom`
+* Copy and rename the `sites/example.settings.local.php` file to `sites/default/settings.local.php`.
+
+```
+cp sites/example.settings.local.php sites/default/settings.local.php
+```
+
+* To enable the settings.local.php file - open `settings.php` file in `sites/default` and uncomment these lines:
+
+```
+if (file_exists(__DIR__ . '/settings.local.php')) {
+   include __DIR__ . '/settings.local.php';
+ }
+```
+
+* Enable the null cache service by uncommenting this line in `settings.local.php` file:
+
+```
+$settings['container_yamls'][] = DRUPAL_ROOT . '/sites/development.services.yml';
+```
+
+* By default - `the settings.local.php` file has CSS and JS Aggregation disabled and if you want to make any changes to this, open the file and change the following to TRUE in these lines:
+
+```
+$config['system.performance']['css']['preprocess'] = FALSE;
+$config['system.performance']['js']['preprocess'] = FALSE;
+```
+
+* Disabling the render cache and Disabling Dynamic Page Cache. Open `settings.local.php` and uncomment these lines:
+
+```
+$settings['cache']['bins']['render'] = 'cache.backend.null';
+$settings['cache']['bins']['dynamic_page_cache'] = 'cache.backend.null';
+```
+
+* Disabling Twig cache - open `development.services.yml` in the `sites` folder and add the following lines:
+```
+parameters:
+    twig.config:
+      debug: true
+      auto_reload: true
+      cache: false
+```
+
+* After all these changes - the Drupal cache needs to be rebuilt, otherwise the website will encounter unexpected errors
+```
+drush cr
+```
+or visit the following URL on the working website
+```
+http://website/core/rebuild.php
+```
+
+* Useful tool for development - [Drupal Console](https://www.drupal.org/project/console). Also check [Twig Documentation for Template Designers](http://twig.sensiolabs.org/doc/templates.html) and [Twig Template naming conventions](https://www.drupal.org/node/2354645)
