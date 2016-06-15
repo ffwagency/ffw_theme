@@ -84,6 +84,22 @@ module.exports = function(grunt) {
       }
     },
 
+    // kss
+    kss: {
+      options: {
+        css: '../compiled/styles.css',
+        destination: 'ffw-styleguide',
+        homepage: 'ffw-styleguide.md',
+        builder: 'ffw-styleguide/ffw-template',
+        title: 'Style guide',
+      },
+      dist: {
+        files: {
+          'ffw-styleguide': ['sass/']
+        }
+      }
+    },
+
   });
 
   grunt.loadNpmTasks('grunt-contrib-watch');
@@ -92,6 +108,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-notify');
+  grunt.loadNpmTasks('grunt-kss');
 
   grunt.registerTask('default', ['compass', 'csscount', 'jshint', 'uglify']);
 
