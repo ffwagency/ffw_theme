@@ -186,4 +186,12 @@ or visit the following URL on the working website
 http://website/core/rebuild.php
 ```
 
+#### Debugging available in core
+* The first variant to debug on Drupal 8 is to use {{ dump() }}.
+* A better option for debugging is to use {{ kint() }} for a nicer output, e.g.:
+```
+{{ kint(content) }}
+{{ kint(content.field_image }}
+```
+
 * Useful tool for development - [Drupal Console](https://www.drupal.org/project/console). Also check [Twig Documentation for Template Designers](http://twig.sensiolabs.org/doc/templates.html) and [Twig Template naming conventions](https://www.drupal.org/node/2354645)
