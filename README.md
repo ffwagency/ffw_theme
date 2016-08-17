@@ -194,4 +194,23 @@ http://website/core/rebuild.php
 {{ kint(content.field_image }}
 ```
 
+#### Sharing variables between preprocess functions
+* Set the shared variable:
+```php
+  <?php
+  function template_preprocess() {
+    $some_variable = &drupal_static('shared_variable');
+    if(!isset($some_variable)) {
+      $some_variable = 'string or something';
+    }
+  }
+  ?>
+```
+* Get the shared variable
+```php
+  <?php function template_preprocess() {
+    $vars['define_variable_for_template'] = &drupal_static('shared_variable');
+  }
+  ?>
+
 * Useful tool for development - [Drupal Console](https://www.drupal.org/project/console). Also check [Twig Documentation for Template Designers](http://twig.sensiolabs.org/doc/templates.html) and [Twig Template naming conventions](https://www.drupal.org/node/2354645)
