@@ -212,5 +212,6 @@ http://website/core/rebuild.php
     $vars['define_variable_for_template'] = &drupal_static('shared_variable');
   }
   ?>
+```
 
 * Useful tool for development - [Drupal Console](https://www.drupal.org/project/console). Also check [Twig Documentation for Template Designers](http://twig.sensiolabs.org/doc/templates.html) and [Twig Template naming conventions](https://www.drupal.org/node/2354645)
