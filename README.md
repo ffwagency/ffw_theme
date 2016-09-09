@@ -214,4 +214,11 @@ http://website/core/rebuild.php
   ?>
 ```
 
+#### Disable Dummy themes and modules
+Open settings.php OR settings.local.php, find
+```php
+$settings['extension_discovery_scan_tests'] = TRUE;
+```
+and change TRUE to FALSE
+
 * Useful tool for development - [Drupal Console](https://www.drupal.org/project/console). Also check [Twig Documentation for Template Designers](http://twig.sensiolabs.org/doc/templates.html) and [Twig Template naming conventions](https://www.drupal.org/node/2354645)
