@@ -1,6 +1,6 @@
 // Define JavaScript files and their order for aggregation
 var js_files = [
-  'js/custom.js',
+  'js/custom.js'
 ];
 
 // Grunt
@@ -17,9 +17,8 @@ module.exports = function(grunt) {
       options: {
         globals: {
           jQuery: true,
-        },
-        ignores: ['js/script.js']
-      },
+        }
+      }
     },
 
     // compass
@@ -40,7 +39,7 @@ module.exports = function(grunt) {
       },
       my_target: {
         files : {
-          'js/script.js': js_files,
+          'js-min/script.js': js_files,
         },
       },
     },

@@ -4,4 +4,4 @@ global-assets:
     theme:
       assets/css/styles.css: {}
   js:
-    assets/js/script.js: {}
+    assets/js-min/script.js: {}
