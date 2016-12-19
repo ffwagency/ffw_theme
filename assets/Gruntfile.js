@@ -47,13 +47,12 @@ module.exports = function(grunt) {
     csscomb: {
         options: {
             // Task-specific options go here.
-            config: '.csscomb.json',
-            exclude: ['sass/grid/*']
+            config: '.csscomb.json'
         },
         dynamic_mappings: {
           expand: true,
           cwd: 'sass/',
-          src: ['*.scss'],
+          src: ['*.scss', 'base/*', 'forms/*', 'misc/*'], // TODO: Search how to exclude susy
           dest: 'sass/',
           ext: '.scss'
         }
@@ -89,7 +88,7 @@ module.exports = function(grunt) {
         tasks: ['jshint', 'uglify'],
       },
       set4: {
-        files: ['sass/*.scss'],
+        files: ['sass/**/*.scss'],
         tasks: ['csscomb'],
       }
     },

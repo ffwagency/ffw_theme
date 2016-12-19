@@ -9,7 +9,7 @@
 
 /* Normalize */
 
-@import "_normalize.scss";
+@import "base/_normalize.scss";
 
 /* Includes */
 
@@ -20,12 +20,12 @@
 
 /* Drupal */
 
-@import "_drupal_default.scss";
+@import "misc/_drupal_default.scss";
 
 /* Website styles */
 
-@import "_inputs_and_buttons.scss";
-@import "_default.scss";
+@import "forms/_inputs_and_buttons.scss";
+@import "base/_default.scss";
 
 /* Print (this should be last) */
 @import "_print.scss";
