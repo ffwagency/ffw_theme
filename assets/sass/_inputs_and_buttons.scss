@@ -10,16 +10,16 @@
 //   <a class="button" href="#">Button link</a>
 //
 // Style guide: inputs_and_buttons.button-link
-input[type='submit'],
-input[type='button'],
-input[type='reset'],
-input[type='file'],
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+input[type="file"],
 button,
 .button {
-  @extend %button;
   -webkit-appearance: none;
+  @extend %button;
 }
-input[type='file'] {
+input[type="file"] {
   height: auto;
   padding: $input-padding;
 }
@@ -50,10 +50,10 @@ input[type='file'] {
 // Style guide: inputs_and_buttons.inputs
 select,
 textarea,
-input[type='text'],
-input[type='email'],
-input[type='password'],
-input[type='number'] {
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"] {
   box-sizing: border-box;
   height: $input-height;
   padding: $input-padding;
@@ -83,18 +83,18 @@ textarea {
 input,
 textarea {
   &::-webkit-input-placeholder {
-     color: $body-color;
-     opacity: $disabled-opacity !important;
+    opacity: $disabled-opacity !important;
+    color: $body-color;
   }
 
   &::-moz-placeholder {
-     color: $body-color;
-     opacity: $disabled-opacity !important;
+    opacity: $disabled-opacity !important;
+    color: $body-color;
   }
 
   &:-ms-input-placeholder {
-     color: $body-color;
-     opacity: $disabled-opacity !important;
+    opacity: $disabled-opacity !important;
+    color: $body-color;
   }
 }
 

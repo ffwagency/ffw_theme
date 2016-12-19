@@ -38,14 +38,14 @@ img {
 //
 // Style guide: defaults.link
 a {
-  color: $link-color;
   outline-color: $link-color;
   transition: color $transition-time;
+  color: $link-color;
 
   &:hover,
   &:active {
-    color: $link-hover-color;
     transition: color ($transition-time/2);
+    color: $link-hover-color;
   }
 }
 
@@ -53,16 +53,16 @@ hr {
   height: 1px;
   margin: 1em 0;
   border: none;
+  opacity: $disabled-opacity;
   color: $body-color;
   background-color: $body-color;
-  opacity: $disabled-opacity;
 }
 
 fieldset {
   min-width: inherit; /* width fix for Chrome */
-  border: 1px solid $body-color;
   margin: 0;
   padding: 1em;
+  border: 1px solid $body-color;
 }
 
 @-moz-document url-prefix() {
@@ -120,7 +120,7 @@ fieldset {
   @include container;
 }
 .span-6-of-12 {
-  @include span(6 of 12);
-
   box-sizing: border-box;
+
+  @include span(6 of 12);
 }

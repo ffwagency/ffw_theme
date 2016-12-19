@@ -3,42 +3,42 @@
 %clearfix {
   &:before,
   &:after {
-      content: " ";
-      display: table;
+    display: table;
+    content: " ";
   }
   &:after {
-      clear: both;
+    clear: both;
   }
 }
 
 %button {
-  box-sizing: border-box;
   display: inline-block;
+  box-sizing: border-box;
   height: $input-height;
   padding: $input-padding ($input-padding*4);
   border: 1px solid $body-color;
   border-radius: $input-radius;
+  cursor: pointer;
+  transition: all $transition-time;
+  text-decoration: none;
   line-height: $input-line-height;
   color: $body-background-color;
   background: $body-color;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all $transition-time;
 
   &:hover,
   &:active {
+    transition: all ($transition-time/2);
+    text-decoration: none;
     color: $body-color;
     background: $link-color;
-    text-decoration: none;
-    transition: all ($transition-time/2);
   }
 
   &[disabled],
   &.disabled {
-    color: $body-background-color;
-    background: $body-color;
     cursor: default;
     opacity: $disabled-opacity;
+    color: $body-background-color;
+    background: $body-color;
   }
 }
 

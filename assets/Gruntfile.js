@@ -18,6 +18,7 @@ module.exports = function(grunt) {
         globals: {
           jQuery: true,
         },
+        ignores: ['js/script.js']
       },
     },
 
@@ -46,11 +47,17 @@ module.exports = function(grunt) {
     csscomb: {
         options: {
             // Task-specific options go here.
-            config: '.csscomb.json'
+            config: '.csscomb.json',
+            exclude: ['sass/grid/*']
         },
-        your_target: {
-            // Target-specific file lists and/or options go here.
+        dynamic_mappings: {
+          expand: true,
+          cwd: 'sass/',
+          src: ['*.scss'],
+          dest: 'sass/',
+          ext: '.scss'
         }
+
     },
 
     // csscount
@@ -81,6 +88,10 @@ module.exports = function(grunt) {
         files: ['<%= jshint.files %>'],
         tasks: ['jshint', 'uglify'],
       },
+      set4: {
+        files: ['sass/*.scss'],
+        tasks: ['csscomb'],
+      }
     },
 
     // notify

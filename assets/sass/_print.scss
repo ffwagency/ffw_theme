@@ -1,7 +1,6 @@
 /* Print styles */
 
 @media print {
-
   @page {
     margin: 2cm;
   }
@@ -60,5 +59,4 @@
   img {
     page-break-inside: avoid;
   }
-
 }
