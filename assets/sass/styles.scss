@@ -14,6 +14,10 @@
 @import '_mixins.scss';
 @import '_extends.scss';
 
+/* Drupal */
+
+@import '_drupal_default.scss';
+
 /* Website styles */
 
 @import '_inputs_and_buttons.scss';

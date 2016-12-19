@@ -25,7 +25,7 @@ module.exports = function(grunt) {
     compass: {
       dev: {
         options: {
-          cssDir: 'compiled',
+          cssDir: 'css',
           sassDir: 'sass',
           config: 'config.rb',
         },
@@ -39,16 +39,25 @@ module.exports = function(grunt) {
       },
       my_target: {
         files : {
-          'compiled/script.js': js_files,
+          'js/script.js': js_files,
         },
       },
+    },
+    csscomb: {
+        options: {
+            // Task-specific options go here.
+            config: '.csscomb.json'
+        },
+        your_target: {
+            // Target-specific file lists and/or options go here.
+        }
     },
 
     // csscount
     csscount: {
       dev: {
         src: [
-          'compiled/*.css',
+          'css/*.css',
         ],
         options: {
           maxSelectors: 4000,
@@ -87,7 +96,7 @@ module.exports = function(grunt) {
     // kss
     kss: {
       options: {
-        css: '../compiled/styles.css',
+        css: '../css/styles.css',
         destination: 'ffw-styleguide',
         homepage: 'ffw-styleguide.md',
         builder: 'ffw-styleguide/ffw-template',
@@ -108,9 +117,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-notify');
+  grunt.loadNpmTasks('grunt-csscomb');
   grunt.loadNpmTasks('grunt-kss');
 
-  grunt.registerTask('default', ['compass', 'csscount', 'jshint', 'uglify']);
+  grunt.registerTask('default', ['compass', 'csscomb', 'csscount', 'jshint', 'uglify']);
 
   grunt.task.run('notify_hooks');
 
