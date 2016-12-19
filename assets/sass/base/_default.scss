@@ -116,8 +116,9 @@ fieldset {
 //  </style>
 //
 // Style guide: Grid
-.container {
-  @include container;
+.container,
+.layout-container {
+  @include container();
 }
 .span-6-of-12 {
   box-sizing: border-box;

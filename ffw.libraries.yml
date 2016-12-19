@@ -2,6 +2,6 @@ global-assets:
   version: VERSION
   css:
     theme:
-      compiled/styles.css: {}
+      assets/css/styles.css: {}
   js:
-    compiled/script.js: {}
+    assets/js/script.js: {}

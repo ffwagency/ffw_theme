@@ -5,12 +5,13 @@
 $susy: (
   columns: 12,
   gutters: 0,
+  container: 1200px,
 );
 
 /* Colors */
 
 $body-color: #333;
-$body-background-color: #ccc;
+$body-background-color: #f7f7f7;
 $link-color: #999;
 $link-hover-color: #333;
 $input-bg: #fff;

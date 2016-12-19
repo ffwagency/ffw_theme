@@ -107,9 +107,9 @@ module.exports = function(grunt) {
     kss: {
       options: {
         css: '../css/styles.css',
-        destination: 'ffw-styleguide',
+        destination: '../ffw-styleguide',
         homepage: 'ffw-styleguide.md',
-        builder: 'ffw-styleguide/ffw-template',
+        builder: '../ffw-styleguide/ffw-template',
         title: 'Style guide',
       },
       dist: {
