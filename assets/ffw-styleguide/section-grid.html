@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width">
 
   <link rel="stylesheet" href="kss-assets/kss.css">
-  <link rel="stylesheet" href="../compiled/styles.css">
+  <link rel="stylesheet" href="../css/styles.css">
 
 </head>
 <body id="kss-node">
@@ -47,14 +47,6 @@
         <a class="kss-nav__menu-link" href="section-helper-classes.html">
           <span class="kss-nav__ref">3</span><span class="kss-nav__name">helper-classes</span>
         </a>
-            <ul class="kss-nav__menu-child">
-              <li class="kss-nav__menu-item">
-                <a class="kss-nav__menu-link" href="section-helper-classes.html#kssref-helper-classes-ellipsis">
-                  <span class="kss-nav__ref ">3.1</span
-                  ><span class="kss-nav__name">Ellipsis</span>
-                </a>
-              </li>
-            </ul>
       </li>
       <li class="kss-nav__menu-item">
         <a class="kss-nav__menu-link" href="section-inputs_and_buttons.html">
@@ -66,42 +58,25 @@
 </div>
 <article role="main" class="kss-main">
 
-    <div id="kssref-helper-classes" class="kss-section kss-section--depth-1">
+    <div id="kssref-grid" class="kss-section kss-section--depth-1">
 
       <div class="kss-style">
         <h1 class="kss-title kss-title--level-1">
-          <a class="kss-title__permalink" href="#kssref-helper-classes">
+          <a class="kss-title__permalink" href="#kssref-grid">
             <span class="kss-title__ref">
-              3
+              2
               <span class="kss-title__permalink-hash">
-                  #helper-classes
+                  #Grid
               </span>
             </span>
-            helper-classes
+            Grid
           </a>
         </h1>
 
+          <div class="kss-description">
+            <p>Example on how the susy-grid could be used.</p>
 
-      </div>
-
-
-
-    </div>
-    <section id="kssref-helper-classes-ellipsis" class="kss-section kss-section--depth-2">
-
-      <div class="kss-style">
-        <h2 class="kss-title kss-title--level-2">
-          <a class="kss-title__permalink" href="#kssref-helper-classes-ellipsis">
-            <span class="kss-title__ref">
-              3.1
-              <span class="kss-title__permalink-hash">
-                  #helper-classes.ellipsis
-              </span>
-            </span>
-            Ellipsis
-          </a>
-        </h2>
-
+          </div>
 
       </div>
 
@@ -112,19 +87,45 @@
 
 
           <div class="kss-modifier__example">
-            <div class="ellipsis" style="width:200px">Class .ellipsis to cut text that is too much</div>
+            <div class="container">
+  <div class="span-6-of-12">
+    <p>Susy grid (span 6 of 12)</p>
+  </div>
+  <div class="span-6-of-12">
+    <p>Susy grid (span 6 of 12)</p>
+  </div>
+ </div>
+ <style>
+   .span-6-of-12 {
+     padding: 3px;
+     border: 1px solid #333;
+   }
+ </style>
           </div>
 
         </div>
           <div class="kss-markup kss-style">
-            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class&#x3D;&quot;ellipsis&quot; style&#x3D;&quot;width:200px&quot;&gt;Class .ellipsis to cut text that is too much&lt;/div&gt;</code></pre>
+            <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class&#x3D;&quot;container&quot;&gt;
+  &lt;div class&#x3D;&quot;span-6-of-12&quot;&gt;
+    &lt;p&gt;Susy grid (span 6 of 12)&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;span-6-of-12&quot;&gt;
+    &lt;p&gt;Susy grid (span 6 of 12)&lt;/p&gt;
+  &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;style&gt;
+   .span-6-of-12 {
+     padding: 3px;
+     border: 1px solid #333;
+   }
+ &lt;/style&gt;</code></pre>
           </div>
 
         <div class="kss-source kss-style">
-          Source: <code>_default.scss</code>, line 78
+          Source: <code>base/_default.scss</code>, line 98
         </div>
 
-    </section>
+    </div>
 </article>
 
 <!-- SCRIPTS -->
