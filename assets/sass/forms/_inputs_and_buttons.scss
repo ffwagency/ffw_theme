@@ -1,0 +1,140 @@
+// Inputs and Buttons
+//
+//
+// Style guide: inputs_and_buttons
+
+
+// Button Link
+//
+// Markup:
+//   <a class="button" href="#">Button link</a>
+//
+// Style guide: inputs_and_buttons.button-link
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+input[type="file"],
+button,
+.button {
+  -webkit-appearance: none;
+  @extend %button;
+}
+input[type="file"] {
+  height: auto;
+  padding: $input-padding;
+}
+
+/* Inputs */
+
+// Input text, submit, select, password
+//
+// Markup:
+//  <input type="text" value="" placeholder="Text">
+//  <input type="text" value="Text (disabled)" disabled="disabled">
+//  <input type="submit" value="Button">
+//  <input type="submit" value="Button (disabled)" disabled="disabled">
+//  <select class="form-select" style="float:left; margin-right: 5px">
+//    <option value="option_1">Option 1</option>
+//    <option value="option_2" selected="selected">Option 2</option>
+//    <option value="option_3">Option 3</option>
+//    <option value="option_4">Option 4</option>
+//  </select>
+//  <select class="form-select" disabled="disabled" style="margin-top: 5px">
+//    <option value="option_1">Option 1</option>
+//    <option value="option_2">Option 2</option>
+//    <option value="option_3" selected="selected">Option 3</option>
+//    <option value="option_4">Option 4</option>
+//  </select>
+//  <input type="password" value="Password"> <input type="password" value="Password disabled" disabled="disabled">
+//
+// Style guide: inputs_and_buttons.inputs
+select,
+textarea,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"] {
+  box-sizing: border-box;
+  height: $input-height;
+  padding: $input-padding;
+  border: 1px solid $input-border;
+  border-radius: $input-radius;
+  line-height: $input-line-height;
+  color: $body-color;
+  background-color: $input-bg;
+
+  &[disabled],
+  .disabled {
+    opacity: $disabled-opacity;
+  }
+}
+
+// Textarea
+//
+// Markup:
+//  <textarea cols="30" rows="3">Textarea</textarea>
+//  <textarea cols="30" rows="3" disabled="disabled">Textarea (disabled)</textarea>
+//
+// Style guide: inputs_and_buttons.textarea
+textarea {
+  height: auto;
+}
+
+input,
+textarea {
+  &::-webkit-input-placeholder {
+    opacity: $disabled-opacity !important;
+    color: $body-color;
+  }
+
+  &::-moz-placeholder {
+    opacity: $disabled-opacity !important;
+    color: $body-color;
+  }
+
+  &:-ms-input-placeholder {
+    opacity: $disabled-opacity !important;
+    color: $body-color;
+  }
+}
+
+input,
+select,
+textarea {
+  max-width: 100%;
+
+  &:focus {
+    outline-color: $body-color;
+  }
+}
+
+// Radio buttons and checkboxes
+//
+// Markup:
+//   <input type="radio" name="radio-name" checked="checked"> radio|ch
+//   <input type="radio" name="radio-name"> radio
+//   &nbsp;&nbsp;&nbsp;
+//   <input type="radio" name="radio-name-2" disabled="disabled"> radio disabled
+//   <input type="radio" name="radio-name-2" checked="checked" disabled="disabled"> radio|ch disabled
+//   <br>
+//   <br>
+//   <label><input type="radio" name="radio-name-3" checked="checked"> radio|ch (inside label)</label>
+//   <label><input type="radio" name="radio-name-3"> radio (inside label)</label>
+//   &nbsp;&nbsp;&nbsp;
+//   <label><input type="radio" name="radio-name-4" disabled="disabled"> radio disabled (inside label)</label>
+//   <label><input type="radio" name="radio-name-4" checked="checked" disabled="disabled"> radio|ch disabled (inside label)</label>
+//   <hr>
+//   <input type="checkbox" checked="checked"> checked
+//   <input type="checkbox"> check
+//   &nbsp;&nbsp;&nbsp;
+//   <input type="checkbox" checked="checked" disabled="disabled"> checked|ch disabled
+//   <input type="checkbox" disabled="disabled"> check disabled
+//   <br>
+//   <br>
+//   <label><input type="checkbox"> check (inside label)</label>
+//   <label><input type="checkbox" checked="checked"> checked|ch (inside label)</label>
+//   &nbsp;&nbsp;&nbsp;
+//   <label><input type="checkbox" disabled="disabled"> check disabled (inside label)</label>
+//   <label><input type="checkbox" checked="checked" disabled="disabled"> checked|ch disabled (inside label)</label>
+//
+// Style guide: inputs_and_buttons.radio_checkboxes

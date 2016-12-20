@@ -1,0 +1,31 @@
+/* All styles to be included in this file */
+
+@-ms-viewport {
+  width: device-width;
+}
+@viewport {
+  width: device-width;
+}
+
+/* Normalize */
+
+@import "base/_normalize.scss";
+
+/* Includes */
+
+@import "_variables.scss";
+@import "grid/_susy.scss"; /* 2.2.10 */
+@import "_mixins.scss";
+@import "_extends.scss";
+
+/* Drupal */
+
+@import "misc/_drupal_default.scss";
+
+/* Website styles */
+
+@import "forms/_inputs_and_buttons.scss";
+@import "base/_default.scss";
+
+/* Print (this should be last) */
+@import "_print.scss";

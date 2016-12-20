@@ -1,0 +1,50 @@
+/* SASS extends */
+
+%clearfix {
+  &:before,
+  &:after {
+    display: table;
+    content: " ";
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+%button {
+  display: inline-block;
+  box-sizing: border-box;
+  height: $input-height;
+  padding: $input-padding ($input-padding*4);
+  border: 1px solid $body-color;
+  border-radius: $input-radius;
+  cursor: pointer;
+  transition: all $transition-time;
+  text-decoration: none;
+  line-height: $input-line-height;
+  color: $body-background-color;
+  background: $body-color;
+
+  &:hover,
+  &:active {
+    transition: all ($transition-time/2);
+    text-decoration: none;
+    color: $body-color;
+    background: $link-color;
+  }
+
+  &[disabled],
+  &.disabled {
+    cursor: default;
+    opacity: $disabled-opacity;
+    color: $body-background-color;
+    background: $body-color;
+  }
+}
+
+%ellipsis {
+  /* Suitable only for single line */
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
