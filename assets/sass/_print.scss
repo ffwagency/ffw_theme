@@ -1,0 +1,62 @@
+/* Print styles */
+
+@media print {
+  @page {
+    margin: 2cm;
+  }
+
+  body,
+  article {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #000 !important;
+    background: #fff !important;
+  }
+
+  h1,
+  h2,
+  h3 {
+    color: #000 !important;
+    background: none !important;
+  }
+
+  nav,
+  aside {
+    display: none !important;
+  }
+
+  img {
+    max-width: 100% !important;
+  }
+
+  a {
+    word-wrap: break-word !important;
+
+    &[href^=http]:after {
+      content: " <" attr(href) ">";
+    }
+  }
+
+  a,
+  input,
+  select,
+  textarea,
+  button,
+  .button {
+    color: #000 !important;
+    background: #fff !important;
+  }
+
+  /* Page breaks */
+
+  h1,
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+
+  img {
+    page-break-inside: avoid;
+  }
+}
