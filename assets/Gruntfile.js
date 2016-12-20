@@ -43,10 +43,12 @@ module.exports = function(grunt) {
         },
       },
     },
+
+    // csscomb
     csscomb: {
         options: {
-            // Task-specific options go here.
-            config: '.csscomb.json'
+          // Task-specific options go here.
+          config: '.csscomb.json'
         },
         dynamic_mappings: {
           expand: true,
@@ -55,7 +57,6 @@ module.exports = function(grunt) {
           dest: 'sass/',
           ext: '.scss'
         }
-
     },
 
     // csscount
