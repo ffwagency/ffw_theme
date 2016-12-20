@@ -46,6 +46,7 @@ $ sudo npm install
 * Start work
 
 ```
+$ cd assets
 $ grunt watch
 ```
 
