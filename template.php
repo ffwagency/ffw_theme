@@ -12,12 +12,12 @@
  */
 function ffw_preprocess_html(&$vars) {
   // Add our custom CSS after all other CSS.
-  drupal_add_css(path_to_theme() . '/compiled/styles.css', array(
+  drupal_add_css(path_to_theme() . '/assets/css/styles.css', array(
     'weight' => 999,
     'preprocess' => false,
   ));
   // Add our custom JS in footer, after all other JS.
-  drupal_add_js(path_to_theme() . '/compiled/script.js', array(
+  drupal_add_js(path_to_theme() . '/assets/js/script.js', array(
     'scope' => 'footer',
     'weight' => 999,
     'preprocess' => false,
