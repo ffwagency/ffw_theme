@@ -223,3 +223,4 @@ $settings['extension_discovery_scan_tests'] = TRUE;
 and change TRUE to FALSE
 
 * Useful tool for development - [Drupal Console](https://www.drupal.org/project/console). Also check [Twig Documentation for Template Designers](http://twig.sensiolabs.org/doc/templates.html) and [Twig Template naming conventions](https://www.drupal.org/node/2354645)
+* Useful article on topic - Debugging for Drupal 8 https://www.webwash.net/drupal-8-debugging-techniques/
