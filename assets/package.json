@@ -1,20 +1,27 @@
 {
   "name": "ffw_theme",
   "version": "0.0.1",
-  "description": "FFW theme",
-  "dependencies": {
-    "grunt": "^1.0.1",
-    "grunt-contrib-compass": "^1.1.1",
-    "grunt-contrib-jshint": "^1.1.0",
-    "grunt-contrib-uglify": "^3.0.1",
-    "grunt-contrib-watch": "^1.0.0",
-    "grunt-css-count": "^0.3.2",
-    "grunt-kss": "^5.0.1",
-    "grunt-notify": "^0.4.5",
-    "kss": "^3.0.0-beta.18",
-    "time-grunt": "^1.4.0"
-  },
+  "description": "FFW theme with NPM as a build tool",
   "devDependencies": {
-    "grunt-csscomb": "^3.1.1"
+    "compass": "^0.1.1",
+    "csscomb": "^4.1.0",
+    "jshint": "^2.9.4",
+    "kss": "^3.0.0-beta.18",
+    "node-sass": "^4.5.3",
+    "nodemon": "^1.11.0",
+    "postcss": "^6.0.1",
+    "uglify-js": "^3.0.15",
+    "watch": "^1.0.2"
+  },
+  "scripts": {
+    "jshint": "jshint js-source/**.js",
+    "uglify": "uglifyjs --compress --mangle -- js-source/custom.js > js/script.js",
+    "csscomb": "csscomb sass/_test.scss",
+    "build": "npm run build:js && npm run build:css",
+    "build-kss": "kss --config kss-config.json",
+    "build-js": "npm run jshint && npm run uglify",
+    "build-css": "node-sass  -r sass/styles.scss -o css/ --output-style=compressed",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\" && \"npm run csscomb\"",
+    "watch-js": "nodemon -e js -x \"npm run build-js\""
   }
 }
