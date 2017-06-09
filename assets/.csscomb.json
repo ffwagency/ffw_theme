@@ -11,7 +11,7 @@
     "block-indent": "  ",
     "color-shorthand": true,
     "element-case": "lower",
-    "eof-newline": false,
+    "eof-newline": true,
     "leading-zero": false,
     "quotes": "double",
     "sort-order-fallback": "abc",
