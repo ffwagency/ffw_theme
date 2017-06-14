@@ -8,9 +8,9 @@
 * npm
 * sass 3.4.13
 * compass 0.1.1
-* csscomb 4.1.0
+* csscomb 4.1.0 (Needs removing of some test code)
 * jshint 2.9.4
-* kss 3.0.0-beta.18
+* kss 3.0.0-beta.18 (Needs configuration and testing)
 * node-sass 4.5.3
 * nodemon 1.11.0
 * postcss 6.0.1
@@ -54,7 +54,8 @@ $ sudo npm install
 
 ```
 $ cd assets
-$ grunt watch
+$ npm run watch-css OR npm run build-css
+$ npm run watch-js OR npm run build-js
 ```
 
 ## Style guide
