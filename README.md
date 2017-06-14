@@ -6,9 +6,16 @@
 * git
 * node.js
 * npm
-* grunt 0.4.5
 * sass 3.4.13
-* compass 1.0.3
+* compass 0.1.1
+* csscomb 4.1.0
+* jshint 2.9.4
+* kss 3.0.0-beta.18
+* node-sass 4.5.3
+* nodemon 1.11.0
+* postcss 6.0.1
+* uglify-js 3.0.15
+* watch 1.0.2
 
 ## Startup guide
 
