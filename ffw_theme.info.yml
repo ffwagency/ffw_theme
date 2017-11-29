@@ -1,0 +1,67 @@
+name: FFW Theme
+type: theme
+description: 'This theme uses NPM. See README.md for software requirements and guidelines.'
+package: Custom
+core: 8.x
+# base theme: classy
+
+regions:
+  header: Items for the header region
+  primary_menu: Items for the primary menu region
+  secondary_menu: Items for the secondary menu region
+  highlighted: Items for the highlighted content region
+  help: Dynamic help text - mostly for admin pages
+  content: The main content of the current page
+  sidebar_first: Items for the first sidebar
+  sidebar_second: Items for the second sidebar
+  footer: Items for the footer region
+  breadcrumb: Items for the breadcrumb region
+
+libraries:
+  - ffw_theme/global-assets
+
+stylesheets-remove:
+#  - core/modules/system/css/components/ajax-progress.module.css
+  - core/modules/system/css/components/align.module.css
+  - core/modules/system/css/components/autocomplete-loading.module.css
+  - core/modules/system/css/components/fieldgroup.module.css
+  - core/modules/system/css/components/container-inline.module.css
+  - core/modules/system/css/components/clearfix.module.css
+  - core/modules/system/css/components/details.module.css
+#  - core/modules/system/css/components/hidden.module.css
+  - core/modules/system/css/components/js.module.css
+  - core/modules/system/css/components/nowrap.module.css
+  - core/modules/system/css/components/position-container.module.css
+  - core/modules/system/css/components/progress.module.css
+  - core/modules/system/css/components/reset-appearance.module.css
+  - core/modules/system/css/components/resize.module.css
+  - core/modules/system/css/components/sticky-header.module.css
+  - core/modules/system/css/components/tabledrag.module.css
+  - core/modules/system/css/components/action-links.theme.css
+  - core/modules/system/css/components/breadcrumb.theme.css
+  - core/modules/system/css/components/button.theme.css
+  - core/modules/system/css/components/collapse-processed.theme.css
+  - core/modules/system/css/components/container-inline.theme.css
+  - core/modules/system/css/components/details.theme.css
+  - core/modules/system/css/components/exposed-filters.theme.css
+  - core/modules/system/css/components/field.theme.css
+  - core/modules/system/css/components/form.theme.css
+#  - core/modules/system/css/components/icons.theme.css
+  - core/modules/system/css/components/inline-form.theme.css
+  - core/modules/system/css/components/item-list.theme.css
+  - core/modules/system/css/components/link.theme.css
+  - core/modules/system/css/components/links.theme.css
+  - core/modules/system/css/components/menu.theme.css
+  - core/modules/system/css/components/messages.theme.css
+  - core/modules/system/css/components/more-link.theme.css
+  - core/modules/system/css/components/pager.theme.css
+  - core/modules/system/css/components/progress.theme.css
+  - core/modules/system/css/components/tableselect.theme.css
+  - core/modules/system/css/components/tabledrag.theme.css
+  - core/modules/system/css/components/tablesort.theme.css
+  - core/modules/system/css/components/tabs.theme.css
+  - core/modules/system/css/components/textarea.theme.css
+  - core/modules/system/css/components/tree-child.module.css
+  - core/modules/file/css/file.theme.css
+  - core/modules/file/css/file.admin.css
+  - core/modules/image/css/image.theme.css

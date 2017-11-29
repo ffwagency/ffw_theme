@@ -21,7 +21,7 @@
     "build-kss": "kss --source \"sass/\" --css \"css/styles.css\" --destination \"ffw-styleguide\" --homepage \"ffw-styleguide.md\" --builder \"ffw-styleguide/ffw-template\" --title \"Style guide\"",
     "build-js": "npm run jshint && npm run uglify",
     "build-css": "node-sass  -r sass/styles.scss -o css/ --output-style=compressed",
-    "watch-css": "nodemon -e scss -x \"npm run build-css\" && \"npm run csscomb\"",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\"",
     "watch-js": "nodemon -e js -x \"npm run build-js\""
   }
 }

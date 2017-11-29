@@ -1,0 +1,4 @@
+# FFW Theme using NPM as a Build Tool
+* Watch CSS: npm run watch-css
+* Build JS: npm run build-js
+* The whole commands and configurations can be found in the package.json file in the root directory of the ffw_theme.

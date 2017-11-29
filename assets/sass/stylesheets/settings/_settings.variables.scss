@@ -1,0 +1,57 @@
+/** ===========================================================================
+ * Variables used in SASS
+  ===========================================================================*/
+
+/** ===========================================================================
+ #SUSY SETTINGS.
+ =========================================================================== */
+
+$susy: (
+  columns: 12,
+  gutters: 0,
+  container: 1200px,
+);
+
+
+/** ===========================================================================
+ #COLORS.
+ =========================================================================== */
+
+$body-color: #333;
+$body-background-color: #f7f7f7;
+$link-color: #999;
+$link-hover-color: #333;
+$input-bg: #fff;
+$input-border: $body-color;
+$selection-color: $body-background-color;
+$selection-bg: $body-color;
+$messages-ok: #234600;
+$messages-warn: #840;
+$messages-error: #8c2e0b;
+$messages-ok-background: lighten($messages-ok, 82%);
+$messages-warn-background: lighten($messages-warn, 70%);
+$messages-error-background: lighten($messages-error, 66%);
+
+/* Inputs and buttons. */
+
+$input-radius: 3px;
+$input-line-height: 1.5em;
+$input-padding: .25em;
+$input-height: $input-line-height + ($input-padding*2);
+
+/* Spaces and sizes. */
+
+$space: 10px;
+$space-m: ($space * 2);
+$space-l: ($space * 3);
+
+$form-space: 1em;
+
+/* Times and transitions. */
+
+$transition-time: 400ms;
+$global-transition: all $transition-time ease-in-out !default;
+
+/* More */
+
+$disabled-opacity: .5;

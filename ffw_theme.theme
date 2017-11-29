@@ -1,0 +1,9 @@
+<?php
+/**
+ * @file
+ * Process and preprocess hooks.
+ */
+$path_to_ffw_theme = drupal_get_path('theme', 'ffw_theme');
+
+include_once $path_to_ffw_theme . '/inc/contrib.inc';
+include_once $path_to_ffw_theme . '/inc/custom.inc';

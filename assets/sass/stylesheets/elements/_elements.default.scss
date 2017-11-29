@@ -1,12 +1,21 @@
-/* Default values for main HTML elements */
+/* ==========================================================================
+   #Default values for main HTML elements
+   ========================================================================== */
+
 // Default elements
 //
 // Default elements on the site, e.g. paragraphs, links, etc.
 //
 // Style guide: defaults
 
+/**
+ * Page setup.
+ *
+ * 1. Ensure that the page always fills the entire height of the viewport.
+ */
 html {
-  height: 100%;
+  min-height: 100%; /* [1] */
+  height: 100%; /* [1] */
 }
 
 body {

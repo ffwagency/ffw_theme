@@ -7,25 +7,107 @@
   width: device-width;
 }
 
-/* Normalize */
+/**
+ * CONTENTS
+ *
+ * SETTINGS
+ * Config...............Project-level configuration and feature switches.
+ * Global...............Project-wide variables and settings.
+ *
+ * TOOLS
+ * Font-size............A mixin which guarantees baseline-friendly line-heights.
+ * Clearfix.............Micro clearfix mixin.
+ * Hidden...............Mixin for hiding elements.
+ *
+ * GENERIC
+ * Box-sizing...........Better default `box-sizing`.
+ * Normalize.css........A level playing field using @necolas’ Normalize.css.
+ *
+ * ELEMENTS
+ * Page.................Set up our document’s default `font-size` and
+ *                      `line-height`.
+ * Headings.............Very minimal (i.e. only font-size information) for
+ *                      headings 1 through 6.
+ * Images...............Base image styles.
+ * Tables...............Simple table styles.
+ *
+ * OBJECTS
+ * Wrapper..............Page constraint object.
+ * Layout...............Generic layout module.
+ * Media................Image- and text-like content side by side. The
+ *                      poster-child of OOCSS.
+ * Flag.................Table-layout-based advancement on the Media object.
+ * List-bare............Lists with no bullets or indents.
+ * List-inline..........A list whose items all site in a line.
+ * Box..................Simple boxing abstraction.
+ * Block................Image-on-top-of-text object.
+ * Ratio................A container for maintaining aspect ratio of content.
+ * Crop.................Provide a cropping context for media (images, etc.).
+ * Table................Classes for manipulating `table`s.
+ * Pack.................Pack items into available horizontal space.
+ *
+ * COMPONENTS
+ * Buttons..............
+ *
+ * UTILITIES
+ * Clearfix.............Bind our clearfix onto a utility class.
+ * Widths...............Simple width helper classes.
+ * Headings.............Reassigning our heading styles to helper classes.
+ * Spacings.............Nudge bits of the DOM around with these spacing
+ *                      classes.
+ * Responsive-Spacings..Enhances the function of normal spacings for
+ *                      responsive usage.
+ * Print................Reset-like styles taken from the HTML5 Boilerplate.
+ * Hide.................Helper classes to hide content
+ */
 
-@import "base/_normalize.scss";
+/* ==========================================================================
+   #SETTINGS
+   - used with preprocessors and contain font, colors definitions, etc.
+   ========================================================================== */
+  @import "stylesheets/settings/_settings.variables.scss";
+  @import "stylesheets/settings/_settings.fonts.scss";
 
-/* Includes */
+/* ==========================================================================
+  #TOOLS
+  - globally used mixins and functions. It’s important not to output any CSS in
+  - the first 2 layers.
+  ========================================================================== */
+  @import "stylesheets/tools/_tools.extends.scss";
+  @import "stylesheets/tools/_tools.mixins.scss";
+  @import "stylesheets/tools/_tools.hidden.scss";
+  @import "stylesheets/grid/_susy.scss"; /* 2.2.10 */
 
-@import "_variables.scss";
-@import "grid/_susy.scss"; /* 2.2.10 */
-@import "_mixins.scss";
-@import "_extends.scss";
+/* ==========================================================================
+   #GENERIC
+   -reset and/or normalize styles, box-sizing definition, etc.
+   ========================================================================== */
+  @import "stylesheets/generic/_generic.normalize.scss";
 
-/* Drupal */
+/* ==========================================================================
+  #ELEMENTS
+  - styling for bare HTML elements (like H1, A, etc.).
+  ========================================================================== */
+  @import "stylesheets/elements/_elements.default.scss";
+  @import "stylesheets/elements/_elements.drupal_default.scss";
+  @import "stylesheets/elements/_elements.inputs_and_buttons.scss";
+  @import "stylesheets/elements/_elements.headings.scss";
+  @import "stylesheets/elements/_elements.tables.scss";
+  @import "stylesheets/elements/_elements.images.scss";
 
-@import "misc/_drupal_default.scss";
+/* ==========================================================================
+   #OBJECTS
+   - class-based selectors which define undecorated design patterns
+   ========================================================================== */
 
-/* Website styles */
+/* ==========================================================================
+  #COMPONENTS
+  - specific UI components
+  ========================================================================== */
 
-@import "forms/_inputs_and_buttons.scss";
-@import "base/_default.scss";
-
-/* Print (this should be last) */
-@import "_print.scss";
+/* ==========================================================================
+   #UTILITIES
+   - utilities and helper classes with ability to override anything which goes before in the triangle, eg. hide helper class
+   ========================================================================== */
+  @import "stylesheets/utilities/_utilities.shame.scss";
+  @import "stylesheets/utilities/_utilities.print.scss"; // This should be always last.

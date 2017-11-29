@@ -1,0 +1,21 @@
+ffw_theme.mobile:
+  label: mobile
+  mediaQuery: '(min-width: 320px)'
+  weight: 0
+  multipliers:
+    - 1x
+    - 2x
+ffw_theme.tablet:
+  label: tablet
+  mediaQuery: '(min-width: 767px)'
+  weight: 2
+  multipliers:
+    - 1x
+    - 2x
+ffw_theme.desktop:
+  label: desktop
+  mediaQuery: '(min-width: 1199px)'
+  weight: 3
+  multipliers:
+    - 1x
+    - 2x

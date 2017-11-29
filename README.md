@@ -1,5 +1,5 @@
 # FFW FE Theme
-* version: 0.1.6
+* version: 0.2.0
 
 ## Current software requirements
 
@@ -7,15 +7,14 @@
 * node.js
 * npm
 * sass 3.4.13
-* compass 0.1.1
-* csscomb 4.1.0 (Needs removing of some test code)
-* jshint 2.9.4
-* kss 3.0.0-beta.18 (Needs configuration and testing)
-* node-sass 4.5.3
-* nodemon 1.11.0
-* postcss 6.0.1
-* uglify-js 3.0.15
-* watch 1.0.2
+* compass: 0.1.1,
+* jshint: 2.9.4,
+* node-sass: 4.5.3,
+* nodemon: 1.11.0,
+* uglify-js: 3.0.15,
+* watch: 1.0.2,
+* postcss: 6.0.1
+* kss: 3.0.0-beta.18
 
 ## Startup guide
 
@@ -44,18 +43,28 @@ $ git checkout drupal7
 $ rm -rf .git
 ```
 
-* Install Grunt related stuff as a super user. You might need to change "sudo" according to your OS.
+* Install NPM modules (It is not recommended to use sudo, if you need to, change the permissions and then you might remove the need of using it)
 
 ```
-$ sudo npm install
+$ npm install
 ```
 
 * Start work
 
 ```
 $ cd assets
-$ npm run watch-css OR npm run build-css
-$ npm run watch-js OR npm run build-js
+```
+To directly build without "watcher":
+```
+$ npm run build-css
+$ npm run build-js
+$ npm run build-kss
+```
+
+To "watch":
+```
+$ npm run watch-css
+$ npm run watch-js
 ```
 
 ## Style guide
@@ -63,12 +72,12 @@ $ npm run watch-js OR npm run build-js
 * As a style guide [kss-node](https://github.com/kss-node/kss-node) is used. After installing the node and grunt modules from the above instructions, the style guide is generated with the following command:
 
 ```
-$ grunt kss
+$ npm run build-kss
 ```
 
 * For more info check [kss-node](https://github.com/kss-node/kss-node);
 
-* The style guide is located at /path/to/theme/ffw-styleguide/index.html;
+* The style guide is located at [domain]/themes/ffw_theme/assets/ffw-styleguide/index.html;
 
 * How to use and create style guide components check the sass files in the theme.
 
@@ -84,6 +93,11 @@ $ git diff --word-diff
 
 ## Version history
 
+* 0.2.0 - ITCSS, shame.css, updated npm plugins, npm as a build tool
+  - ITCSS - https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/
+  - shame.css for writing hacks/tricks which need refactoring later
+  - Updated NPM plugins
+  - Usage of NPM as a build tool
 * 0.1.6 - added default print styles
 * 0.1.5 - added "ellipsis" class and extend (for single line)
 * 0.1.4 - added default styles for inputs and buttons
@@ -135,3 +149,101 @@ $ git diff --word-diff
 * Documentation and compliance with the standard
 * Directory structure
 * ...missed something? Please add here!
+
+---
+---
+---
+
+
+## Drupal 8 - Debugging, aggregation, cache
+* Place custom themes in `[root-dir]/themes/custom`
+* Copy and rename the `sites/example.settings.local.php` file to `sites/default/settings.local.php`.
+
+```
+cp sites/example.settings.local.php sites/default/settings.local.php
+```
+
+* To enable the settings.local.php file - open `settings.php` file in `sites/default` and uncomment these lines:
+
+```
+if (file_exists(__DIR__ . '/settings.local.php')) {
+   include __DIR__ . '/settings.local.php';
+ }
+```
+
+* Enable the null cache service by uncommenting this line in `settings.local.php` file:
+
+```
+$settings['container_yamls'][] = DRUPAL_ROOT . '/sites/development.services.yml';
+```
+
+* By default - `the settings.local.php` file has CSS and JS Aggregation disabled and if you want to make any changes to this, open the file and change the following to TRUE in these lines:
+
+```
+$config['system.performance']['css']['preprocess'] = FALSE;
+$config['system.performance']['js']['preprocess'] = FALSE;
+```
+
+* Disabling the render cache and Disabling Dynamic Page Cache. Open `settings.local.php` and uncomment these lines:
+
+```
+$settings['cache']['bins']['render'] = 'cache.backend.null';
+$settings['cache']['bins']['dynamic_page_cache'] = 'cache.backend.null';
+```
+
+* Disabling Twig cache - open `development.services.yml` in the `sites` folder and add the following lines:
+```
+parameters:
+    twig.config:
+      debug: true
+      auto_reload: true
+      cache: false
+```
+
+* After all these changes - the Drupal cache needs to be rebuilt, otherwise the website will encounter unexpected errors
+```
+drush cr
+```
+or visit the following URL on the working website
+```
+http://website/core/rebuild.php
+```
+
+#### Debugging available in core
+* The first variant to debug on Drupal 8 is to use {{ dump() }}.
+* A better option for debugging is to use {{ kint() }} for a nicer output, e.g.:
+```
+{{ kint(content) }}
+{{ kint(content.field_image }}
+```
+
+#### Sharing variables between preprocess functions
+* Set the shared variable:
+```php
+  <?php
+  function template_preprocess() {
+    $some_variable = &drupal_static('shared_variable');
+    if(!isset($some_variable)) {
+      $some_variable = 'string or something';
+    }
+  }
+  ?>
+```
+* Get the shared variable
+```php
+  <?php function template_preprocess() {
+    $vars['define_variable_for_template'] = &drupal_static('shared_variable');
+  }
+  ?>
+```
+
+#### Disable Dummy themes and modules
+Open settings.php OR settings.local.php, find
+```php
+$settings['extension_discovery_scan_tests'] = TRUE;
+```
+and change TRUE to FALSE
+
+* Chrome plugin: Drupal Template Helper - https://chrome.google.com/webstore/detail/drupal-template-helper/ppiceaegogijpjodfpiimifhbnaifbnn
+* Useful tool for development - [Drupal Console](https://www.drupal.org/project/console). Also check [Twig Documentation for Template Designers](http://twig.sensiolabs.org/doc/templates.html) and [Twig Template naming conventions](https://www.drupal.org/node/2354645)
+* Useful article on topic - Debugging for Drupal 8 https://www.webwash.net/drupal-8-debugging-techniques/
