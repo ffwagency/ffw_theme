@@ -69,6 +69,8 @@ $ npm run watch-css
 $ npm run watch-js
 ```
 
+###### Maybe you will also want to change the output-style in the package.json file - from compressed to expanded for the node-sass script, so the git diff will have better output, and conflicts will not be created due to the reason that it is compressed.
+
 ## Style guide
 
 * As a style guide [kss-node](https://github.com/kss-node/kss-node) is used. After installing the node and grunt modules from the above instructions, the style guide is generated with the following command:
