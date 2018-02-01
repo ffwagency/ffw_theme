@@ -1,5 +1,5 @@
 # FFW FE Theme
-* version: 0.2.0
+* version: 0.2.1
 
 ## Current software requirements
 
@@ -97,6 +97,7 @@ $ git diff --word-diff
 
 ## Version history
 
+* 0.2.1 - Added postcss, postcss-cli and autoprefixer.
 * 0.2.0 - ITCSS, shame.css, updated npm plugins, npm as a build tool
   - ITCSS - https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/
   - shame.css for writing hacks/tricks which need refactoring later
