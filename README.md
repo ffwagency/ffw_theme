@@ -14,7 +14,9 @@
 * uglify-js: 3.0.15,
 * watch: 1.0.2,
 * postcss: 6.0.1
+* postcss-cli: 4.1.1
 * kss: 3.0.0-beta.18
+* autoprefixer: 7.2.5
 
 ## Startup guide
 

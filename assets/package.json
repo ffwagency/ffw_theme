@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "FFW theme with NPM as a build tool",
   "devDependencies": {
+    "autoprefixer": "^7.2.5",
     "compass": "^0.1.1",
     "csscomb": "^4.1.0",
     "jshint": "^2.9.4",
@@ -10,6 +11,7 @@
     "node-sass": "^4.5.3",
     "nodemon": "^1.11.0",
     "postcss": "^6.0.1",
+    "postcss-cli": "^4.1.1",
     "uglify-js": "^3.0.15",
     "watch": "^1.0.2"
   },
@@ -20,7 +22,7 @@
     "build": "npm run build:js && npm run build:css",
     "build-kss": "kss --source \"sass/\" --css \"css/styles.css\" --destination \"ffw-styleguide\" --homepage \"ffw-styleguide.md\" --builder \"ffw-styleguide/ffw-template\" --title \"Style guide\"",
     "build-js": "npm run jshint && npm run uglify",
-    "build-css": "node-sass  -r sass/styles.scss -o css/ --output-style=compressed",
+    "build-css": "node-sass  -r sass/styles.scss -o css/ --output-style=compressed && postcss --use autoprefixer -b 'last 5 versions' -o css/*.css css/*.css",
     "watch-css": "nodemon -e scss -x \"npm run build-css\"",
     "watch-js": "nodemon -e js -x \"npm run build-js\""
   }
