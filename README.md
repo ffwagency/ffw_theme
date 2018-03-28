@@ -95,6 +95,10 @@ $ git diff --word-diff
 
 * If you plan to use SVGs in the project, you should consider using [SVGO](https://github.com/svg/svgo), which is also available as a [Grunt task](https://github.com/sindresorhus/grunt-svgmin). Another solution for images is [Grunticon](https://github.com/filamentgroup/grunticon).
 
+### ITCSS:
+* https://www.creativebloq.com/web-design/manage-large-css-projects-itcss-101517528
+* https://csswizardry.net/talks/2014/11/itcss-dafed.pdf
+
 ## Version history
 
 * 0.2.1 - Added postcss, postcss-cli and autoprefixer.
