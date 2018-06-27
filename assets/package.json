@@ -18,7 +18,7 @@
   "scripts": {
     "csscomb": "csscomb sass/*",
     "jshint": "jshint js-source/**.js",
-    "uglify": "uglifyjs --compress --mangle -- js-source/custom.js > js/script.js",
+    "uglify": "uglifyjs --compress --mangle -- js-source/*.js > js/script.js",
     "build": "npm run build:js && npm run build:css",
     "build-kss": "kss --source \"sass/\" --css \"css/styles.css\" --destination \"ffw-styleguide\" --homepage \"ffw-styleguide.md\" --builder \"ffw-styleguide/ffw-template\" --title \"Style guide\"",
     "build-js": "npm run jshint && npm run uglify",
