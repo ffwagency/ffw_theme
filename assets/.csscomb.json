@@ -22,6 +22,10 @@
     "strip-spaces": true,
     "tab-size": true,
     "unitless-zero": true,
+    "syntax": {
+        ".css": "scss",
+        ".lss": "less"
+    },
     "sort-order": [
             "position",
             "z-index",
