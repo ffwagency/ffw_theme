@@ -6,15 +6,15 @@
 * git
 * node.js
 * npm
-* sass 3.4.13
+* sass 3.4.25
 * compass: 0.1.1,
-* jshint: 2.9.4,
-* node-sass: 4.5.3,
-* nodemon: 1.11.0,
+* jshint: 2.9.6,
+* node-sass: 4.10.0,
+* nodemon: 1.18.5,
 * uglify-js: 3.0.15,
 * watch: 1.0.2,
 * postcss: 6.0.1
-* postcss-cli: 4.1.1
+* postcss-cli: 6.0.1
 * kss: 3.0.0-beta.18
 * autoprefixer: 7.2.5
 
