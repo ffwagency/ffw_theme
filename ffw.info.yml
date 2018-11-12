@@ -1,0 +1,31 @@
+name: FFW theme
+type: theme
+description: 'Responsive theme with either Grunt or npm as build tool. See README.md for software requirements. Type "grunt watch" or check package.json for the npm script to compile files.'
+package: Custom
+base theme: classy
+core: 8.x
+
+regions:
+  header: Header
+  primary_menu: Primary menu
+  secondary_menu: Secondary menu
+  breadcrumb: Breadcrumb
+  highlighted: Highlighted content region
+  help: Dynamic help text - mostly for admin pages
+  content: Main content of the current page
+  sidebar_first: First sidebar
+  sidebar_second: Second sidebar
+  below_content: Below main content
+  footer: Footer
+
+libraries:
+  - core/normalize
+  - ffw/ffw-style
+  - ffw/ffw-js
+
+libraries-override:
+  classy/base:
+    css:
+      component:
+        css/components/menu.css: false
+        css/components/breadcrumb.css: false

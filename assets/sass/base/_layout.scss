@@ -1,0 +1,10 @@
+* {
+  box-sizing: border-box;
+}
+
+main,
+.region {
+  display: block;
+  max-width: $max-width;
+  margin: 0 auto;
+}

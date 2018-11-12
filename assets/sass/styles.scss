@@ -3,29 +3,39 @@
 @-ms-viewport {
   width: device-width;
 }
+
 @viewport {
   width: device-width;
 }
 
+// Import Susy grid
+@import '../node_modules/susy/sass/_susy.scss';
+
 /* Normalize */
+// Loaded as Drupal core library.
 
-@import "base/_normalize.scss";
-
-/* Includes */
-
-@import "_variables.scss";
-@import "grid/_susy.scss"; /* 2.2.10 */
-@import "_mixins.scss";
-@import "_extends.scss";
+/* Config */
+@import "config/_variables.scss";
+@import "config/_mixins.scss";
+@import "config/_extends.scss";
 
 /* Drupal */
-
-@import "misc/_drupal_default.scss";
+@import "base/_typography.scss";
+@import "base/_drupal_default.scss";
 
 /* Website styles */
-
-@import "forms/_inputs_and_buttons.scss";
 @import "base/_default.scss";
+@import "base/_forms.scss";
+@import "base/_common.scss";
+
+/* Components */
+@import "components/_breadcrumb.scss";
+@import "components/navigation/_menu.scss";
+@import "components/navigation/_main_navigation.scss";
+
+
+/* Layout */
+@import "base/_layout.scss";
 
 /* Print (this should be last) */
 @import "_print.scss";

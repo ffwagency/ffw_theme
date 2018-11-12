@@ -1,10 +1,4 @@
 {
-    "exclude": [
-        ".git/**",
-        "node_modules/**",
-        "bower_components/**",
-        "sass/grid/**"
-    ],
     "remove-empty-rulesets": true,
     "always-semicolon": true,
     "color-case": "lower",

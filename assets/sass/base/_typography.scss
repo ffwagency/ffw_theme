@@ -1,0 +1,79 @@
+/* Typography */
+//
+// Markup:
+//   <h1>H1 title</h1>
+//   <h2>H2 title</h2>
+//   <h3>H3 title</h3>
+//   <h4>H4 title</h4>
+//   <h5>H5 title</h5>
+//   <h6>H6 title</h6>
+//
+// Style guide: typography
+html,
+body {
+  font-family: "HelveticaNeue", "Arial", sans-serif;
+  font-size: $font-normal;
+  line-height: 1.5;
+  color: $body-color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 1em;
+  font-weight: bold;
+}
+
+h1,
+%header1 {
+   font-size: 3.75rem; // 60px
+   font-weight: bold;
+   line-height: 1; // 60px
+}
+
+h2,
+%header2 {
+  font-size: 2.25rem; // 36px
+  line-height: 1.17; // 42.1167px
+}
+
+h3,
+%header3 {
+  font-size: 1.5rem; // 24px
+  line-height: 1.33; // 31.9167px
+}
+
+h4,
+%header4 {
+  font-size: 1.312rem; // 21px
+  font-weight: 500;
+  line-height: 1.43; // 30.0333px
+}
+
+h5,
+%header5 {
+  font-size: 1rem; // 16px
+  line-height: 1.375; // 22px
+}
+
+h6,
+%header6 {
+  font-size: 0.875rem; // 14px
+  line-height: 1.429; // 20px
+}
+
+%text-light {
+  @extend %header4;
+  font-weight: $font-light;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+label {
+  font-size: 0.812rem;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}

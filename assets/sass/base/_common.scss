@@ -1,0 +1,23 @@
+// Visibility classes
+.visible {
+  display: block;
+}
+
+.visible-mobile {
+  @include media(tablet) {
+    display: none;
+  }
+}
+
+.visible-tablet {
+  @include media(desktop) {
+    display: none;
+  }
+}
+
+.visible-desktop {
+  @include media-max(desktop) {
+    display: none;
+  }
+}
+// End visibility classes

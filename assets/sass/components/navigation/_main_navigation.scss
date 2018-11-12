@@ -1,0 +1,250 @@
+// Common styles for desktop and mobile
+.navigation.menu--main {
+  a {
+    color: $charcoal-grey;
+  }
+  
+  .child-items {
+    display: none;
+  }
+}
+
+// Mobile styles
+@include media-max(desktop) {
+  .mobile-menu-header {
+    display: flex;
+    padding: $space * 6 $space * 2.4 $space * 2.4;
+    background: $white;
+
+    .link-front {
+      font-weight: bold;
+      color: $charcoal;
+      background: url(../img/icons-home.svg) left center no-repeat;
+    }
+
+    [class*="icon-"] {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      background-size: contain;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+
+    .icon-search {
+      margin-left: auto;
+      background-image: url(../img/icons-search.svg);
+    }
+
+    .icon-close {
+      margin-left: $space;
+      background-image: url(../img/icons-close.svg);
+    }
+  }
+
+  .navigation.menu--main {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: $ice-blue;
+
+    .menu {
+      margin: 0;
+      border-top: 1px solid $ice-blue;
+
+      a {
+        display: block;
+      }
+
+      .child-items {
+        display: none;
+        border-radius: $input-radius;
+
+        &.visible {
+          display: block;
+        }
+      }
+
+      .expanded > .child-items {
+        display: block;
+      }
+
+      // Parent container for all menu links
+      .parent-items {
+        margin: 0;
+        border-top: 1px solid $ice-blue;
+      }
+
+      // Expandable items, all levels
+      .parent-item {
+        position: relative;
+
+        .expand-button { // touch area
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 50px;
+          height: 60px;
+          cursor: pointer;
+          
+          &::before {
+            position: absolute;
+            top: 30px;
+            right: 24px;
+            transform: translateY(-50%);
+            content: "\2b";
+            width: 20px;
+            height: 20px;
+            color: $charcoal;
+            line-height: 20px;
+            border: 1px solid $charcoal;
+            border-radius: $input-radius;
+            cursor: pointer;
+            font-size: 15px;
+            text-align: center;
+            transition: all $transition-time;
+          }
+
+          &.expanded {
+            
+            &::before {
+              color: $blue-grey;
+              content: "\2212";
+              border-color: $charcoal-grey;
+              background: $charcoal-grey;
+            }
+          }
+
+          &:hover {
+            
+            &::before {
+              border-color: $azure;
+              color: $azure;
+            }
+          }
+        }
+      }
+      
+      .expanded > a {
+        font-weight: bold;
+      }
+      
+      // Main menus, first level
+      .menu-level-0 {
+        display: block;
+
+        &:hover {
+          position: relative;
+        }
+
+        > a {
+          display: block;
+          padding: $space * 1.8 $space * 2.4;
+          border-bottom: 1px solid $ice-blue;
+          font-size: $font-normal;
+          background: $white;
+
+          &:hover {
+            color: $azure;
+          }
+        }
+      }
+
+      // li[class*="menu-level-"]:not(.menu-level-0) {
+      .menu-level-1,
+      .menu-level-2 {
+        > a {
+          display: block;
+          padding: $space * 1.15 $space * 2.4;
+          font-size: $font-small;
+
+          &::before {
+            display: inline-block;
+            margin-right: $space;
+            content: "\2212";
+          }
+        }
+
+        .expand-button {
+          height: 44px;
+
+          &::before {
+            top: 22px;
+          }
+        }
+      }
+
+      .menu-level-2 {
+        opacity: .6;
+
+        > a {
+          padding-left: $space * 4;
+        }
+      }
+    }
+  }
+}
+
+// Desktop styles
+@include media(desktop) {
+  .mobile-menu-header {
+    display: none;
+  }
+
+  .navigation.menu--main {
+    position: static;
+
+    .parent-item {
+      position: relative;
+  
+      .expand-button {
+        position: static;
+        display: inline-block;
+        @include link-arrow($dark-grey);
+        width: .4em;
+        height: .4em;
+        margin: 0 0 3px 8px;
+        border-width: 1px 1px 0 0;
+        border-radius: 0;
+        transform: rotate(135deg);
+        transition: border-color $transition-time, color $transition-time;
+      }
+      
+      &:hover {
+        > .child-items {
+           position: absolute;
+           top: 2em;
+           display: block;
+         }
+       }
+    }
+
+    // Main menus, first level
+    .menu-level-0 {
+      display: inline-block;
+      height: 2em;
+      margin: 0 $gutter 0 0;
+
+      > a {
+        font-size: 15px;
+      }
+    }
+
+    .child-items {
+      padding: $gutter;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.14);
+      background: $white;
+    }
+  }
+}
+
+.block-search {
+  margin-left: auto;
+}
+
+.form-search {
+  display: none;
+}

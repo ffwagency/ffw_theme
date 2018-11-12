@@ -1,0 +1,11 @@
+ffw-style:
+  version: VERSION
+  css:
+    theme:
+      assets/css/styles.css: {}
+ffw-js:
+  js:
+    assets/js/script.js: {}
+  dependencies:
+  - core/jquery
+  - core/drupal
