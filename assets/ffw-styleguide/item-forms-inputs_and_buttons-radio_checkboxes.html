@@ -47,14 +47,6 @@
         <a class="kss-nav__menu-link" href="section-defaults.html">
           <span class="kss-nav__ref">3</span><span class="kss-nav__name">Default values for main HTML elements</span>
         </a>
-            <ul class="kss-nav__menu-child">
-              <li class="kss-nav__menu-item">
-                <a class="kss-nav__menu-link" href="section-defaults.html#kssref-defaults-link">
-                  <span class="kss-nav__ref ">3.1</span
-                  ><span class="kss-nav__name">Link</span>
-                </a>
-              </li>
-            </ul>
       </li>
       <li class="kss-nav__menu-item">
         <a class="kss-nav__menu-link" href="section-forms.html">
@@ -76,41 +68,20 @@
 </div>
 <article role="main" class="kss-main">
 
-    <div id="kssref-defaults" class="kss-section kss-section--depth-1">
+    <div id="kssref-forms-inputs_and_buttons-radio_checkboxes" class="kss-section kss-section--depth-3">
 
       <div class="kss-style">
-        <h1 class="kss-title kss-title--level-1">
-          <a class="kss-title__permalink" href="#kssref-defaults">
+        <h3 class="kss-title kss-title--level-3">
+          <a class="kss-title__permalink" href="#kssref-forms-inputs_and_buttons-radio_checkboxes">
             <span class="kss-title__ref">
-              3
+              4.2.5
               <span class="kss-title__permalink-hash">
-                  #defaults
+                  #forms.inputs_and_buttons.radio_checkboxes
               </span>
             </span>
-            Default values for main HTML elements
+            Radio buttons and checkboxes
           </a>
-        </h1>
-
-
-      </div>
-
-
-
-    </div>
-    <section id="kssref-defaults-link" class="kss-section kss-section--depth-2">
-
-      <div class="kss-style">
-        <h2 class="kss-title kss-title--level-2">
-          <a class="kss-title__permalink" href="#kssref-defaults-link">
-            <span class="kss-title__ref">
-              3.1
-              <span class="kss-title__permalink-hash">
-                  #defaults.link
-              </span>
-            </span>
-            Link
-          </a>
-        </h2>
+        </h3>
 
 
       </div>
@@ -122,18 +93,64 @@
 
 
           <div class="kss-modifier__example">
-              <a href="#">Default link</a>
-  <a href="https://google.com">External link</a>
+              <input type="radio" name="radio-name" checked="checked"> radio|checked
+  <input type="radio" name="radio-name"> radio
+  &nbsp;&nbsp;&nbsp;
+  <input type="radio" name="radio-name-2" disabled="disabled"> radio disabled
+  <input type="radio" name="radio-name-2" checked="checked" disabled="disabled"> radio|checked disabled
+  <br>
+  <br>
+  <label><input type="radio" name="radio-name-3" checked="checked"> radio|ch (inside label)</label>
+  <label><input type="radio" name="radio-name-3"> radio (inside label)</label>
+  &nbsp;&nbsp;&nbsp;
+  <label><input type="radio" name="radio-name-4" disabled="disabled"> radio disabled (inside label)</label>
+  <label><input type="radio" name="radio-name-4" checked="checked" disabled="disabled"> radio|checked disabled (inside label)</label>
+  <hr>
+  <input type="checkbox" checked="checked"> checked
+  <input type="checkbox"> check
+  &nbsp;&nbsp;&nbsp;
+  <input type="checkbox" checked="checked" disabled="disabled"> checked|checked disabled
+  <input type="checkbox" disabled="disabled"> check disabled
+  <br>
+  <br>
+  <label><input type="checkbox"> check (inside label)</label>
+  <label><input type="checkbox" checked="checked"> checked|checked (inside label)</label>
+  &nbsp;&nbsp;&nbsp;
+  <label><input type="checkbox" disabled="disabled"> check disabled (inside label)</label>
+  <label><input type="checkbox" checked="checked" disabled="disabled"> checked|checked disabled (inside label)</label>
           </div>
 
         </div>
           <div class="kss-markup kss-style">
-            <pre class="prettyprint linenums lang-html"><code data-language="html">  &lt;a href&#x3D;&quot;#&quot;&gt;Default link&lt;/a&gt;
-  &lt;a href&#x3D;&quot;https://google.com&quot;&gt;External link&lt;/a&gt;</code></pre>
+            <pre class="prettyprint linenums lang-html"><code data-language="html">  &lt;input type&#x3D;&quot;radio&quot; name&#x3D;&quot;radio-name&quot; checked&#x3D;&quot;checked&quot;&gt; radio|checked
+  &lt;input type&#x3D;&quot;radio&quot; name&#x3D;&quot;radio-name&quot;&gt; radio
+  &amp;nbsp;&amp;nbsp;&amp;nbsp;
+  &lt;input type&#x3D;&quot;radio&quot; name&#x3D;&quot;radio-name-2&quot; disabled&#x3D;&quot;disabled&quot;&gt; radio disabled
+  &lt;input type&#x3D;&quot;radio&quot; name&#x3D;&quot;radio-name-2&quot; checked&#x3D;&quot;checked&quot; disabled&#x3D;&quot;disabled&quot;&gt; radio|checked disabled
+  &lt;br&gt;
+  &lt;br&gt;
+  &lt;label&gt;&lt;input type&#x3D;&quot;radio&quot; name&#x3D;&quot;radio-name-3&quot; checked&#x3D;&quot;checked&quot;&gt; radio|ch (inside label)&lt;/label&gt;
+  &lt;label&gt;&lt;input type&#x3D;&quot;radio&quot; name&#x3D;&quot;radio-name-3&quot;&gt; radio (inside label)&lt;/label&gt;
+  &amp;nbsp;&amp;nbsp;&amp;nbsp;
+  &lt;label&gt;&lt;input type&#x3D;&quot;radio&quot; name&#x3D;&quot;radio-name-4&quot; disabled&#x3D;&quot;disabled&quot;&gt; radio disabled (inside label)&lt;/label&gt;
+  &lt;label&gt;&lt;input type&#x3D;&quot;radio&quot; name&#x3D;&quot;radio-name-4&quot; checked&#x3D;&quot;checked&quot; disabled&#x3D;&quot;disabled&quot;&gt; radio|checked disabled (inside label)&lt;/label&gt;
+  &lt;hr&gt;
+  &lt;input type&#x3D;&quot;checkbox&quot; checked&#x3D;&quot;checked&quot;&gt; checked
+  &lt;input type&#x3D;&quot;checkbox&quot;&gt; check
+  &amp;nbsp;&amp;nbsp;&amp;nbsp;
+  &lt;input type&#x3D;&quot;checkbox&quot; checked&#x3D;&quot;checked&quot; disabled&#x3D;&quot;disabled&quot;&gt; checked|checked disabled
+  &lt;input type&#x3D;&quot;checkbox&quot; disabled&#x3D;&quot;disabled&quot;&gt; check disabled
+  &lt;br&gt;
+  &lt;br&gt;
+  &lt;label&gt;&lt;input type&#x3D;&quot;checkbox&quot;&gt; check (inside label)&lt;/label&gt;
+  &lt;label&gt;&lt;input type&#x3D;&quot;checkbox&quot; checked&#x3D;&quot;checked&quot;&gt; checked|checked (inside label)&lt;/label&gt;
+  &amp;nbsp;&amp;nbsp;&amp;nbsp;
+  &lt;label&gt;&lt;input type&#x3D;&quot;checkbox&quot; disabled&#x3D;&quot;disabled&quot;&gt; check disabled (inside label)&lt;/label&gt;
+  &lt;label&gt;&lt;input type&#x3D;&quot;checkbox&quot; checked&#x3D;&quot;checked&quot; disabled&#x3D;&quot;disabled&quot;&gt; checked|checked disabled (inside label)&lt;/label&gt;</code></pre>
           </div>
 
 
-    </section>
+    </div>
 </article>
 
 <!-- SCRIPTS -->

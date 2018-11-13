@@ -1,7 +1,40 @@
+// Main navigation
+//
 // Common styles for desktop and mobile
+// Markup:
+// <nav role="navigation" aria-labelledby="block-vd-main-menu--2-menu" id="block-vd-main-menu--2" class="block block-menu navigation menu--main">         
+//   <h2 class="visually-hidden block__title" id="block-vd-main-menu--2-menu">Main navigation</h2>
+//   <div class="mobile-menu-header">
+//     <a href="/" title="Front page" rel="home" class="link-front">Front page</a>
+//     <span class="icon-search" title="Search"></span>
+//     <span class="icon-close" title="Close menu"></span>
+//   </div>
+//   <ul class="menu parent-items">
+//     <li class="menu-item menu-item--collapsed menu-level-0">
+//       <a href="/node/43" class="menu-item-icons" title="Description of spira." data-drupal-link-system-path="node/43">Trafik</a>
+//     </li>
+//     <li class="menu-item menu-item--expanded parent-item menu-level-0">
+//       <a href="/" class="menu-item-icons" target="_self" data-drupal-link-system-path="<front>">Projekter</a>
+//       <span class="expand-button"></span>
+//       <ul class="menu child-items">
+//         <li class="menu-item menu-level-1">
+//           <a href="/node/11" class="icon-search" title="Description of chus." data-drupal-link-system-path="node/11">Find Projekt</a>
+//         </li>
+//         <li class="menu-item menu-level-1">
+//           <a href="/node/58" title="Description of seko." data-drupal-link-system-path="node/58">Titel updated</a>
+//         </li>
+//         <li class="menu-item menu-level-1">
+//           <a href="/node/23" title="Description of towuuocedru." data-drupal-link-system-path="node/23">Augue Cogo Eu Ibidem Paratus Refero</a>
+//         </li>
+//       </ul>
+//     </li>
+//   </ul>
+// </nav>
+//
+// Style guide: Components.main_navigation
 .navigation.menu--main {
   a {
-    color: $charcoal-grey;
+    // color: $charcoal;
   }
   
   .child-items {
@@ -11,6 +44,7 @@
 
 // Mobile styles
 @include media-max(desktop) {
+
   .mobile-menu-header {
     display: flex;
     padding: $space * 6 $space * 2.4 $space * 2.4;
@@ -49,11 +83,9 @@
     left: 0;
     top: 0;
     width: 100%;
-    background: $ice-blue;
 
     .menu {
       margin: 0;
-      border-top: 1px solid $ice-blue;
 
       a {
         display: block;
@@ -75,7 +107,6 @@
       // Parent container for all menu links
       .parent-items {
         margin: 0;
-        border-top: 1px solid $ice-blue;
       }
 
       // Expandable items, all levels
@@ -111,18 +142,18 @@
           &.expanded {
             
             &::before {
-              color: $blue-grey;
+              color: $blue;
               content: "\2212";
-              border-color: $charcoal-grey;
-              background: $charcoal-grey;
+              border-color: $charcoal;
+              background: $charcoal;
             }
           }
 
           &:hover {
             
             &::before {
-              border-color: $azure;
-              color: $azure;
+              border-color: $blue;
+              color: $blue;
             }
           }
         }
@@ -143,12 +174,11 @@
         > a {
           display: block;
           padding: $space * 1.8 $space * 2.4;
-          border-bottom: 1px solid $ice-blue;
           font-size: $font-normal;
           background: $white;
 
           &:hover {
-            color: $azure;
+            color: $blue;
           }
         }
       }
@@ -203,7 +233,7 @@
       .expand-button {
         position: static;
         display: inline-block;
-        @include link-arrow($dark-grey);
+        @include link-arrow($charcoal);
         width: .4em;
         height: .4em;
         margin: 0 0 3px 8px;

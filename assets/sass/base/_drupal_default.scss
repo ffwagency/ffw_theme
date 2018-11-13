@@ -56,57 +56,55 @@ table.sticky-header {
 }
 
 /* Forms */
+// .form-wrapper {
+//   margin-bottom: $form-space;
+// }
 
-.form-wrapper {
-  margin-bottom: $form-space;
-}
+// .form-item {
+//   padding: ($form-space/2) 0;
 
-.form-item {
-  padding: ($form-space/2) 0;
+//   label {
+//     display: block;
+//     padding: ($form-space/3) 0;
+//   }
 
-  label {
-    display: block;
-    padding: ($form-space/3) 0;
-  }
+//   .description {
+//     padding: ($form-space/3) 0;
+//     font-style: italic;
+//     opacity: $disabled-opacity;
+//   }
+// }
 
-  .description {
-    padding: ($form-space/3) 0;
-    font-style: italic;
-    opacity: $disabled-opacity;
-  }
-}
+// .form-type-radio,
+// .form-type-checkbox {
+//   input {
+//     margin: ($form-space/3) 0;
+//   }
 
-.form-type-radio,
-.form-type-checkbox {
-  input {
-    margin: ($form-space/3) 0;
-  }
+//   label {
+//     display: inline;
+//   }
+// }
 
-  label {
-    display: inline;
-  }
-}
+// .form-file {
+//   margin-right: $form-space;
+// }
 
-.form-file {
-  margin-right: $form-space;
-}
+// fieldset {
+//   margin: $form-space 0;
+//   padding: $form-space;
+//   border: 1px solid rgba($body-color, $disabled-opacity);
 
-fieldset {
-  margin: $form-space 0;
-  padding: $form-space;
-  border: 1px solid rgba($body-color, $disabled-opacity);
+  // legend {
+  //   padding: 0 $form-space;
 
-  legend {
-    padding: 0 $form-space;
-
-    a {
-      text-decoration: none;
-    }
-  }
-}
+  //   a {
+  //     text-decoration: none;
+  //   }
+  // }
+// }
 
 /* Password in forms */
-
 div.password-suggestions,
 div.password-confirm {
   display: none;

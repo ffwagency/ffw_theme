@@ -1,4 +1,12 @@
 // Visibility classes
+//
+// Markup:
+//   <span class="visible">Visible</span>
+//   <span class="visible-mobile">Visible on mobile devices</span>
+//   <span class="visible-tablet">Visible on tablets</span>
+//   <span class="visible-desktop">Visible on desktop</span>
+//
+// Style guide: common.visibility
 .visible {
   display: block;
 }

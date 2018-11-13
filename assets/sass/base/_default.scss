@@ -1,7 +1,4 @@
-/* Default values for main HTML elements */
-// Default elements
-//
-// Default elements on the site, e.g. paragraphs, links, etc.
+// Default values for main HTML elements
 //
 // Style guide: defaults
 
@@ -21,6 +18,17 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+::selection {
+  color: $selection-color;
+  background: $selection-bg;
+}
+
+::-moz-selection {
+  color: $selection-color;
+  background: $selection-bg;
+}
+
 
 // Link
 //
@@ -46,26 +54,12 @@ a {
   }
 }
 
-.clearfix {
-  @extend %clearfix;
-}
-
 // Ellipsis
 //
 // Markup:
 // <div class="ellipsis" style="width:200px">Class .ellipsis to cut text that is too much</div>
 //
-// Style guide helper-classes.ellipsis
+// Style guide Helper classes.ellipsis
 .ellipsis {
   @extend %ellipsis;
-}
-
-::selection {
-  color: $selection-color;
-  background: $selection-bg;
-}
-
-::-moz-selection {
-  color: $selection-color;
-  background: $selection-bg;
 }
