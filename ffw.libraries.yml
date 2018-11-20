@@ -9,3 +9,10 @@ ffw-js:
   dependencies:
   - core/jquery
   - core/drupal
+
+# Layout libraries
+threecol_equal:
+  version: VERSION
+  css:
+    theme:
+      layouts/threecol_equal/threecol_equal.css: {}

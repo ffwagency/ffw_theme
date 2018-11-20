@@ -1,0 +1,16 @@
+layout_threecol_equal:
+  label: '3 equal width columns'
+  path: layouts/threecol_equal
+  template: layout--threecol-equal
+  library: ffw/threecol_equal
+  category: 'Columns: 3'
+  default_region: first
+  icon_map:
+    - [first, second, third]
+  regions:
+    first:
+      label: First
+    second:
+      label: Second
+    third:
+      label: Third
