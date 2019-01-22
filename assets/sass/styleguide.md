@@ -1,4 +1,4 @@
-# Welcome to FFW styleguide
+# Welcome to the Styleguide
 
 ## Style guide info
 
@@ -18,13 +18,13 @@ Below the example box there is the html code for that block.
 
 * KSS-node is used as a style guide i.e. document style sheets;
 
-* The generated style guide is located in fww-styleguide folder in the root folder of ffw theme;
+* The generated style guide is located in __styleguide__ folder in the root folder of the theme;
 
 * To generate(add new elements to the style guide) run in the command line, from the theme root folder:
 ```grunt kss```
 
-* Visit sitename/path/to/ffw-styleguide/index.html;
+* Visit sitename/path/to/styleguide/index.html;
 
-* `ffw-styleguide/ffw-template` is a custom builder, which is used to customize the style guide. Currently only logo and favicon are added. Feel free to extend.
+* `styleguide/template` is a custom builder, which is used to customize the style guide. Currently only logo and favicon are added. Feel free to extend.
 
 * For more info on the kss style guide see [kss-node](https://github.com/kss-node/kss-node);

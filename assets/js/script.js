@@ -8,7 +8,7 @@
 
   Drupal.behaviors.feThemeExample = {
     attach: function (context, settings) {
-      console.log('FFW FE theme');
+      console.log('Hello work!');
     }
   };
 
