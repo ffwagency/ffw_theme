@@ -1,5 +1,5 @@
 # FFW FE Theme
-* version: 0.2.1
+* version: 0.2.2
 
 ## Current software requirements
 
@@ -67,6 +67,11 @@ To "watch":
 ```
 $ npm run watch-css
 $ npm run watch-js
+```
+
+#### If npm run build-js fails at the beginning after npm install, run this:
+```
+npm install --save-dev uglify-js@github:mishoo/UglifyJS2#harmony
 ```
 
 ###### Maybe you will also want to change the output-style in the package.json file - from compressed to expanded for the node-sass script, so the git diff will have better output, and conflicts will not be created due to the reason that it is compressed.
