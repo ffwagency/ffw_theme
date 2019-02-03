@@ -11,7 +11,7 @@
 * jshint: 2.9.6,
 * node-sass: 4.10.0,
 * nodemon: 1.18.5,
-* uglify-js: 3.0.15,
+* "uglify-es": "github:mishoo/UglifyJS2#harmony",
 * watch: 1.0.2,
 * postcss: 6.0.1
 * postcss-cli: 6.0.1
