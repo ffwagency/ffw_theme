@@ -1,0 +1,91 @@
+@import "../_sass/_init.scss";
+
+// Typography
+// Markup:
+//  <h3>Base</h3>
+//   <h1>H1 title</h1>
+//   <h2>H2 title</h2>
+//   <h3>H3 title</h3>
+//   <h4>H4 title</h4>
+//   <h5>H5 title</h5>
+//   <h6>H6 title</h6>
+// <p style="font: 20px/2 'Neue Haas Grotesk W01 Disp'"> Neue Haas Grotesk™ W01 Text 55 Roman </p>
+// <p style="font: italic 20px/2 'Neue Haas Grotesk W01 Disp'"> Neue Haas Grotesk™ W01 Text 56 Italic </p>
+// <p style="font: 500 20px/2 'Neue Haas Grotesk W01 Disp'"> Neue Haas Grotesk™ W01 Text 65 Medium </p>
+// <p style="font: bold 20px/2 'Neue Haas Grotesk W01 Disp'"> Neue Haas Grotesk™ W01 Text 75 Bold </p>
+// <p style="font: bold italic 20px/2 'Neue Haas Grotesk W01 Disp'"> Neue Haas Grotesk™ W01 Text 76 Bold Italic </p>
+//
+// Weight: 999
+//
+// Style guide: Typography
+
+html,
+body {
+  color: $body-color;
+  font-size: $font-normal; //16px
+  font-family: "HelveticaNeue", "Arial", sans-serif;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 1em;
+  font-weight: bold;
+}
+
+h1,
+%header1 {
+  font-weight: bold;
+  font-size: 3.75rem; // 60px
+  line-height: 1; // 60px
+}
+
+h2,
+%header2 {
+  font-size: 2.25rem; // 36px
+  line-height: 1.17; // 42.1167px
+}
+
+h3,
+%header3 {
+  font-size: 1.5rem; // 24px
+  line-height: 1.33; // 31.9167px
+}
+
+h4,
+%header4 {
+  font-weight: 500;
+  font-size: 1.312rem; // 21px
+  line-height: 1.43; // 30.0333px
+}
+
+h5,
+%header5 {
+  font-size: 1rem; // 16px
+  line-height: 1.375; // 22px
+}
+
+h6,
+%header6 {
+  font-size: .875rem; // 14px
+  line-height: 1.429; // 20px
+}
+
+%text-light {
+  font-weight: $font-light;
+
+  @extend %header4;
+}
+
+label {
+  letter-spacing: normal;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  font-size: .812rem;
+  line-height: normal;
+}

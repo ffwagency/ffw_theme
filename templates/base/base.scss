@@ -1,0 +1,413 @@
+@import "../_sass/_init.scss";
+
+// Default values for main HTML elements
+//
+// Style guide: defaults
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
+}
+
+body {
+  min-height: 100%;
+  margin: 0; /* Remove the margin in all browsers (opinionated). */
+  text-align: center;
+  color: $body-color;
+  font-size: $base-font;
+  line-height: 1.5;
+  background-color: $body-background-color;
+}
+
+/* Grouping content
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in IE.
+ */
+figcaption,
+figure,
+main { /* 1 */
+  display: block;
+}
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1rem; /* 2 */
+}
+
+/* Text-level semantics
+========================================================================== */
+
+::selection {
+  color: $selection-color;
+  background: $selection-bg;
+}
+
+::-moz-selection {
+  color: $selection-color;
+  background: $selection-bg;
+}
+
+// Link
+//
+// Markup:
+//   <a href="#">Default link</a>
+//   <a href="https://google.com">External link</a>
+//
+// Style guide: defaults.link
+a {
+  outline-color: $link-color;
+  color: $link-color;
+  transition: color $transition-time;
+  background-color: transparent; /* Remove the gray background on active links in IE 10. */
+  -webkit-text-decoration-skip: objects; /* Remove gaps in links underline in iOS 8+ and Safari 8+. */
+
+  &:hover,
+  &:active {
+    @extend %link-hover;
+  }
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  position: relative;
+  line-height: 0;
+  font-size: 75%;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Lists
+   ========================================================================== */
+
+/**
+ * Unset default list margin and padding because if not
+ * we'll have to unset it every. single. time.
+ */
+ul,
+ol,
+dl {
+  margin: 0;
+  padding: 0 0 0 2rem;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Embedded content
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 9-.
+ */
+audio,
+video {
+  display: inline-block;
+}
+
+/**
+ * Add the correct display in iOS 4-7.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+
+img {
+  max-width: 100%;
+  height: auto;
+  border: 0; /* Remove the border on images inside links in IE 10-. */
+}
+
+/**
+ * Hide the overflow in IE.
+ */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Interactive
+   ========================================================================== */
+
+/*
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in Edge, IE, and Firefox.
+ */
+details, /* 1 */
+menu {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item;
+}
+
+/* Scripting
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 9-.
+ */
+canvas {
+  display: inline-block;
+}
+
+/**
+ * Add the correct display in IE.
+ */
+template {
+  display: none;
+}
+
+/* Hidden
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 10-.
+ */
+[hidden] {
+  display: none;
+}
+
+// Ellipsis
+//
+// Markup:
+// <div class="ellipsis" style="width:200px">Class .ellipsis to cut text that is too much</div>
+//
+// Style guide Helper classes.ellipsis
+.ellipsis {
+  @extend %ellipsis;
+}
+
+
+/* Drupal default classes */
+
+.submitted > span {
+  opacity: $disabled-opacity;
+}
+
+table.sticky-header {
+  background: $body-background-color;
+}
+
+/* Admin tabs and some buttons */
+
+.tabs ul,
+.action-links,
+.field-collection-view-links,
+#main-wrapper .links.inline {
+  margin: 0;
+
+  @extend %clearfix;
+
+  li {
+    float: left;
+    margin: 0 $form-space $form-space 0;
+    list-style: none;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  a {
+    @extend %button;
+  }
+}
+
+.tabs ul {
+  padding: 0;
+}
+
+.action-links,
+.field-collection-view-links,
+#main-wrapper .links.inline {
+  padding: $form-space 0 0 0;
+}
+
+.form-actions {
+  @extend %clearfix;
+
+  input {
+    margin: $form-space $form-space 0 0;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+/* Messages and errors (copied from the original CSS) */
+
+div.messages {
+  padding: $form-space;
+
+  ul {
+    margin: 0 0 0 $form-space;
+    padding: 0;
+  }
+
+  p {
+    margin: 0;
+
+     + p {
+      margin-top: $form-space;
+    }
+  }
+}
+
+div.status {
+  border-color: $messages-ok;
+}
+div.status,
+.ok {
+  color: $messages-ok;
+}
+div.status,
+table tr.ok {
+  background-color: $messages-ok-background;
+}
+
+div.warning {
+  border-color: $messages-warn;
+}
+div.warning,
+.warning {
+  color: $messages-warn;
+}
+div.warning,
+table tr.warning {
+  background-color: $messages-warn-background;
+}
+
+div.error {
+  border-color: $messages-error;
+}
+div.error,
+.error {
+  color: $messages-error;
+}
+div.error,
+table tr.error {
+  background-color: $messages-error-background;
+}
+div.error p.error {
+  color: $body-color;
+}
+
+.marker,
+.form-required {
+  color: $messages-error;
+}
+.form-item input.error,
+.form-item textarea.error,
+.form-item select.error {
+  border: 1px solid $messages-error;
+}
+
+input.error {
+  border: 1px solid $messages-error !important;
+  background: $messages-error-background !important;
+}
+
+// Visibility classes
+//
+// Markup:
+//   <span class="visible">Visible</span>
+//   <span class="visible-mobile">Visible on mobile devices</span>
+//   <span class="visible-tablet">Visible on tablets</span>
+//   <span class="visible-desktop">Visible on desktop</span>
+//
+// Style guide: common.visibility
+.visible {
+  display: block;
+}
+
+.visible-mobile {
+  @include media(tablet) {
+    display: none;
+  }
+}
+
+.visible-tablet {
+  @include media(desktop) {
+    display: none;
+  }
+}
+
+.visible-desktop {
+  @include media-max(desktop) {
+    display: none;
+  }
+}
+// End visibility classes
+
+// Common styles
+//
+// Markup:
+//   <main>Mina content wrapper</main>
+//   <section class="region">Visible on mobile devices</section>
+//
+// Style guide: common.layout
+
+
+main,
+.region {
+  display: block;
+  max-width: $max-width;
+  margin: 0 auto;
+}

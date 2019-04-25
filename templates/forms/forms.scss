@@ -1,0 +1,344 @@
+@import "../_sass/_init.scss";
+
+// Forms
+//
+//
+// Style guide: forms
+.form-wrapper {
+  margin-bottom: $form-space;
+}
+
+.form-item {
+  padding: ($form-space/2) 0;
+
+  label {
+    display: block;
+    padding: ($form-space/3) 0;
+  }
+
+  .description {
+    padding: ($form-space/3) 0;
+    font-style: italic;
+    opacity: $disabled-opacity;
+  }
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+}
+
+input,
+select,
+textarea {
+  max-width: 100%;
+
+  &:focus {
+    outline-color: $body-color;
+  }
+}
+
+// Fieldset
+//
+// Style guide: forms.fieldset
+//
+// Markup:
+//  <fieldset>
+//   <legend>Legend</legend>
+//  </fieldset>
+//
+// Style guide: forms.fieldset
+fieldset {
+  min-width: inherit; /* width fix for Chrome */
+  margin: $form-space 0;
+  padding: $form-space;
+  border: 1px solid rgba($body-color, $disabled-opacity);
+
+
+  legend {
+    padding: 0 $form-space;
+
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
+@-moz-document url-prefix() {
+  fieldset {
+    display: table-cell; /* width fix for FF */
+  }
+}
+
+// Buttons
+//
+// Markup:
+//  <input type="submit" value="Button">
+//  <input type="submit" value="Button (disabled)" disabled="disabled"><br /><br />
+// 
+// Style guide: forms.inputs_and_buttons.buttons
+
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+input[type="file"],
+button,
+.button {
+  -webkit-appearance: none;
+  @extend %button;
+}
+
+
+// Upload
+//
+// Markup:
+// <div class="js-form-item form-item js-form-type-file form-type-file js-form-item-files-logo-upload form-item-files-logo-upload">
+// <input data-drupal-selector="edit-logo-upload" aria-describedby="edit-logo-upload--description" type="file" id="edit-logo-upload" name="files[logo_upload]" size="60" class="js-form-file form-file">
+// <div id="edit-logo-upload--description" class="description">
+//   If you don't have direct file access to the server, use this field to upload your logo.
+// </div>
+// </div><br /><br />
+// 
+// Style guide: forms.inputs_and_buttons.buttons
+.form-file {
+  margin-right: $form-space;
+}
+
+input[type="file"] {
+  height: auto;
+  padding: $input-padding;
+}
+
+// Button Link
+//
+// Markup:
+//   <a class="button" href="#">Button link</a>
+//
+// Style guide: forms.inputs_and_buttons.button-link
+
+
+/* Inputs */
+
+// Input text, password, select
+//
+// Markup:
+//  <input type="text" value="" placeholder="Text">
+//  <input type="text" value="Text (disabled)" disabled="disabled"><br /><br />
+//  <input type="password" value="Password"> <input type="password" value="Password disabled" disabled="disabled"><br /><br />
+//  <select class="form-select" style="float:left; margin-right: 5px">
+//    <option value="option_1">Option 1</option>
+//    <option value="option_2" selected="selected">Option 2</option>
+//    <option value="option_3">Option 3</option>
+//    <option value="option_4">Option 4</option>
+//  </select>
+//  <select class="form-select" disabled="disabled" style="margin-top: 5px">
+//    <option value="option_1">Option 1</option>
+//    <option value="option_2">Option 2</option>
+//    <option value="option_3" selected="selected">Option 3</option>
+//    <option value="option_4">Option 4</option>
+//  </select>
+//
+// Style guide: forms.inputs_and_buttons.inputs
+select,
+textarea,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"] {
+  box-sizing: border-box;
+  height: $input-height;
+  padding: $input-padding;
+  border: 1px solid $input-border;
+  border-radius: $input-radius;
+  color: $body-color;
+  line-height: $input-line-height;
+  background-color: $input-bg;
+
+  &[disabled],
+  .disabled {
+    opacity: $disabled-opacity;
+  }
+}
+
+// Password in forms
+//
+// Markup:
+// <div id="edit-pass" class="js-form-item form-item js-form-type-password-confirm form-type-password-confirm js-form-item-pass form-item-pass form-no-label">
+// <div class="js-form-item form-item js-form-type-password form-type-password js-form-item-pass-pass1 form-item-pass-pass1 password-parent">
+// <label for="edit-pass-pass1">Password</label>
+// <input class="password-field js-password-field form-text" data-drupal-selector="edit-pass-pass1" type="password" id="edit-pass-pass1" name="pass[pass1]" size="25" maxlength="128">
+// <div class="password-strength"><div class="password-strength__meter"><div class="password-strength__indicator js-password-strength__indicator is-strong" style="width: 87.5%;"></div></div><div aria-live="polite" aria-atomic="true" class="password-strength__title">Password strength: <span class="password-strength__text js-password-strength__text">Strong</span></div></div></div>
+// <div class="js-form-item form-item js-form-type-password form-type-password js-form-item-pass-pass2 form-item-pass-pass2 confirm-parent">
+// <label for="edit-pass-pass2">Confirm password</label>
+// <input class="password-confirm js-password-confirm form-text" data-drupal-selector="edit-pass-pass2" type="password" id="edit-pass-pass2" name="pass[pass2]" size="25" maxlength="128">
+// <div aria-live="polite" aria-atomic="true" class="password-confirm js-password-confirm" style="visibility: hidden;">Passwords match: <span></span></div></div><div class="password-suggestions description" style="">Recommendations to make your password stronger:<ul><li>Add punctuation</li></ul></div>
+// <div id="edit-pass--description" class="description">
+//   To change the current user password, enter the new password in both fields.
+// </div>
+// </div>
+// 
+// Style guide: forms.inputs_and_buttons.password
+
+div.password-suggestions,
+div.password-confirm {
+  display: none;
+}
+
+#field-password-add-more-wrapper .password-parent {
+  position: relative;
+}
+
+div.password-strength {
+  position: absolute;
+  bottom: ($form-space/2);
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 3px;
+  margin-bottom: -5px;
+
+  .password-indicator {
+    height: 3px;
+    background-color: lighten($messages-error, 33%);
+
+    .indicator {
+      height: 3px;
+      background-color: lighten($messages-ok, 33%);
+    }
+  }
+
+  .password-strength-text,
+  .password-strength-title {
+    display: none;
+  }
+}
+
+.password-suggestions.description {
+  font-style: italic;
+  opacity: $disabled-opacity;
+}
+
+
+// Textarea
+//
+// Markup:
+//  <textarea cols="30" rows="3">Textarea</textarea>
+//  <textarea cols="30" rows="3" disabled="disabled">Textarea (disabled)</textarea>
+//
+// Style guide: forms.inputs_and_buttons.textarea
+textarea {
+  height: auto;
+}
+
+input,
+textarea {
+  &::-webkit-input-placeholder {
+    color: $body-color;
+    opacity: $disabled-opacity !important;
+  }
+
+  &::-moz-placeholder {
+    color: $body-color;
+    opacity: $disabled-opacity !important;
+  }
+
+  &:-ms-input-placeholder {
+    color: $body-color;
+    opacity: $disabled-opacity !important;
+  }
+}
+
+// Radio buttons and checkboxes
+//
+// Markup:
+//   <input type="radio" name="radio-name" checked="checked"> radio|checked
+//   <input type="radio" name="radio-name"> radio
+//   &nbsp;&nbsp;&nbsp;
+//   <input type="radio" name="radio-name-2" disabled="disabled"> radio disabled
+//   <input type="radio" name="radio-name-2" checked="checked" disabled="disabled"> radio|checked disabled
+//   <br>
+//   <br>
+//   <label><input type="radio" name="radio-name-3" checked="checked"> radio|ch (inside label)</label>
+//   <label><input type="radio" name="radio-name-3"> radio (inside label)</label>
+//   &nbsp;&nbsp;&nbsp;
+//   <label><input type="radio" name="radio-name-4" disabled="disabled"> radio disabled (inside label)</label>
+//   <label><input type="radio" name="radio-name-4" checked="checked" disabled="disabled"> radio|checked disabled (inside label)</label>
+//   <hr>
+//   <input type="checkbox" checked="checked"> checked
+//   <input type="checkbox"> check
+//   &nbsp;&nbsp;&nbsp;
+//   <input type="checkbox" checked="checked" disabled="disabled"> checked|checked disabled
+//   <input type="checkbox" disabled="disabled"> check disabled
+//   <br>
+//   <br>
+//   <label><input type="checkbox"> check (inside label)</label>
+//   <label><input type="checkbox" checked="checked"> checked|checked (inside label)</label>
+//   &nbsp;&nbsp;&nbsp;
+//   <label><input type="checkbox" disabled="disabled"> check disabled (inside label)</label>
+//   <label><input type="checkbox" checked="checked" disabled="disabled"> checked|checked disabled (inside label)</label>
+//
+// Style guide: forms.inputs_and_buttons.radio_checkboxes
+
+
+.form-type-radio,
+.form-type-checkbox {
+  input {
+    margin: ($form-space/3) 0;
+  }
+
+  label {
+    display: inline;
+  }
+}
+
+/* Forms */
+/* Webforms */
+
+.webform-client-form {
+  .webform-component {
+    border-bottom: 1px solid rgba($body-color, $disabled-opacity);
+  }
+
+  table {
+    th,
+    td {
+      padding: ($form-space/3);
+      border: 1px solid rgba($body-color, $disabled-opacity);
+    }
+
+    .form-item {
+      padding: 0;
+    }
+  }
+}
+
+.webform-container-inline.form-item label {
+  display: inline;
+}
+
+.webform-progressbar {
+  padding: ($form-space*2) 0;
+}
+
+.webform-confirmation {
+  padding: $form-space 0;
+
+   + .links {
+    a {
+      margin: $form-space $form-space 0 0;
+
+      @extend %button;
+    }
+  }
+}
+
+.form-item-submitted-component-time-ampm {
+  margin-left: ($form-space/2);
+
+  label {
+    margin-right: 0;
+  }
+}

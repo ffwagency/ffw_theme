@@ -1,16 +1,12 @@
+#  Style Guide
+
+This application is a living style guide, generated from KSS documented styles.
+
 ## Getting Started
-
-### Browser Support
-Autoprefixer & Babel is set to support:
-
-* IE >= 9
-* Last 3 versions of modern browsers.
-
-These can be updated at any time within the `package.json`.
-
-### Run the following commands from the theme directory
 If you haven't yet, install nvm:
 https://github.com/creationix/nvm
+
+### Run the following commands from the theme directory
 
 #### Use the right version of node with:
 `nvm use`
@@ -26,21 +22,21 @@ _This command will look at your `.nvmrc` file and use the version node.js specif
 _This command looks at `package.json` and installs all the npm dependencies specified in it.  Some of the dependencies include gulp, autoprefixer, gulp-sass and others._
 
 #### Runs default task
-`npm run gulp:build`
+`npm run build`
 
 _This will run whatever the default task is._
 
 #### Compiles Sass
-`npm run gulp:compile`
+`npm run compile`
 
 _This will perform a one-time Sass compilation._
 
 #### Runs the watch command
-`npm run gulp:watch`
+`npm run watch`
 
 _This is ideal when you are doing a lot of Sass changes and you want to make sure every time a change is saved it automatically gets compiled to CSS_
 
 #### Cleans complied directory
-`npm run gulp:clean`
+`npm run clean`
 
 _This will perform a one-time deletion of all compiled files within the dist/ directory._

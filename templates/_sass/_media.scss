@@ -1,0 +1,55 @@
+// Media breakpoints
+// Media display size from certain size (mobile first)
+@mixin media($breakpoint) {
+  @if $breakpoint == tablet {
+    @media (min-width: $tablet) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tablet-large {
+    @media (min-width: $tablet-large) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == desktop {
+    @media (min-width: $desktop) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == large {
+    @media (min-width: $large) {
+      @content;
+    }
+  }
+}
+
+// Media display size up to certain size
+@mixin media-max($breakpoint) {
+  @if $breakpoint == tablet {
+    @media (max-width: $tablet - 1px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == desktop {
+    @media (max-width: $desktop - 1px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == large {
+    @media (max-width: $large - 1px) {
+      @content;
+    }
+  }
+}
+
+// Media display size from - to
+@mixin media-between($breakpoint1, $breakpoint2) {
+  @media (min-width: $breakpoint1) and (max-width: $breakpoint2) {
+    @content;
+  }
+}
