@@ -1,3 +1,5 @@
+> Theme generated with [Yeoman theme generator](https://github.com/svetlin-ffw/yo-drupal-theme-generator)
+
 ## Getting Started
 
 ### Browser Support
