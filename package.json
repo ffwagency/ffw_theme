@@ -12,6 +12,7 @@
     "gulp:watch": "gulp watch",
     "orderscss": "csscomb \"../templates/\"",
     "jshint": "jshint templates/**/*.js",
+    "scsslint": "stylelint \"templates/**/*.scss\" --syntax scss --fix --cache",
     "build:kss": "kss --source \"templates/\" --css \"../assets/css/styles.css\" --destination \"styleguide\" --homepage \"styleguide.md\" --builder \"styleguide/template\" --title \"Style guide\"",
     "build:sprite": "svg-sprite -p 2 -c --cscss --css-render-scss-dest='../templates/sprite/_sprite.scss' templates/sprite/icons/*.svg --cs='../templates/sprite/sprite.css.svg'",
     "build:js": "npm run jshint",
@@ -67,6 +68,8 @@
     "node-sass": "^4.11.0",
     "nodemon": "^1.18.9",
     "run-sequence": "^2.0.0",
+    "stylelint": "^13.0.0",
+    "stylelint-scss": "^3.14.2",
     "susy": "^3.0.5",
     "svg-sprite": "^1.5.0",
     "watch": "^1.0.2"

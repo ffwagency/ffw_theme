@@ -46,3 +46,6 @@ _This is ideal when you are doing a lot of Sass changes and you want to make sur
 `npm run gulp:clean`
 
 _This will perform a one-time deletion of all compiled files within the dist/ directory._
+
+## TODO
+* Replace Gulp tasks with npm scripts
