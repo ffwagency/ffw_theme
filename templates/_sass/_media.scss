@@ -6,7 +6,6 @@
       @content;
     }
   }
-
   @if $breakpoint == tablet-large {
     @media (min-width: $tablet-large) {
       @content;
@@ -18,7 +17,6 @@
       @content;
     }
   }
-
   @else if $breakpoint == large {
     @media (min-width: $large) {
       @content;
@@ -39,7 +37,6 @@
       @content;
     }
   }
-
   @else if $breakpoint == large {
     @media (max-width: $large - 1px) {
       @content;

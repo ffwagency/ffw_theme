@@ -56,7 +56,7 @@ hr {
  * 2. Correct the odd `em` font sizing in all browsers.
  */
 pre {
-  font-family: monospace, monospace; /* 1 */
+  font-family: monospace; /* 1 */
   font-size: 1rem; /* 2 */
 }
 
@@ -117,11 +117,11 @@ sup {
 }
 
 sub {
-  bottom: -0.25em;
+  bottom: -.25em;
 }
 
 sup {
-  top: -0.5em;
+  top: -.5em;
 }
 
 /* Lists
@@ -162,7 +162,6 @@ audio:not([controls]) {
   display: none;
   height: 0;
 }
-
 
 img {
   max-width: 100%;
@@ -304,7 +303,7 @@ div.messages {
   p {
     margin: 0;
 
-     + p {
+    + p {
       margin-top: $form-space;
     }
   }
@@ -313,10 +312,12 @@ div.messages {
 div.status {
   border-color: $messages-ok;
 }
+
 div.status,
 .ok {
   color: $messages-ok;
 }
+
 div.status,
 table tr.ok {
   background-color: $messages-ok-background;
@@ -325,10 +326,12 @@ table tr.ok {
 div.warning {
   border-color: $messages-warn;
 }
+
 div.warning,
 .warning {
   color: $messages-warn;
 }
+
 div.warning,
 table tr.warning {
   background-color: $messages-warn-background;
@@ -337,14 +340,17 @@ table tr.warning {
 div.error {
   border-color: $messages-error;
 }
+
 div.error,
 .error {
   color: $messages-error;
 }
+
 div.error,
 table tr.error {
   background-color: $messages-error-background;
 }
+
 div.error p.error {
   color: $body-color;
 }
@@ -353,6 +359,7 @@ div.error p.error {
 .form-required {
   color: $messages-error;
 }
+
 .form-item input.error,
 .form-item textarea.error,
 .form-item select.error {
@@ -394,6 +401,7 @@ input.error {
     display: none;
   }
 }
+
 // End visibility classes
 
 // Common styles
@@ -403,7 +411,6 @@ input.error {
 //   <section class="region">Visible on mobile devices</section>
 //
 // Style guide: common.layout
-
 
 main,
 .region {

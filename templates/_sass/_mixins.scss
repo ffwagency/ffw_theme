@@ -5,7 +5,7 @@
 // Clearfix
 @mixin clearfix {
   &::after {
-    content: '';
+    content: "";
     display: table;
     clear: both;
   }
@@ -48,10 +48,14 @@
     flex-wrap: wrap;
     justify-content: space-between;
 
-     > #{$child} {
-      width: susy-span(12);@include media(tablet) {
+    > #{$child} {
+      width: susy-span(12);
+
+      @include media(tablet) {
         width: susy-span(6);
-      }@include media(tablet-large) {
+      }
+
+      @include media(tablet-large) {
         width: susy-span(4);
       }
     }
@@ -77,6 +81,7 @@
 
   &::before {
     @include link-arrow($color2);
+
     // content: '';
     // display: inline-block;
     // width: .5em;
