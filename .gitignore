@@ -1,8 +1,9 @@
 # Ignore the node modules folder (created by 'npm install').
 node_modules
 
-# We absolutely don't want to have the .sass-cache in git.
+# We absolutely don't want to have the .sass-cache and .stylelintcache in git.
 .sass-cache
+.stylelintcache
 
 # Ignore any errors thrown by npm.
 npm-debug.log

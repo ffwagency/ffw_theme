@@ -1,12 +1,12 @@
-@import "../_sass/_init.scss";
+@import '../_sass/_init.scss';
 
 // Default values for main HTML elements
 //
 // Style guide: defaults
 
 html {
-  height: 100%;
   box-sizing: border-box;
+  height: 100%;
 }
 
 * {
@@ -21,10 +21,10 @@ html {
 body {
   min-height: 100%;
   margin: 0; /* Remove the margin in all browsers (opinionated). */
-  text-align: center;
-  color: $body-color;
   font-size: $base-font;
   line-height: 1.5;
+  text-align: center;
+  color: $body-color;
   background-color: $body-background-color;
 }
 
@@ -82,8 +82,8 @@ pre {
 // Style guide: defaults.link
 a {
   outline-color: $link-color;
-  color: $link-color;
   transition: color $transition-time;
+  color: $link-color;
   background-color: transparent; /* Remove the gray background on active links in IE 10. */
   -webkit-text-decoration-skip: objects; /* Remove gaps in links underline in iOS 8+ and Safari 8+. */
 
@@ -111,8 +111,8 @@ small {
 sub,
 sup {
   position: relative;
-  line-height: 0;
   font-size: 75%;
+  line-height: 0;
   vertical-align: baseline;
 }
 
@@ -249,9 +249,8 @@ table.sticky-header {
 .action-links,
 .field-collection-view-links,
 #main-wrapper .links.inline {
-  margin: 0;
-
   @extend %clearfix;
+  margin: 0;
 
   li {
     float: left;

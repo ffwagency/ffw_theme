@@ -1,0 +1,1208 @@
+@font-face {
+  font-family: 'DM Sans';
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+  src: url('https://fonts.gstatic.com/s/dmsans/v4/rP2Hp2ywxg089UriCZ2IHSeH.woff2') format('woff2');
+}
+
+.page-produkte-content {
+  min-height: 0;
+  padding-top: 104px;
+  border: 0;
+  background-color: $color-white;
+  background-image: linear-gradient(to bottom, #fff, #33dcff);
+  background-repeat: no-repeat;
+  background-size: 100% 104px;
+
+  @include media(desktop) {
+    padding-top: 172px;
+    background-size: 100% 542px;
+  }
+
+  @include media(tablet) {
+    padding-top: 156px;
+    background-image: linear-gradient(to bottom, #c1f5ff, #33dcff);
+    background-size: 100% 413px;
+  }
+
+  @include media(xl) {
+    padding-top: 212px;
+  }
+
+  .produkt {
+    @extend .pull-left, .pull-right;
+    position: relative;
+    z-index: 2;
+    max-width: $max-width-desktop;
+
+    @include media(desktop) {
+      margin: 0 auto;
+    }
+  }
+
+  .produkt-content {
+    @extend .wrapper-content;
+    @extend .wrapper;
+    position: relative;
+    z-index: 1;
+    transition: all $transition-time;
+    background: $color-white;
+
+    @include media(tablet) {
+      min-height: 473px;
+    }
+
+    &.collapsing {
+      height: 473px;
+      max-height: 473px;
+      overflow: hidden;
+
+      .product-image.hidden-expanded {
+        display: none;
+      }
+    }
+
+    &.expanded {
+      .produkt-content {
+        border: 0;
+      }
+    }
+
+    .stage-text {
+      opacity: 1;
+      transition: visibility .3s ease, opacity .3s ease;
+    }
+
+    &.collapsed {
+      overflow: hidden;
+
+      @include media(tablet) {
+        min-height: 473px;
+        max-height: 473px;
+        box-shadow: 0 0 0 1px $color-blue;
+      }
+
+      .stage-text {
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility .3s ease, opacity .3s ease;
+      }
+    }
+
+    .tipps-content {
+      > h2:first-child {
+        @include media(tablet) {
+          max-width: 450px;
+        }
+
+        @include media(desktop) {
+          max-width: 570px;
+        }
+      }
+    }
+  }
+
+  > .product-image {
+    position: absolute;
+    z-index: 2;
+  }
+
+  .teaser-columns {
+    @extend .pull-left, .pull-right;
+    margin-bottom: 4rem;
+
+    @include media-max(tablet) {
+      margin-right: 0;
+      margin-left: 0;
+    }
+  }
+
+  .produkt-babys {
+    .stage-image {
+      background: url('../images/produkte-babys-S.jpg') center no-repeat;
+      background-size: cover;
+
+      @include media(tablet) {
+        background-image: url('../images/produkte-babys-M.jpg');
+      }
+
+      @include media(desktop) {
+        background-image: url('../images/produkte-babys-L.jpg');
+      }
+
+      @include media(xl) {
+        background-image: url('../images/produkte-babys-XL.jpg');
+      }
+    }
+  }
+
+  .produkt-erwachsene {
+    .stage-image {
+      background: url('../images/produkte-erwachsene-S.jpg') center no-repeat;
+      background-size: cover;
+
+      @include media(tablet) {
+        background-image: url('../images/produkte-erwachsene-M.jpg');
+      }
+
+      @include media(desktop) {
+        background-image: url('../images/produkte-erwachsene-L.jpg');
+      }
+
+      @include media(xl) {
+        background-image: url('../images/produkte-erwachsene-XL.jpg');
+      }
+    }
+  }
+
+  .produkt-schwangere {
+    .stage-image {
+      background: url('../images/produkte-schwangere-S.jpg') center no-repeat;
+      background-size: cover;
+
+      @include media(tablet) {
+        background-image: url('../images/produkte-schwangere-M.jpg');
+      }
+
+      @include media(desktop) {
+        background-image: url('../images/produkte-schwangere-L.jpg');
+      }
+
+      @include media(xl) {
+        background-image: url('../images/produkte-schwangere-XL.jpg');
+      }
+    }
+  }
+
+  .stage-content {
+    @include clearfix;
+    position: relative;
+
+    .stage-header {
+      position: relative;
+      padding-top: 1.5rem;
+      padding-bottom: 2px;
+
+      @include media(tablet) {
+        float: left;
+        width: 47%;
+        padding-top: 82px;
+      }
+
+      @include media(desktop) {
+        padding-top: 67px;
+      }
+
+      @include media(xl) {
+        padding-top: 118px;
+      }
+
+      h2 {
+        @extend .subheadline;
+      }
+
+      h1 {
+        @extend %h2;
+      }
+
+      .button-wrapper {
+        position: relative;
+        text-align: left;
+
+        [class*='button'] {
+          width: 100%;
+          margin-bottom: 1rem;
+
+          @include media(tablet) {
+            width: auto;
+            margin-bottom: 2rem;
+          }
+        }
+
+        .link-more {
+          display: inline-block;
+          margin-bottom: 1.75rem;
+        }
+
+        .product-image {
+          position: absolute;
+          right: 0;
+          bottom: 40px;
+          z-index: 1;
+          width: 95px;
+          transform: rotate(9deg);
+        }
+      }
+    }
+
+    .stage-image {
+      margin-top: 12px;
+      padding-bottom: 67.4%;
+
+      @include media(tablet) {
+        float: right;
+        width: calc(50% + 2.125rem);
+        height: 473px;
+        margin-top: 0;
+        margin-right: -#{map-get($wrapper-space, 'tablet')};
+        padding-bottom: 0;
+      }
+
+      @include media(desktop) {
+        width: calc(50% + 2.75rem);
+        height: 509px;
+        margin-right: -#{map-get($wrapper-space, 'desktop')};
+        padding-bottom: 0;
+      }
+
+      @include media(xl) {
+        width: calc(50% + 5rem);
+        margin-right: -#{map-get($wrapper-space, 'xl')};
+        padding-bottom: 41%;
+      }
+    }
+
+    .stage-text {
+      padding-top: 1.75rem;
+      padding-bottom: 6px;
+
+      @include media(tablet) {
+        float: left;
+        clear: both;
+        width: 65.2%;
+        margin-bottom: 100px;
+        padding-top: 2rem;
+        padding-bottom: 0;
+      }
+
+      @include media(desktop) {
+        clear: none;
+        width: 48.2%;
+        margin-bottom: 156px;
+        padding-top: 0;
+      }
+
+      @include media(xl) {
+        width: 45.7%;
+      }
+
+      h3 {
+        @extend .subheadline;
+      }
+
+      p:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .content-body {
+    // @include clearfix;
+    position: relative;
+    z-index: 1;
+    clear: both;
+    margin: 0;
+
+    @include media(tablet) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  .column-first {
+    position: relative;
+    margin-top: 2.125rem;
+    margin-bottom: 64px;
+
+    @include media(tablet) {
+      @include columns(4,12, true);
+      margin-top: 45px;
+    }
+
+    @include media(desktop) {
+      width: 41.6667%;
+      margin-top: 0;
+      margin-bottom: 80px;
+      padding-right: 2rem;
+    }
+
+    @include media(xl) {
+      margin-bottom: 112px;
+    }
+  }
+
+  .column-last {
+    @include media(tablet) {
+      @include columns(8, 12, true);
+    }
+
+    @include media(desktop) {
+      width: calc(50% + 3.75rem);
+      margin-right: -3.75rem;
+    }
+
+    @include media(xl) {
+      width: calc(50% + 5rem);
+      margin-right: -5rem;
+      margin-bottom: 72px;
+    }
+  }
+
+  .infographic {
+    @extend .pull-right;
+    margin-left: auto;
+    padding-top: 26px;
+    padding-bottom: 26px;
+
+    @include media(tablet) {
+      margin-right: 0;
+      margin-left: -#{map-get($wrapper-space, 'tablet')};
+      padding-top: 80px;
+      padding-bottom: 79px;
+    }
+
+    @include media(desktop) {
+      margin-left: -#{map-get($wrapper-space, 'desktop')};
+      padding-top: 184px;
+      padding-bottom: 91px;
+    }
+
+    @include media(xl) {
+      margin-left: -#{map-get($wrapper-space, 'xl')};
+      padding-top: 184px;
+      padding-bottom: 112px;
+    }
+
+    img {
+      width: 64px;
+      margin-bottom: 29px;
+
+      @include media(tablet) {
+        width: 97px;
+        margin-bottom: 2rem;
+      }
+
+      @include media(desktop) {
+        width: 114px;
+        margin-bottom: 35px;
+      }
+    }
+
+    p {
+      margin-bottom: 24px;
+
+      @include media(desktop) {
+        margin-bottom: 40px;
+      }
+    }
+  }
+}
+
+.page-produkte-schwangere .produkt-babys,
+.page-produkte-babys .produkt-erwachsene,
+.page-produkte-babys .produkt-schwangere {
+  @include media(tablet) {
+    margin-top: 80px;
+  }
+
+  @include media(desktop) {
+    margin-top: 80px;
+  }
+
+  @include media(xl) {
+    margin-top: 120px;
+  }
+}
+
+.page-produkte-schwangere,
+.page-produkte-babys {
+  .produkt.collapsed {
+    @include media(tablet) {
+      padding: 0 1px;
+    }
+  }
+
+  [class*='visual']::before {
+    width: 11px;
+    height: calc(11px * 2.04);
+
+    @include media(tablet) {
+      width: 19px;
+      height: calc(19px * 2.04);
+    }
+
+    @include media(xl) {
+      width: 23px;
+      height: calc(23px * 2.04);
+    }
+  }
+}
+
+// Babys product page, babys/
+.page-produkte-babys {
+  .produkt-babys {
+    > .product-image {
+      display: none;
+
+      @include media(tablet) {
+        top: 244px;
+        right: 0;
+        display: block;
+        width: 256px;
+      }
+
+      @include media(desktop) {
+        top: 225px;
+        right: -10px;
+        width: 340px;
+      }
+
+      @include media(xl) {
+        top: 181px;
+        right: -30px;
+        width: 405px;
+      }
+    }
+
+    > [class*='visual'] {
+      position: absolute;
+      top: -13px;
+      right: 77px;
+      z-index: 2;
+
+      @include media(tablet) {
+        top: -21px;
+        right: 150px;
+        bottom: auto;
+        left: auto;
+
+        &::before {
+          transform: rotate(52deg);
+        }
+      }
+
+      @include media(desktop) {
+        top: -19px;
+        right: 230px;
+      }
+
+      &::before {
+        transform: rotate(30deg);
+      }
+    }
+
+    .infographic [class*='visual'] {
+      display: none;
+
+      @include media(tablet) {
+        top: 200px;
+        right: 35px;
+        display: block;
+
+        &::before {
+          transform: rotate(12deg);
+        }
+      }
+
+      @include media(desktop) {
+        top: 330px;
+        right: 58px;
+
+        &::before {
+          transform: rotate(17deg);
+        }
+      }
+
+      @include media(xl) {
+        top: 290px;
+      }
+    }
+  }
+
+  .produkt-schwangere {
+    .stage-header {
+      padding-top: 1.5rem;
+
+      @include media(tablet) {
+        padding-top: 55px;
+      }
+
+      @include media(desktop) {
+        padding-top: 67px;
+      }
+
+      @include media(xl) {
+        padding-top: 118px;
+      }
+
+      .button-wrapper .product-image {
+        bottom: 54px;
+        transform: rotate(0);
+      }
+    }
+
+    > [class*='visual'] {
+      display: none;
+
+      @include media(tablet) {
+        top: -22px;
+        bottom: auto;
+        left: 169px;
+        display: block;
+
+        &::before {
+          transform: rotate(-22deg);
+        }
+      }
+
+      @include media(desktop) {
+        top: -24px;
+        left: 310px;
+      }
+
+      @include media(xl) {
+        top: -30px;
+        left: 300px;
+      }
+    }
+
+    .infographic [class*='visual'] {
+      display: none;
+
+      @include media(tablet) {
+        top: 160px;
+        right: 35px;
+        display: block;
+
+        &::before {
+          transform: rotate(12deg);
+        }
+      }
+
+      @include media(desktop) {
+        top: 290px;
+        right: 58px;
+
+        &::before {
+          transform: rotate(17deg);
+        }
+      }
+
+      @include media(xl) {
+        top: 260px;
+      }
+    }
+
+    &.expanded > [class*='visual'] {
+      z-index: 2;
+    }
+  }
+
+  .produkt-babys.expanded ~ .produkt-schwangere {
+    > [class*='visual'] {
+      display: none;
+
+      @include media(tablet) {
+        top: 270px;
+        bottom: auto;
+        left: 169px;
+        display: block;
+
+        &::before {
+          transform: rotate(-22deg);
+        }
+      }
+
+      @include media(desktop) {
+        top: 370px;
+        left: 310px;
+      }
+
+      @include media(xl) {
+        top: 280px;
+        left: 300px;
+      }
+    }
+
+    .infographic [class*='visual'] {
+      display: none;
+
+      @include media(tablet) {
+        top: 470px;
+        right: 35px;
+        display: block;
+
+        &::before {
+          transform: rotate(12deg);
+        }
+      }
+
+      @include media(desktop) {
+        top: 660px;
+        right: 58px;
+
+        &::before {
+          transform: rotate(17deg);
+        }
+      }
+
+      @include media(xl) {
+        top: 570px;
+      }
+    }
+  }
+}
+
+// schwangere/produkte/
+.page-produkte-schwangere {
+  .produkt-schwangere {
+    > .product-image {
+      display: none;
+
+      @include media(tablet) {
+        top: 346px;
+        right: 28px;
+        display: block;
+        width: 270px;
+      }
+
+      @include media(desktop) {
+        top: 324px;
+        right: 24px;
+        width: 434px;
+      }
+
+      @include media(xl) {
+        top: 304px;
+        right: 20px;
+        width: 495px;
+      }
+    }
+
+    > [class*='visual'] {
+      position: absolute;
+      top: -13px;
+      right: 77px;
+      z-index: 2;
+
+      @include media(tablet) {
+        top: -21px;
+        right: 150px;
+        bottom: auto;
+        left: auto;
+
+        &::before {
+          transform: rotate(52deg);
+        }
+      }
+
+      @include media(desktop) {
+        top: -19px;
+        right: 230px;
+      }
+
+      &::before {
+        transform: rotate(30deg);
+      }
+    }
+
+    .infographic [class*='visual'] {
+      display: none;
+
+      @include media(tablet) {
+        top: 80px;
+        right: 35px;
+        display: block;
+
+        &::before {
+          transform: rotate(12deg);
+        }
+      }
+
+      @include media(desktop) {
+        top: 210px;
+        right: 58px;
+
+        &::before {
+          transform: rotate(17deg);
+        }
+      }
+
+      @include media(xl) {
+        top: 170px;
+      }
+    }
+  }
+
+  .produkt-babys {
+    > .product-image {
+      display: none;
+
+      @include media(tablet) {
+        top: 244px;
+        right: 0;
+        display: block;
+        width: 256px;
+      }
+
+      @include media(desktop) {
+        top: 225px;
+        right: -10px;
+        width: 340px;
+      }
+
+      @include media(xl) {
+        top: 181px;
+        right: -30px;
+        width: 405px;
+      }
+    }
+
+    > [class*='visual'] {
+      display: none;
+
+      @include media(tablet) {
+        top: -22px;
+        bottom: auto;
+        left: 169px;
+        display: block;
+
+        &::before {
+          transform: rotate(-22deg);
+        }
+      }
+
+      @include media(desktop) {
+        top: -24px;
+        left: 310px;
+      }
+
+      @include media(xl) {
+        top: -30px;
+        left: 300px;
+      }
+    }
+
+    .infographic [class*='visual'] {
+      display: none;
+
+      @include media(tablet) {
+        top: 200px;
+        right: 35px;
+        display: block;
+
+        &::before {
+          transform: rotate(12deg);
+        }
+      }
+
+      @include media(desktop) {
+        top: 340px;
+        right: 58px;
+
+        &::before {
+          transform: rotate(17deg);
+        }
+      }
+
+      @include media(xl) {
+        top: 260px;
+      }
+    }
+
+    &.expanded > [class*='visual'] {
+      z-index: 2;
+    }
+  }
+
+  .produkt-schwangere.expanded ~ .produkt-babys {
+    > [class*='visual'] {
+      display: none;
+
+      @include media(tablet) {
+        top: 250px;
+        bottom: auto;
+        left: 169px;
+        display: block;
+
+        &::before {
+          transform: rotate(-22deg);
+        }
+      }
+
+      @include media(desktop) {
+        top: 320px;
+        left: 310px;
+      }
+
+      @include media(xl) {
+        top: 270px;
+        left: 300px;
+      }
+    }
+
+    .infographic [class*='visual'] {
+      display: none;
+
+      @include media(tablet) {
+        top: 500px;
+        right: 35px;
+        display: block;
+
+        &::before {
+          transform: rotate(12deg);
+        }
+      }
+
+      @include media(desktop) {
+        top: 700px;
+        right: 58px;
+
+        &::before {
+          transform: rotate(17deg);
+        }
+      }
+
+      @include media(xl) {
+        top: 590px;
+      }
+    }
+  }
+}
+
+// .page-produkte-schwangere {
+//   // schwangere/produkte/ - top section
+//   .produkt-schwangere {
+
+//     // Outer elements
+//     > [class*='visual'] {
+//       display: none;
+//       z-index: 3;
+
+//       @include media(tablet) {
+//         display: block;
+//         top: -21px;
+//         right: 25%;
+//         bottom: auto;
+
+//         &::before {
+//           transform: rotate(35deg);
+//         }
+//       }
+//     }
+
+//     // Inner element
+//     .infographic {
+//       [class*='visual'] {
+//         display: none;
+
+//         @include media(tablet) {
+//           display: block;
+//           right: 35px;
+//           top: 142px;
+
+//           &::before {
+//             transform: rotate(12deg);
+//           }
+//         }
+
+//         @include media(desktop) {
+//           right: 58px;
+//           top: 108px;
+
+//           &::before {
+//             transform: rotate(17deg);
+//           }
+//         }
+
+//         @include media(xl) {
+//           top: 58px;
+//         }
+//       }
+//     }
+//   }
+
+//   // Bottom section
+//   .produkt-babys {
+//     > .product-image {
+//       display: none;
+
+//       @include media(tablet) {
+//         display: block;
+//         top: 244px;
+//         right: 0;
+//         width: 256px;
+//       }
+
+//       @include media(desktop) {
+//         top: 225px;
+//         right: -10px;
+//         width: 340px;
+//       }
+
+//       @include media(xl) {
+//         top: 181px;
+//         right: -30px;
+//         width: 405px;
+//       }
+//     }
+
+//     > [class*='visual'] {
+//       display: none;
+
+//       @include media(tablet) {
+//         display: block;
+//         top: -22px;
+//         left: 169px;
+//         bottom: auto;
+
+//         &::before {
+//           transform: rotate(-22deg);
+//         }
+//       }
+
+//       @include media(desktop) {
+//         top: -24px;
+//         left: 310px;
+//       }
+
+//       @include media(xl) {
+//         top: -30px;
+//         left: 300px;
+//       }
+//     }
+
+//     // > [class*='visual'] {
+//     //   display: none;
+//     //   z-index: 1;
+
+//     //   @include media(tablet) {
+//     //     display: block;
+//     //     top: 21px;
+//     //     left: 25%;
+//     //     bottom: auto;
+
+//     //     &::before {
+//     //       transform: rotate(35deg);
+//     //     }
+//     //   }
+//     // }
+//   }
+// }
+
+// babys/ - page, second section
+// .page-produkte-babys {
+//   .produkt-schwangere {
+//     [class*='visual'] {
+//       display: none;
+
+//       @include media(tablet) {
+//         display: block;
+//         top: 580px;
+//         left: 155px;
+//         bottom: auto;
+
+//         &::before {
+//           transform: rotate(17deg);
+//         }
+//       }
+
+//       @include media(desktop) {
+//         top: 630px;
+//         left: auto;
+//         right: 100px;
+//       }
+
+//       @include media(xl) {
+//         top: 660px;
+//         right: 50px;
+//       }
+//     }
+//   }
+// }
+
+// Erwachsene product page
+.page-produkte-erwachsene .produkt-erwachsene {
+  [class*='visual']::before {
+    width: 25px;
+    height: calc(25px * .7678);
+
+    @include media(tablet) {
+      width: 43px;
+      height: calc(43px * .7678);
+      transform: rotate(12deg);
+    }
+
+    @include media(desktop) {
+      width: 56px;
+      height: calc(56px * .7678);
+      transform: rotate(16deg);
+    }
+  }
+
+  > [class*='visual'] {
+    top: -13px;
+    right: 77px;
+    z-index: 2;
+
+    @include media(tablet) {
+      top: -18px;
+      right: 18%;
+      bottom: auto;
+      left: auto;
+      z-index: 2;
+      display: block;
+
+      &::before {
+        width: 43px;
+        height: calc(43px * .7633);
+        transform: rotate(-16deg);
+      }
+    }
+  }
+
+  .column-first {
+    @include media(tablet) {
+      margin-bottom: 6rem;
+    }
+
+    @include media(desktop) {
+      margin-bottom: 8rem;
+    }
+
+    @include media(xl) {
+      margin-bottom: 10rem;
+    }
+  }
+
+  .infographic [class*='visual'] {
+    display: none;
+
+    @include media(tablet) {
+      top: 70px;
+      right: 35px;
+      display: block;
+
+      &::before {
+        transform: rotate(12deg);
+      }
+    }
+
+    @include media(desktop) {
+      top: 190px;
+      right: 45px;
+
+      &::before {
+        transform: rotate(16deg);
+      }
+    }
+
+    @include media(xl) {
+      top: 39px;
+    }
+  }
+}
+
+.produkt-erwachsene,
+.produkt-schwangere {
+  > .product-image {
+    display: none;
+
+    @include media(tablet) {
+      top: 346px;
+      right: 28px;
+      display: block;
+      width: 270px;
+    }
+
+    @include media(desktop) {
+      top: 324px;
+      right: 24px;
+      width: 434px;
+    }
+
+    @include media(xl) {
+      top: 304px;
+      right: 20px;
+      width: 495px;
+    }
+  }
+}
+
+// Expand/collapse product button
+.expander {
+  @extend %shadow-teal;
+  position: relative;
+  z-index: 1;
+  display: block;
+  max-width: $max-width-desktop;
+  margin: 0 auto;
+
+  // padding: 0.712rem 1rem;
+  padding: 1.125rem 1rem;
+  border-radius: $radius;
+  cursor: pointer;
+  transition: background-color $transition-time, color $transition-time;
+  font-size: 1rem;
+  font-weight: $font-bold;
+  line-height: 1;
+  text-align: center;
+  color: $color-white;
+  background-color: $color-teal;
+
+  @include media(tablet) {
+    width: auto;
+    margin-right: -#{map-get($wrapper-space, 'tablet')};
+    margin-left: -#{map-get($wrapper-space, 'tablet')};
+    padding: 1.356rem 0;
+    border-radius: 0;
+    font-size: 1.125rem;
+  }
+
+  @include media(desktop) {
+    margin: 0 auto;
+    padding: 1.98rem 0;
+  }
+
+  &::before {
+    display: inline-block;
+    content: 'Mehr anzeigen';
+
+    @include media(tablet) {
+      border-bottom: 2px solid $color-white;
+      line-height: 1.7;
+    }
+  }
+
+  &:hover,
+  &:active {
+    @extend %shadow-teal-blue;
+    background-color: $color-teal;
+  }
+
+  .expanded + & {
+    width: auto;
+    max-width: $max-width-desktop;
+
+    @include media-max(tablet) {
+      margin-top: 20px;
+    }
+
+    // @include media(tablet) {
+    //   margin-top: 32px;
+    // }
+
+    // @include media(desktop) {
+    //   margin-top: 40px;
+    // }
+
+    // @include media(xl) {
+    //   margin-top: 56px;
+    // }
+
+    &::before {
+      content: 'Weniger anzeigen';
+    }
+  }
+}

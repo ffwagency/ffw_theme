@@ -1,13 +1,13 @@
-//=======================================================
+// =======================================================
 // Mixins
-//=======================================================
+// =======================================================
 
 // Clearfix
 @mixin clearfix {
   &::after {
-    content: "";
-    display: table;
     clear: both;
+    display: table;
+    content: '';
   }
 }
 
@@ -15,8 +15,8 @@
 // @see http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
 @mixin element-invisible {
   position: absolute !important;
-  height: 1px;
   width: 1px;
+  height: 1px;
   overflow: hidden;
   clip: rect(1px, 1px, 1px, 1px);
 }
@@ -24,10 +24,10 @@
 // Turns off the element-invisible effect.
 @mixin element-invisible-off {
   position: static !important;
-  clip: auto;
-  height: auto;
   width: auto;
+  height: auto;
   overflow: auto;
+  clip: auto;
 }
 
 // Makes an element visually hidden by default, but visible when focused.
@@ -44,8 +44,8 @@
 @mixin three-columns($parent, $child) {
   #{$parent} {
     display: flex;
-    align-items: flex-start;
     flex-wrap: wrap;
+    align-items: flex-start;
     justify-content: space-between;
 
     > #{$child} {
@@ -71,13 +71,13 @@
   margin-right: .7em;
   border-top: 2px solid $color;
   border-right: 2px solid $color;
-  content: "";
+  content: '';
   transform: rotate(45deg);
 }
 
 @mixin read-more($color1, $color2) {
-  color: $color1;
   text-decoration: none;
+  color: $color1;
 
   &::before {
     @include link-arrow($color2);

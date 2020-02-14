@@ -4,7 +4,7 @@
   &::before,
   &::after {
     display: table;
-    content: " ";
+    content: ' ';
   }
 
   &::after {
@@ -13,38 +13,38 @@
 }
 
 %link-hover {
-  color: $link-hover-color;
+  transition: color ($transition-time / 2);
   text-decoration: none;
-  transition: color ($transition-time/2);
+  color: $link-hover-color;
 }
 
 %button {
   display: inline-block;
   box-sizing: border-box;
   height: $input-height;
-  padding: $input-padding ($input-padding*4);
+  padding: $input-padding ($input-padding * 4);
   border: 1px solid $body-color;
   border-radius: $input-radius;
-  color: $body-background-color;
-  text-decoration: none;
-  line-height: $input-line-height;
   cursor: pointer;
   transition: all $transition-time;
+  line-height: $input-line-height;
+  text-decoration: none;
+  color: $body-background-color;
   background: $body-color;
 
   &:hover,
   &:active {
-    color: $body-color;
+    transition: all ($transition-time / 2);
     text-decoration: none;
-    transition: all ($transition-time/2);
+    color: $body-color;
     background: $link-color;
   }
 
   &[disabled],
   &.disabled {
-    color: $body-background-color;
     opacity: $disabled-opacity;
     cursor: default;
+    color: $body-background-color;
     background: $body-color;
   }
 }

@@ -1,4 +1,4 @@
-@import "../_sass/_init.scss";
+@import '../_sass/_init.scss';
 
 // Forms
 //
@@ -9,17 +9,17 @@
 }
 
 .form-item {
-  padding: ($form-space/2) 0;
+  padding: ($form-space / 2) 0;
 
   label {
     display: block;
-    padding: ($form-space/3) 0;
+    padding: ($form-space / 3) 0;
   }
 
   .description {
-    padding: ($form-space/3) 0;
-    font-style: italic;
     opacity: $disabled-opacity;
+    padding: ($form-space / 3) 0;
+    font-style: italic;
   }
 }
 
@@ -80,15 +80,14 @@ fieldset {
 // 
 // Style guide: forms.inputs_and_buttons.buttons
 
-input[type="submit"],
-input[type="button"],
-input[type="reset"],
-input[type="file"],
+input[type='submit'],
+input[type='button'],
+input[type='reset'],
+input[type='file'],
 button,
 .button {
-  -webkit-appearance: none;
-
   @extend %button;
+  -webkit-appearance: none;
 }
 
 // Upload
@@ -106,7 +105,7 @@ button,
   margin-right: $form-space;
 }
 
-input[type="file"] {
+input[type='file'] {
   height: auto;
   padding: $input-padding;
 }
@@ -143,17 +142,17 @@ input[type="file"] {
 // Style guide: forms.inputs_and_buttons.inputs
 select,
 textarea,
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="number"] {
+input[type='text'],
+input[type='email'],
+input[type='password'],
+input[type='number'] {
   box-sizing: border-box;
   height: $input-height;
   padding: $input-padding;
   border: 1px solid $input-border;
   border-radius: $input-radius;
-  color: $body-color;
   line-height: $input-line-height;
+  color: $body-color;
   background-color: $input-bg;
 
   &[disabled],
@@ -192,7 +191,7 @@ div.password-confirm {
 
 div.password-strength {
   position: absolute;
-  bottom: ($form-space/2);
+  bottom: ($form-space / 2);
   left: 0;
   box-sizing: border-box;
   width: 100%;
@@ -216,8 +215,8 @@ div.password-strength {
 }
 
 .password-suggestions.description {
-  font-style: italic;
   opacity: $disabled-opacity;
+  font-style: italic;
 }
 
 // Textarea
@@ -234,18 +233,18 @@ textarea {
 input,
 textarea {
   &::-webkit-input-placeholder {
-    color: $body-color;
     opacity: $disabled-opacity !important;
+    color: $body-color;
   }
 
   &::-moz-placeholder {
-    color: $body-color;
     opacity: $disabled-opacity !important;
+    color: $body-color;
   }
 
   &:-ms-input-placeholder {
-    color: $body-color;
     opacity: $disabled-opacity !important;
+    color: $body-color;
   }
 }
 
@@ -283,7 +282,7 @@ textarea {
 .form-type-radio,
 .form-type-checkbox {
   input {
-    margin: ($form-space/3) 0;
+    margin: ($form-space / 3) 0;
   }
 
   label {
@@ -302,7 +301,7 @@ textarea {
   table {
     th,
     td {
-      padding: ($form-space/3);
+      padding: ($form-space / 3);
       border: 1px solid rgba($body-color, $disabled-opacity);
     }
 
@@ -317,7 +316,7 @@ textarea {
 }
 
 .webform-progressbar {
-  padding: ($form-space*2) 0;
+  padding: ($form-space * 2) 0;
 }
 
 .webform-confirmation {
@@ -325,15 +324,14 @@ textarea {
 
   + .links {
     a {
-      margin: $form-space $form-space 0 0;
-
       @extend %button;
+      margin: $form-space $form-space 0 0;
     }
   }
 }
 
 .form-item-submitted-component-time-ampm {
-  margin-left: ($form-space/2);
+  margin-left: ($form-space / 2);
 
   label {
     margin-right: 0;
