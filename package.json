@@ -10,7 +10,7 @@
     "gulp:lint": "gulp lint",
     "gulp:styleguide": "gulp styleguide",
     "gulp:watch": "gulp watch",
-    "lint:scss:theme": "stylelint \"templates/**/*.scss\" --syntax scss --fix --cache",
+    "lint:scss:theme": "stylelint \"templates/**/*.scss\" --syntax scss --fix --cache --cache-location \"~/.stylelintcache/\"",
     "lint:js:theme": "eslint \"templates/**/*.js",
     "lint:scss:components": "stylelint \"components/**/*.scss\" --syntax scss --fix --cache",
     "lint:js:components": "eslint \"components/**/*.js",
@@ -19,11 +19,13 @@
     "lint": "npm run lint:scss && npm run lint:js",
     "build:kss": "kss --source \"templates/\" --css \"../assets/css/styles.css\" --destination \"styleguide\" --homepage \"styleguide.md\" --builder \"styleguide/template\" --title \"Style guide\"",
     "build:sprite": "svg-sprite -p 2 -c --cscss --css-render-scss-dest='../templates/sprite/_sprite.scss' templates/sprite/icons/*.svg --cs='../templates/sprite/sprite.css.svg'",
-    "build:js": "npm run babel:js",
+    "build:js:components": "babel components/ --out-dir components/",
+    "build:js:theme": "babel templates/ --out-dir templates/",
+    "build:js": "npm run build:js:components && npm run build:js:theme",
     "build:css": "node-sass --recursive \"templates/\" --output \"templates/\" --output-style=compressed --source-map true",
     "build": "npm run build:sprite && npm run build:js && npm run build:css",
     "watch:js": "nodemon --ext js -x \"npm run build:js\"",
-    "watch:scss": "node-sass --watch --recursive \"../templates/\" --output \"../assets/css/\" --output-style=compressed --source-map true",
+    "watch:scss": "node-sass --watch --recursive \"templates/\" --output \"assets/css/\" --output-style=compressed --source-map true",
     "watch": "npm run watch:comb && npm run jshint && npm run watch:scss"
   },
   "babel": {
@@ -40,7 +42,8 @@
           "useBuiltIns": "usage"
         }
       ]
-    ]
+    ],
+    "sourceMaps": true
   },
   "browserslist": [
     "IE >= 9",
@@ -51,7 +54,7 @@
     "@babel/core": "^7.8.4",
     "@babel/plugin-transform-arrow-functions": "^7.8.3",
     "@babel/preset-env": "^7.8.4",
-    "autoprefixer": "^9.4.6",
+    "autoprefixer": "^9.7.4",
     "browser-sync": "^2.26.7",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
@@ -65,11 +68,11 @@
     "gulp-sass": "^3.1.0",
     "gulp-sass-lint": "^1.3.2",
     "gulp-sourcemaps": "^2.6.0",
-    "kss": "^3.0.0-beta.25",
+    "kss": "^3.0.0",
     "node-sass": "^4.13.1",
-    "nodemon": "^1.18.9",
+    "nodemon": "^1.19.4",
     "run-sequence": "^2.0.0",
-    "stylelint": "^13.0.0",
+    "stylelint": "^13.2.0",
     "stylelint-order": "^4.0.0",
     "stylelint-scss": "^3.14.2",
     "susy": "^3.0.5",
