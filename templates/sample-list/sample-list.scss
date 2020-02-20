@@ -1,3 +1,4 @@
+
 // sample-list
 //
 // This is the sample-list component. It's an example.
@@ -7,9 +8,6 @@
 // Style guide: Components.sample-list
 
 // Import site utilities.
-@import "../../templates/_sass/_init.scss";
+@import "../_sass/_init.scss";
 
-// Check if @import is working
-.sample-list {
-  color: $blue;
-}
+.sample-list {}
