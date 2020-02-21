@@ -7,16 +7,17 @@
 * node.js
 * npm
 * sass 3.4.25
+* autoprefixer: 9.7.4
 * compass: 0.1.1,
-* jshint: 2.9.6,
-* node-sass: 4.10.0,
-* nodemon: 1.18.5,
+* csscomb: 4.3.0
+* jshint: 2.11.0,
+* node-sass: 4.13.1,
+* nodemon: 1.19.4,
 * "uglify-es": "github:mishoo/UglifyJS2#harmony",
 * watch: 1.0.2,
-* postcss: 6.0.1
-* postcss-cli: 6.0.1
-* kss: 3.0.0-beta.18
-* autoprefixer: 7.2.5
+* postcss: 6.0.23
+* postcss-cli: 6.1.3
+* kss: 3.0.0
 
 ## Startup guide
 
