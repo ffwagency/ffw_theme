@@ -107,7 +107,7 @@ $ git diff --word-diff
 
 ## Version history
 
-* 0.2.1 - Updated all npm packages and the README.
+* 0.2.3 - Updated all npm packages and the README.
 * 0.2.2 - Minor changes.
 * 0.2.1 - Added postcss, postcss-cli and autoprefixer.
 * 0.2.0 - ITCSS, shame.css, updated npm plugins, npm as a build tool
