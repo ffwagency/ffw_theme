@@ -1,5 +1,5 @@
 # FFW FE Theme
-* version: 0.2.2
+* version: 0.2.3
 
 ## Current software requirements
 
@@ -37,7 +37,7 @@ $ cd ffw
 * Checkout the desired branch e.g. drupal7
 
 ```
-$ git checkout drupal7
+$ git checkout npm_theme
 ```
 
 * IMPORTANT: remove the local repo by removing the .git directory. You do NOT want to commit to this repo.
@@ -46,7 +46,7 @@ $ git checkout drupal7
 $ rm -rf .git
 ```
 
-* Install NPM modules (It is not recommended to use sudo, if you need to, change the permissions and then you might remove the need of using it)
+* Install NPM modules (It is not recommended to use sudo, if you need to, change the permissions and then try again)
 
 ```
 $ npm install
@@ -79,7 +79,7 @@ npm install --save-dev uglify-js@github:mishoo/UglifyJS2#harmony
 
 ## Style guide
 
-* As a style guide [kss-node](https://github.com/kss-node/kss-node) is used. After installing the node and grunt modules from the above instructions, the style guide is generated with the following command:
+* As a style guide [kss-node](https://github.com/kss-node/kss-node) is used. After installing the node and other modules from the above instructions, the style guide is generated with the following command:
 
 ```
 $ npm run build-kss
@@ -107,6 +107,8 @@ $ git diff --word-diff
 
 ## Version history
 
+* 0.2.1 - Updated all npm packages and the README.
+* 0.2.2 - Minor changes.
 * 0.2.1 - Added postcss, postcss-cli and autoprefixer.
 * 0.2.0 - ITCSS, shame.css, updated npm plugins, npm as a build tool
   - ITCSS - https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/
