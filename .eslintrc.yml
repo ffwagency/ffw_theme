@@ -1,0 +1,2 @@
+# No need of .eslintrc.json in theme, use Drupal's .eslintrc.json from root directory.
+# Necessary packages are included in package.json.

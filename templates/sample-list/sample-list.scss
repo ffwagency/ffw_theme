@@ -1,13 +1,13 @@
 
-// sample-list
+// Sample list component
 //
-// This is the sample-list component. It's an example.
-//
-// Markup: sample-list.twig
-//
+// Markup: sample-list.html.twig
 // Style guide: Components.sample-list
 
 // Import site utilities.
 @import "../_sass/_init.scss";
 
-.sample-list {}
+// Check if @import and JS behavior are working
+.sample-list.testing {
+  color: $blue;
+}
