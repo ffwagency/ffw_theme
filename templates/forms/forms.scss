@@ -1,9 +1,25 @@
 @import '../_sass/_init.scss';
 
-// Forms
+// Form
 //
+// Default Drupal forms
+// 
+//  Markup:
+// <form class="node-page-edit-form node-form" data-drupal-selector="node-page-edit-form"  action="/node/18/edit?destination=/admin/content" method="post" id="node-page-edit-form" accept-charset="UTF-8"
+//   data-drupal-form-fields="edit-title-0-value,edit-body-0-summary,edit-body-0-value">
+//   <div class="layout-node-form clearfix">
+//     <div class="layout-region layout-region-node-main">
+//       <div class="js-form-item form-item js-form-type-textfield form-type-textfield js-form-item-path-0-alias form-item-path-0-alias">
+//        <label for="edit-path-0-alias">URL alias</label>
+//        <input data-drupal-selector="edit-path-0-alias" aria-describedby="edit-path-0-alias--description" type="text" id="edit-path-0-alias" name="path[0][alias]" value="/about-umami" size="60" maxlength="255" class="form-text">
+//        <div id="edit-path-0-alias--description" class="description">Specify an alternative path by which this data can be accessed. For example, type "/about" when writing an about page.</div>
+//      </div>
+//     </div>
+//   </div>
+// </form>
 //
-// Style guide: forms
+//  Style guide: Forms.form
+
 .form-wrapper {
   margin-bottom: $form-space;
 }
@@ -43,14 +59,18 @@ textarea {
 
 // Fieldset
 //
-// Style guide: forms.fieldset
-//
 // Markup:
-//  <fieldset>
-//   <legend>Legend</legend>
+//  <fieldset class="fieldset js-form-item form-item js-form-wrapper form-wrapper">
+//   <legend class="fieldset__legend">
+//     <span class="fieldset__label">Legend</span>
+//   </legend>
+//   <div class="fieldset__wrapper">
+//      Fieldset content
+//      <div class="fieldset__description">description.content</div>
+//    </div>
 //  </fieldset>
 //
-// Style guide: forms.fieldset
+// Style guide: Forms.fieldset
 fieldset {
   min-width: inherit; /* width fix for Chrome */
   margin: $form-space 0;
@@ -78,7 +98,7 @@ fieldset {
 //  <input type="submit" value="Button">
 //  <input type="submit" value="Button (disabled)" disabled="disabled"><br /><br />
 // 
-// Style guide: forms.inputs_and_buttons.buttons
+// Style guide: Forms.buttons
 
 input[type='submit'],
 input[type='button'],
@@ -90,33 +110,12 @@ button,
   -webkit-appearance: none;
 }
 
-// Upload
-//
-// Markup:
-// <div class="js-form-item form-item js-form-type-file form-type-file js-form-item-files-logo-upload form-item-files-logo-upload">
-// <input data-drupal-selector="edit-logo-upload" aria-describedby="edit-logo-upload--description" type="file" id="edit-logo-upload" name="files[logo_upload]" size="60" class="js-form-file form-file">
-// <div id="edit-logo-upload--description" class="description">
-//   If you don't have direct file access to the server, use this field to upload your logo.
-// </div>
-// </div><br /><br />
-// 
-// Style guide: forms.inputs_and_buttons.buttons
-.form-file {
-  margin-right: $form-space;
-}
-
-input[type='file'] {
-  height: auto;
-  padding: $input-padding;
-}
-
 // Button Link
 //
 // Markup:
 //   <a class="button" href="#">Button link</a>
 //
-// Style guide: forms.inputs_and_buttons.button-link
-
+// Style guide: Forms.buttons.button-link
 
 /* Inputs */
 
@@ -139,7 +138,7 @@ input[type='file'] {
 //    <option value="option_4">Option 4</option>
 //  </select>
 //
-// Style guide: forms.inputs_and_buttons.inputs
+// Style guide: Forms.inputs
 select,
 textarea,
 input[type='text'],
@@ -161,62 +160,106 @@ input[type='number'] {
   }
 }
 
-// Password in forms
-//
-// Markup:
-// <div id="edit-pass" class="js-form-item form-item js-form-type-password-confirm form-type-password-confirm js-form-item-pass form-item-pass form-no-label">
-// <div class="js-form-item form-item js-form-type-password form-type-password js-form-item-pass-pass1 form-item-pass-pass1 password-parent">
-// <label for="edit-pass-pass1">Password</label>
-// <input class="password-field js-password-field form-text" data-drupal-selector="edit-pass-pass1" type="password" id="edit-pass-pass1" name="pass[pass1]" size="25" maxlength="128">
-// <div class="password-strength"><div class="password-strength__meter"><div class="password-strength__indicator js-password-strength__indicator is-strong" style="width: 87.5%;"></div></div><div aria-live="polite" aria-atomic="true" class="password-strength__title">Password strength: <span class="password-strength__text js-password-strength__text">Strong</span></div></div></div>
-// <div class="js-form-item form-item js-form-type-password form-type-password js-form-item-pass-pass2 form-item-pass-pass2 confirm-parent">
-// <label for="edit-pass-pass2">Confirm password</label>
-// <input class="password-confirm js-password-confirm form-text" data-drupal-selector="edit-pass-pass2" type="password" id="edit-pass-pass2" name="pass[pass2]" size="25" maxlength="128">
-// <div aria-live="polite" aria-atomic="true" class="password-confirm js-password-confirm" style="visibility: hidden;">Passwords match: <span></span></div></div><div class="password-suggestions description" style="">Recommendations to make your password stronger:<ul><li>Add punctuation</li></ul></div>
-// <div id="edit-pass--description" class="description">
-//   To change the current user password, enter the new password in both fields.
-// </div>
-// </div>
-// 
-// Style guide: forms.inputs_and_buttons.password
+/*
+  Password in forms
 
-div.password-suggestions,
-div.password-confirm {
-  display: none;
-}
+  Markup:
+    <div id="edit-pass" class="js-form-item form-item js-form-type-password-confirm form-type-password-confirm js-form-item-pass form-item-pass form-no-label">
+      <div class="js-form-item form-item js-form-type-password form-type-password js-form-item-pass-pass1 form-item-pass-pass1 password-parent">
+        <label for="edit-pass-pass1">Password</label>
+        <input class="password-field js-password-field form-text" data-drupal-selector="edit-pass-pass1" type="password" id="edit-pass-pass1" name="pass[pass1]" size="25" maxlength="128">
+        <div class="password-strength">
+          <div class="password-strength__meter">
+            <div class="password-strength__indicator js-password-strength__indicator is-strong" style="width: 87.5%;"></div>
+          </div>
+          <div aria-live="polite" aria-atomic="true" class="password-strength__title">
+            Password strength:
+            <span class="password-strength__text js-password-strength__text">Strong</span>
+          </div>
+        </div>
+      </div>
+      <div class="js-form-item form-item js-form-type-password form-type-password js-form-item-pass-pass2 form-item-pass-pass2 confirm-parent">
+        <label for="edit-pass-pass2">Confirm password</label>
+        <input class="password-confirm js-password-confirm form-text" data-drupal-selector="edit-pass-pass2" type="password" id="edit-pass-pass2" name="pass[pass2]" size="25" maxlength="128">
+        <div aria-live="polite" aria-atomic="true" class="password-confirm js-password-confirm">
+          Passwords match: <span class="error">no</span>
+        </div>
+      </div>
+      <div class="password-suggestions description">
+        Recommendations to make your password stronger:
+        <ul>
+          <li>Add punctuation</li>
+        </ul>
+      </div>
+      <div id="edit-pass--description" class="description">
+        To change the current user password, enter the new password in both fields.
+      </div>
+    </div>
+
+  Style guide: Forms.inputs.password
+*/
+
+// div.password-suggestions,
+// div.password-confirm {
+//   display: none;
+// }
 
 #field-password-add-more-wrapper .password-parent {
   position: relative;
 }
 
-div.password-strength {
-  position: absolute;
-  bottom: ($form-space / 2);
-  left: 0;
-  box-sizing: border-box;
-  width: 100%;
-  height: 3px;
-  margin-bottom: -5px;
+.form-type-password  {
+  position: relative;
 
-  .password-indicator {
+  .password-strength {
+    position: absolute;
+    bottom: ($form-space / 2);
+    left: 0;
+    box-sizing: border-box;
+    width: 100%;
     height: 3px;
-    background-color: lighten($messages-error, 33%);
-
-    .indicator {
+    margin-bottom: -5px;
+    
+    .password-indicator {
       height: 3px;
-      background-color: lighten($messages-ok, 33%);
+      background-color: lighten($messages-error, 33%);
+      
+      .indicator {
+        height: 3px;
+        background-color: lighten($messages-ok, 33%);
+      }
     }
-  }
-
-  .password-strength-text,
-  .password-strength-title {
-    display: none;
+    
+    .password-strength-text,
+    .password-strength-title {
+      display: none;
+    }
   }
 }
 
 .password-suggestions.description {
-  opacity: $disabled-opacity;
+    opacity: $disabled-opacity;
   font-style: italic;
+}
+
+// Upload
+//
+// Markup:
+// <div class="js-form-item form-item js-form-type-file form-type-file js-form-item-files-logo-upload form-item-files-logo-upload">
+// <input data-drupal-selector="edit-logo-upload" aria-describedby="edit-logo-upload--description" type="file" id="edit-logo-upload" name="files[logo_upload]" size="60" class="js-form-file form-file">
+// <div id="edit-logo-upload--description" class="description">
+//   If you don't have direct file access to the server, use this field to upload your logo.
+// </div>
+// </div><br /><br />
+// 
+// Style guide: Forms.inputs.file_upload
+.form-file {
+  margin-right: $form-space;
+}
+
+input[type='file'] {
+  height: auto;
+  padding: $input-padding;
 }
 
 // Textarea
@@ -224,8 +267,9 @@ div.password-strength {
 // Markup:
 //  <textarea cols="30" rows="3">Textarea</textarea>
 //  <textarea cols="30" rows="3" disabled="disabled">Textarea (disabled)</textarea>
+//  <textarea cols="30" rows="3" required="required" class="error">Textarea error</textarea>
 //
-// Style guide: forms.inputs_and_buttons.textarea
+// Style guide: Forms.inputs.textarea
 textarea {
   height: auto;
 }
@@ -277,7 +321,7 @@ textarea {
 //   <label><input type="checkbox" disabled="disabled"> check disabled (inside label)</label>
 //   <label><input type="checkbox" checked="checked" disabled="disabled"> checked|checked disabled (inside label)</label>
 //
-// Style guide: forms.inputs_and_buttons.radio_checkboxes
+// Style guide: Forms.inputs.radio_checkboxes
 
 .form-type-radio,
 .form-type-checkbox {

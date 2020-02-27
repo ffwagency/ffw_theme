@@ -1,23 +1,15 @@
 @import '../_sass/_init.scss';
 
-// Typography
+// Content
+// 
 // Markup:
-//  <h3>Base</h3>
-//   <h1>H1 title</h1>
-//   <h2>H2 title</h2>
-//   <h3>H3 title</h3>
-//   <h4>H4 title</h4>
-//   <h5>H5 title</h5>
-//   <h6>H6 title</h6>
-// <p style="font: 20px/2 'Neue Haas Grotesk W01 Disp'"> Neue Haas Grotesk™ W01 Text 55 Roman </p>
-// <p style="font: italic 20px/2 'Neue Haas Grotesk W01 Disp'"> Neue Haas Grotesk™ W01 Text 56 Italic </p>
-// <p style="font: 500 20px/2 'Neue Haas Grotesk W01 Disp'"> Neue Haas Grotesk™ W01 Text 65 Medium </p>
-// <p style="font: bold 20px/2 'Neue Haas Grotesk W01 Disp'"> Neue Haas Grotesk™ W01 Text 75 Bold </p>
-// <p style="font: bold italic 20px/2 'Neue Haas Grotesk W01 Disp'"> Neue Haas Grotesk™ W01 Text 76 Bold Italic </p>
+// <p>Regular paragraph</p>
+// <p style="font-style: italic;">italic</p>
+// <p style="font-weight: 700;">bold</p>
+// <p style="font-style: italic; font-weight: 700;">bold italic</p>
+// <label>Label</label>
 //
-// Weight: 999
-//
-// Style guide: Typography
+// Style guide: Typography.content
 
 html,
 body {
@@ -27,6 +19,19 @@ body {
   color: $body-color;
 }
 
+// Headers
+// 
+// Markup:
+//   <h1>H1 title</h1>
+//   <h2>H2 title</h2>
+//   <h3>H3 title</h3>
+//   <h4>H4 title</h4>
+//   <h5>H5 title</h5>
+//   <h6>H6 title</h6>
+//
+// Style guide: Typography.headers
+
+
 h1,
 h2,
 h3,
@@ -34,13 +39,13 @@ h4,
 h5,
 h6 {
   margin: 0 0 1em;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 h1,
 %header1 {
   font-size: 3.75rem; // 60px
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1; // 60px
 }
 
@@ -59,7 +64,7 @@ h3,
 h4,
 %header4 {
   font-size: 1.312rem; // 21px
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1.43; // 30.0333px
 }
 
@@ -75,14 +80,9 @@ h6,
   line-height: 1.429; // 20px
 }
 
-%text-light {
-  @extend %header4;
-  font-weight: $font-light;
-}
-
 label {
   font-size: .812rem;
-  font-weight: 500;
+  font-weight: 700;
   font-style: normal;
   font-stretch: normal;
   line-height: normal;

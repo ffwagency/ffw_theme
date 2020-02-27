@@ -1,13 +1,11 @@
-"use strict";
 /**
  * @file
  * Use this to describe what your behavior does.
  */
-
-(function (document, Drupal, $) {
+((document, Drupal, $) => {
   Drupal.behaviors.sampleList = {
-    attach: function attach(context) {
+    attach(context) {
       $('.sample-list', context).addClass('testing');
-    }
+    },
   };
 })(document, Drupal, jQuery);

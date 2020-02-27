@@ -2,7 +2,7 @@
 
 // Default values for main HTML elements
 //
-// Style guide: defaults
+// Style guide: Defaults
 
 html {
   box-sizing: border-box;
@@ -23,7 +23,6 @@ body {
   margin: 0; /* Remove the margin in all browsers (opinionated). */
   font-size: $base-font;
   line-height: 1.5;
-  text-align: center;
   color: $body-color;
   background-color: $body-background-color;
 }
@@ -77,9 +76,9 @@ pre {
 //
 // Markup:
 //   <a href="#">Default link</a>
-//   <a href="https://google.com">External link</a>
+//   <a href="https://google.com" class="link__external">External link</a>
 //
-// Style guide: defaults.link
+// Style guide: Defaults.link
 a {
   outline-color: $link-color;
   transition: color $transition-time;
@@ -93,6 +92,12 @@ a {
   }
 }
 
+// Text
+//
+// Markup:
+//  <p>Paragraph content with <small>small</small>, <sub>Sub</sub> and <sup>Sup</sup>  HTML tags.</p>
+//
+// Style guide: Defaults.text
 p {
   margin: 0 0 1rem;
 }
@@ -124,8 +129,24 @@ sup {
   top: -.5em;
 }
 
-/* Lists
-   ========================================================================== */
+// Lists
+//
+// Markup:
+//  <ul>
+//    <li>Unordered list</li>
+//    <li>Unordered list item</li>
+//  </uL>
+//  <ol>
+//    <li>Ordered list</li>
+//    <li>Ordered list item</li>
+//  </ol>
+//  <dl>
+//    <dt>Definition list</dt>
+//    <dt>Definition list term</dt>
+//    <dd>Description details item</dd>
+//  </dl>
+//
+// Style guide: Defaults.lists
 
 /**
  * Unset default list margin and padding because if not
@@ -141,7 +162,6 @@ dl {
 li {
   margin: 0;
   padding: 0;
-  list-style: none;
 }
 
 /* Embedded content
@@ -225,7 +245,7 @@ template {
 // Ellipsis
 //
 // Markup:
-// <div class="ellipsis" style="width:200px">Class .ellipsis to cut text that is too much</div>
+// <div class="ellipsis" style="width:200px">Class <code>.ellipsis</code> to cut long text and would break the layout.</div>
 //
 // Style guide Helper classes.ellipsis
 .ellipsis {
@@ -291,7 +311,25 @@ table.sticky-header {
 
 /* Messages and errors (copied from the original CSS) */
 
-div.messages {
+// Messages
+//
+// Markup:
+// <div role="contentinfo" aria-label="Status message" class="messages messages--status">
+//   Message content.
+// </div>
+// <div class="messages messages--warning">
+// Message content
+// </div>
+// <div class="messages messages--error">
+// Message content
+// <ul class="messages__list">
+//  <li class="messages__item">Message item</li>
+//  <li class="messages__item">Message item</li>
+// </ul>
+// </div>
+//
+// Style guide: Defaults.messages
+.messages {
   padding: $form-space;
 
   ul {
@@ -308,77 +346,75 @@ div.messages {
   }
 }
 
-div.status {
+.messages + .messages {
+  margin-top: $form-space;
+}
+
+.messages--status {
   border-color: $messages-ok;
 }
 
-div.status,
+.messages--status,
 .ok {
   color: $messages-ok;
 }
 
-div.status,
+.messages--status,
 table tr.ok {
   background-color: $messages-ok-background;
 }
 
-div.warning {
-  border-color: $messages-warn;
-}
-
-div.warning,
-.warning {
-  color: $messages-warn;
-}
-
-div.warning,
-table tr.warning {
-  background-color: $messages-warn-background;
-}
-
-div.error {
-  border-color: $messages-error;
-}
-
-div.error,
-.error {
-  color: $messages-error;
-}
-
-div.error,
-table tr.error {
-  background-color: $messages-error-background;
-}
-
-div.error p.error {
+.messages--warning {
+  border-color: transparent;
   color: $body-color;
 }
 
-.marker,
-.form-required {
+.messages--warning,
+table tr.messages--warning {
+  background-color: $messages-warn-background;
+}
+
+.messages--error {
+  border-color: $messages-error;
   color: $messages-error;
 }
 
-.form-item input.error,
-.form-item textarea.error,
-.form-item select.error {
-  border: 1px solid $messages-error;
+.messages--error,
+table tr.messages--error {
+  background-color: $messages-error-background;
 }
 
-input.error {
-  border: 1px solid $messages-error !important;
+.messages--error p.messages--error {
+  color: $body-color;
+}
+
+// Form status messages
+//
+// Markup:
+//  <div class="js-form-item form-item js-form-type-textfield form-type-textfield">
+//   <label for="edit-title-0-value" class="js-form-required form-required">Recipe Name</label>
+//   <input class="js-text-full text-full form-text required error" data-drupal-selector="edit-title-0-value" type="text" id="edit-title-0-value" name="title[0][value]" value="" size="60" maxlength="255" placeholder="" required="required" aria-required="true" aria-invalid="true">
+//  </div>
+//
+// Style guide: Forms.messages
+
+input.error,
+textarea.error,
+select.error,
+input[type].error {
+  border: 1px solid $messages-error;
   background: $messages-error-background !important;
 }
 
 // Visibility classes
 //
 // Markup:
-//   <span class="visible">Visible</span>
-//   <span class="visible-mobile">Visible on mobile devices</span>
-//   <span class="visible-tablet">Visible on tablets</span>
-//   <span class="visible-desktop">Visible on desktop</span>
+//   <div class="visible">Visible</div>
+//   <div class="visible-mobile">Visible on mobile devices</div>
+//   <div class="visible-tablet">Visible on tablets</div>
+//   <div class="visible-desktop">Visible on desktop</div>
 //
-// Style guide: common.visibility
+// Style guide: Helper classes.visibility
 .visible {
   display: block;
 }
@@ -409,7 +445,7 @@ input.error {
 //   <main>Mina content wrapper</main>
 //   <section class="region">Visible on mobile devices</section>
 //
-// Style guide: common.layout
+// Style guide: Common.layout
 
 main,
 .region {

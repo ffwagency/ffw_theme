@@ -8,7 +8,7 @@ $charcoal: #333;
 $blue: #00ade0;
 $light-blue: #68c7e4;
 $green: #65b55a;
-$yellow: #fad637;
+$yellow: #ffc400;
 $tomato: #e53311;
 
 /* Colors */
@@ -23,11 +23,11 @@ $input-border-active: $blue;
 $selection-color: $body-background-color;
 $selection-bg: $body-color;
 $messages-ok: $green;
+$messages-ok-background: lighten($messages-ok, 40%);
 $messages-warn: $yellow;
+$messages-warn-background: lighten($messages-warn, 30%);
 $messages-error: $tomato;
-$messages-ok-background: lighten($messages-ok, 82%);
-$messages-warn-background: lighten($messages-warn, 70%);
-$messages-error-background: lighten($messages-error, 66%);
+$messages-error-background: lighten($messages-error, 40%);
 
 /* Breakpoints */
 $tablet: 768px;
