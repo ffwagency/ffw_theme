@@ -14,7 +14,7 @@
  */
 #}
 {% macro get(name, classNames) %}
-  {% include '@components/icons/assets/' ~ name ~ '.svg.twig' with {
+  {% include 'assets/' ~ name ~ '.svg.twig' with {
     'classNames': classNames,
     'name': name
   } only %}
