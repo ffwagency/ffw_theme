@@ -13,7 +13,8 @@
     "lint:scss": "npm run lint:scss:theme && npm run lint:scss:components",
     "lint:js": "npm run lint:js:theme && npm run lint:js:components",
     "lint": "npm run lint:scss && npm run lint:js",
-    "build:kss": "kss --source \"templates/\" --css \"../assets/css/styles.css\" --destination \"styleguide\" --homepage \"styleguide.md\" --builder \"styleguide/template\" --title \"Style guide\"",
+    "build:styleguide:css": "npm run build:css && rm -f styleguide/styles/theme.css && cat templates/*/*.css components/*/*.css > styleguide/styles/theme.css",
+    "build:styleguide": "kss --config .kss.json && npm run build:styleguide:css",
     "build:sprite": "svg-sprite -p 2 -c --cscss --css-render-scss-dest='../templates/sprite/_sprite.scss' templates/sprite/icons/*.svg --cs='../templates/sprite/sprite.css.svg'",
     "build:js:components": "babel components/ --out-dir components/",
     "build:js:theme": "babel templates/ --out-dir templates/",
@@ -24,7 +25,10 @@
     "build": "npm run build:sprite && npm run build:js && npm run build:css",
     "watch:js": "nodemon --ext js -x \"npm run build:js\"",
     "watch:scss": "node-sass --watch --recursive \"templates/\" --output \"assets/css/\" --output-style=compressed --source-map true",
-    "watch": "npm run watch:comb && npm run jshint && npm run watch:scss"
+    "watch": "npm run watch:comb && npm run jshint && npm run watch:scss",
+    "clean:components": "find components/ -type f \\( -name '*.css' -or -name '*.js' \\) -delete",
+    "clean:theme": "find templates/ -type f \\( -name '*.css' -or -name '*.js' \\) -delete",
+    "clean:styleguide": "rm -rf styleguide/styles/*"
   },
   "browserslist": [
     "IE >= 9",
