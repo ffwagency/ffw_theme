@@ -1,0 +1,16 @@
+{
+  "source": [
+    "components/",
+    "templates/"
+  ],
+  "builder": "styleguide/builder/",
+  "namespace": "styleguide/",
+  "extend-drupal8": true,
+  "destination": "styleguide/styles/",
+  "css": [
+      "theme.css"
+  ],
+  "js": [],
+  "homepage": "styleguide/styleguide.md",
+  "title": "Style Guide"
+}
