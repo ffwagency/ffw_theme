@@ -5,7 +5,7 @@
       {
         "targets": {
           "browsers": [
-            "IE >= 9",
+            "IE >= 10",
             "last 3 versions"
           ]
         },
