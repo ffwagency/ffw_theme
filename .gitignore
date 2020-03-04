@@ -13,3 +13,6 @@ npm-debug.log
 
 # Ignore generated CSS files.
 templates/**/*.css
+
+# Ignore generated styleguide
+styleguide/styles/

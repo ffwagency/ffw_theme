@@ -1,42 +1,53 @@
-#  Style Guide
+# Building style guides with kss-node
 
-This application is a living style guide, generated from KSS documented styles.
+This software is a Node.js implementation of [Knyle Style Sheets](https://github.com/kneath/kss) (KSS), "a documentation syntax for CSS" that's intended to have syntax readable by humans *and* machines. Hence, the kss-node software can be used to create a "living style guide".
 
-## Getting Started
-If you haven't yet, install nvm:
-https://github.com/creationix/nvm
+1. Write human-readable documentation using "KSS syntax" comments. Can be added to CSS, Sass, LESS, or any other CSS Preprocessor files.
+2. Have the `kss` tool automatically build a style guide from your stylesheets.
 
-### Run the following commands from the theme directory
+Here's an example KSS comment:
+```css
+/*
+Button
 
-#### Use the right version of node with:
-`nvm use`
+Your standard button suitable for clicking.
 
-_This command will look at your `.nvmrc` file and use the version node.js specified in it. This ensures all developers use the same version of node for consistency._
+:hover   - Highlights when hovering.
+.shiny   - Do not press this big, shiny, red button.
 
-#### If that version of node isn't installed, install it with:
-`nvm install`
+Markup: button.html
 
-#### Install npm dependencies with
-`npm install`
+Style guide: components.button
+*/
+.button {
+  /* … */
+}
+.button.shiny {
+  /* … */
+}
+```
 
-_This command looks at `package.json` and installs all the npm dependencies specified in it.  Some of the dependencies include gulp, autoprefixer, gulp-sass and others._
+**For more information on how to write KSS comments, see the [KSS spec](https://github.com/kss-node/kss/blob/spec/SPEC.md).**
 
-#### Runs default task
-`npm run build`
+## kss demo
 
-_This will run whatever the default task is._
+This site is built with the `kss` command-line tool and parses the KSS documentation found in this [demo project](https://github.com/kss-node/kss-node/tree/master/demo).
 
-#### Compiles Sass
-`npm run compile`
+The styling of this site is a demo of [kss-node](https://github.com/kss-node/kss-node)'s default style guide builder. By using the site navigation to the left (or above), you can see how your documentation would look with the default builder. Note that alternate builders are available.
 
-_This will perform a one-time Sass compilation._
+## Quick start guide
 
-#### Runs the watch command
-`npm run watch`
+Documentation on how to get started with kss-node (and with Node.js' npm) is available on the [kss-node wiki](https://github.com/kss-node/kss-node/wiki).
 
-_This is ideal when you are doing a lot of Sass changes and you want to make sure every time a change is saved it automatically gets compiled to CSS_
+## JavaScript API
 
-#### Cleans complied directory
-`npm run clean`
+If you don't wish to use the default style guide builder, you can either:
+* write your own builder that uses the KssBuilderBaseHandlebars class, or
+* write your own builder and class that extends KssBuilderBase, or
+* use the JavaScript object representation of the style guide, KssStyleGuide.
 
-_This will perform a one-time deletion of all compiled files within the dist/ directory._
+**For more information on how to integrate kss-node with your own JavaScript, see the [JavaScript API documentation](./section-javascript-api.html).**
+
+## Project homepage
+
+Check out the [project on Github](https://github.com/kss-node/kss-node) for more information about the code.
