@@ -1,6 +1,6 @@
 @import '../_sass/_init.scss';
 
-// Default values for main HTML elements
+// Default values
 //
 // Style guide: Defaults
 
@@ -264,8 +264,21 @@ table.sticky-header {
 }
 
 /* Admin tabs and some buttons */
-
-.tabs ul,
+// Tabs
+//
+// Markup:
+// <nav role="navigation" class="is-collapsible position-container is-horizontal-enabled is-horizontal" aria-labelledby="primary-tabs-title" data-drupal-nav-tabs="">
+//   <button class="reset-appearance tabs__tab tabs__trigger" aria-label="Primary tabs display toggle" data-drupal-nav-tabs-trigger="">•••</button>
+//   <ul class="tabs primary clearfix" data-drupal-nav-tabs-target="">
+//     <li class="tabs__tab"><a href="/recipes/fiery-chili-sauce" data-drupal-link-system-path="node/17">View</a></li>
+//     <li class="tabs__tab is-active"><a href="/node/17/edit" data-drupal-link-system-path="node/17/edit">Edit<span class="visually-hidden">(active tab)</span></a></li>
+//     <li class="tabs__tab"><a href="/node/17/delete" data-drupal-link-system-path="node/17/delete">Delete</a></li>
+//     <li class="tabs__tab"><a href="/node/17/revisions" data-drupal-link-system-path="node/17/revisions">Revisions</a></li>
+//   </ul>
+// </nav>
+//
+// Style guide: Defaults.tabs
+.tabs,
 .action-links,
 .field-collection-view-links,
 #main-wrapper .links.inline {
@@ -273,7 +286,7 @@ table.sticky-header {
   margin: 0;
 
   li {
-    float: left;
+    display: inline-block;
     margin: 0 $form-space $form-space 0;
     list-style: none;
 
@@ -287,26 +300,18 @@ table.sticky-header {
   }
 }
 
-.tabs ul {
+.tabs {
   padding: 0;
+}
+
+.is-horizontal .tabs__trigger {
+  display: none;
 }
 
 .action-links,
 .field-collection-view-links,
 #main-wrapper .links.inline {
   padding: $form-space 0 0 0;
-}
-
-.form-actions {
-  @extend %clearfix;
-
-  input {
-    margin: $form-space $form-space 0 0;
-
-    &:last-child {
-      margin-right: 0;
-    }
-  }
 }
 
 /* Messages and errors (copied from the original CSS) */

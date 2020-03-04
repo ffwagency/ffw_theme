@@ -110,6 +110,18 @@ button,
   -webkit-appearance: none;
 }
 
+.form-actions {
+  @extend %clearfix;
+
+  input {
+    margin: $form-space $form-space 0 0;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
 // Button Link
 //
 // Markup:
