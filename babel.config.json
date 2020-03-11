@@ -1,7 +1,10 @@
 {
+  "only": [
+    "**/*.es6"
+  ],
   "presets": [
     [
-      "@babel/env",
+      "@babel/preset-env",
       {
         "targets": {
           "browsers": [
@@ -13,6 +16,5 @@
         "corejs": "^3.6.4"
       }
     ]
-  ],
-  "sourceMaps": true
+  ]
 }

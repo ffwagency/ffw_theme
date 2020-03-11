@@ -52,8 +52,8 @@ libraries:
 
 
 # This section is used by the contrib module, Component Libraries. It allows you
-# to reference .twig files in your sass/ directory by using the Twig namespace:
-# @ffw_theme
+# to reference .twig files in your components/ directory by using the Twig namespace:
+# @ffw_theme_components
 # See https://www.drupal.org/project/components for more information.
 component-libraries:
   ffw_theme_components:

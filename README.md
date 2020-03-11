@@ -5,7 +5,7 @@
 ### Browser Support
 Autoprefixer & Babel is set to support:
 
-* IE >= 9
+* IE >= 10
 * Last 3 versions of modern browsers.
 
 These can be updated at any time within the `package.json`.
