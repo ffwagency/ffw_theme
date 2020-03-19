@@ -28,7 +28,8 @@
     "watch:scss": "npm run watch:scss:components & npm run watch:scss:theme",
     "clean:components": "find components/ -type f \\( -name '*.css' -or -name '*.js' \\) -delete",
     "clean:theme": "find templates/ -type f \\( -name '*.css' -or -name '*.js' \\) -delete",
-    "clean:styleguide": "rm -rf styleguide/styles/*"
+    "clean:styleguide": "rm -rf styleguide/styles/*",
+    "format": "prettier --write 'templates/**/*.{js,json,es6,scss,css}'"
   },
   "browserslist": [
     "IE >= 10",
