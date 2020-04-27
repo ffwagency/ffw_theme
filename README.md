@@ -27,22 +27,49 @@ _This command will look at your `.nvmrc` file and use the version node.js specif
 
 _This command looks at `package.json` and installs all the npm dependencies specified in it.  Some of the dependencies include gulp, autoprefixer, gulp-sass and others._
 
-#### Runs default task
-`npm run gulp:build`
+#### Lint files
+`npm run lint` is the global lint script which runs all scripts below.
 
-_This will run whatever the default task is._
+`lint:scss:components`
+`lint:scss:theme`
+`lint:js:components`
+`lint:js:theme`
+`lint:scss`
+`lint:js`
+
+#### Build CSS, JS files from source and create sprite
+`npm run build`
+
+_This will run `build:css:components, build:css:theme, build:js:components, build:js:theme, build:sprite` scripts and will generate the corresponding files._
 
 #### Compiles Sass
-`npm run gulp:compile`
+`npm run build:css`
+_This will perform a one-time Sass compilation in `templates` and `components` folders._
 
-_This will perform a one-time Sass compilation._
+Separate scripts for are available for components and theme components:
+`build:css:components`
+`build:css:theme`
 
-#### Runs the watch command
-`npm run gulp:watch`
+#### Watch JS files
+`npm run watch:js` - is the global lint script which runs all scripts below.
+
+`watch:js:components`
+`watch:js:theme`
+
+_This is ideal when you are doing a lot of ES6 file changes and you want to make sure every time a change is saved it automatically gets compiled to JS_
+
+#### Watch SCSS files
+`npm run watch:scss`
 
 _This is ideal when you are doing a lot of Sass changes and you want to make sure every time a change is saved it automatically gets compiled to CSS_
 
-#### Cleans complied directory
-`npm run gulp:clean`
+Separate scripts for are available for components and theme components:
+`watch:scss:components`
+`watch:scss:theme`
 
-_This will perform a one-time deletion of all compiled files within the dist/ directory._
+#### Cleans compiled files
+`npm run clean:components`
+`npm run clean:theme`
+`npm run clean:styleguide`
+
+_This will perform a one-time deletion of CSS and JS compiled files within the `templates`, `components` and `styleguide/styles` directories._
