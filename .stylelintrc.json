@@ -25,7 +25,7 @@
     "at-rule-name-space-after": null,
     "at-rule-no-unknown": null,
     "at-rule-no-vendor-prefix": null,
-    "at-rule-property-requirelist": {
+    "at-rule-property-required-list": {
       "font-face": [
         "font-display",
         "font-family",
