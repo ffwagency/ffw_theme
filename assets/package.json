@@ -9,7 +9,7 @@
     "csscomb": "^4.3.0",
     "jshint": "^2.11.0",
     "kss": "^3.0.0-beta.23",
-    "node-sass": "^4.10.0",
+    "node-sass": "^7.0.0",
     "nodemon": "^1.18.6",
     "susy": "^3.0.5",
     "watch": ""
