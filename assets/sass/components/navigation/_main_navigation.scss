@@ -1,0 +1,280 @@
+// Main navigation
+//
+// Common styles for desktop and mobile
+// Markup:
+// <nav role="navigation" aria-labelledby="block-vd-main-menu--2-menu" id="block-vd-main-menu--2" class="block block-menu navigation menu--main">         
+//   <h2 class="visually-hidden block__title" id="block-vd-main-menu--2-menu">Main navigation</h2>
+//   <div class="mobile-menu-header">
+//     <a href="/" title="Front page" rel="home" class="link-front">Front page</a>
+//     <span class="icon-search" title="Search"></span>
+//     <span class="icon-close" title="Close menu"></span>
+//   </div>
+//   <ul class="menu parent-items">
+//     <li class="menu-item menu-item--collapsed menu-level-0">
+//       <a href="/node/43" class="menu-item-icons" title="Description of spira." data-drupal-link-system-path="node/43">Trafik</a>
+//     </li>
+//     <li class="menu-item menu-item--expanded parent-item menu-level-0">
+//       <a href="/" class="menu-item-icons" target="_self" data-drupal-link-system-path="<front>">Projekter</a>
+//       <span class="expand-button"></span>
+//       <ul class="menu child-items">
+//         <li class="menu-item menu-level-1">
+//           <a href="/node/11" class="icon-search" title="Description of chus." data-drupal-link-system-path="node/11">Find Projekt</a>
+//         </li>
+//         <li class="menu-item menu-level-1">
+//           <a href="/node/58" title="Description of seko." data-drupal-link-system-path="node/58">Titel updated</a>
+//         </li>
+//         <li class="menu-item menu-level-1">
+//           <a href="/node/23" title="Description of towuuocedru." data-drupal-link-system-path="node/23">Augue Cogo Eu Ibidem Paratus Refero</a>
+//         </li>
+//       </ul>
+//     </li>
+//   </ul>
+// </nav>
+//
+// Style guide: Components.main_navigation
+.navigation.menu--main {
+  a {
+    // color: $charcoal;
+  }
+  
+  .child-items {
+    display: none;
+  }
+}
+
+// Mobile styles
+@include media-max(desktop) {
+
+  .mobile-menu-header {
+    display: flex;
+    padding: $space * 6 $space * 2.4 $space * 2.4;
+    background: $white;
+
+    .link-front {
+      font-weight: bold;
+      color: $charcoal;
+      background: url(../img/icons-home.svg) left center no-repeat;
+    }
+
+    [class*="icon-"] {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      background-size: contain;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+
+    .icon-search {
+      margin-left: auto;
+      background-image: url(../img/icons-search.svg);
+    }
+
+    .icon-close {
+      margin-left: $space;
+      background-image: url(../img/icons-close.svg);
+    }
+  }
+
+  .navigation.menu--main {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+
+    .menu {
+      margin: 0;
+
+      a {
+        display: block;
+      }
+
+      .child-items {
+        display: none;
+        border-radius: $input-radius;
+
+        &.visible {
+          display: block;
+        }
+      }
+
+      .expanded > .child-items {
+        display: block;
+      }
+
+      // Parent container for all menu links
+      .parent-items {
+        margin: 0;
+      }
+
+      // Expandable items, all levels
+      .parent-item {
+        position: relative;
+
+        .expand-button { // touch area
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 50px;
+          height: 60px;
+          cursor: pointer;
+          
+          &::before {
+            position: absolute;
+            top: 30px;
+            right: 24px;
+            transform: translateY(-50%);
+            content: "\2b";
+            width: 20px;
+            height: 20px;
+            color: $charcoal;
+            line-height: 20px;
+            border: 1px solid $charcoal;
+            border-radius: $input-radius;
+            cursor: pointer;
+            font-size: 15px;
+            text-align: center;
+            transition: all $transition-time;
+          }
+
+          &.expanded {
+            
+            &::before {
+              color: $blue;
+              content: "\2212";
+              border-color: $charcoal;
+              background: $charcoal;
+            }
+          }
+
+          &:hover {
+            
+            &::before {
+              border-color: $blue;
+              color: $blue;
+            }
+          }
+        }
+      }
+      
+      .expanded > a {
+        font-weight: bold;
+      }
+      
+      // Main menus, first level
+      .menu-level-0 {
+        display: block;
+
+        &:hover {
+          position: relative;
+        }
+
+        > a {
+          display: block;
+          padding: $space * 1.8 $space * 2.4;
+          font-size: $font-normal;
+          background: $white;
+
+          &:hover {
+            color: $blue;
+          }
+        }
+      }
+
+      // li[class*="menu-level-"]:not(.menu-level-0) {
+      .menu-level-1,
+      .menu-level-2 {
+        > a {
+          display: block;
+          padding: $space * 1.15 $space * 2.4;
+          font-size: $font-small;
+
+          &::before {
+            display: inline-block;
+            margin-right: $space;
+            content: "\2212";
+          }
+        }
+
+        .expand-button {
+          height: 44px;
+
+          &::before {
+            top: 22px;
+          }
+        }
+      }
+
+      .menu-level-2 {
+        opacity: .6;
+
+        > a {
+          padding-left: $space * 4;
+        }
+      }
+    }
+  }
+}
+
+// Desktop styles
+@include media(desktop) {
+  .mobile-menu-header {
+    display: none;
+  }
+
+  .navigation.menu--main {
+    position: static;
+
+    .parent-item {
+      position: relative;
+  
+      .expand-button {
+        position: static;
+        display: inline-block;
+        @include link-arrow($charcoal);
+        width: .4em;
+        height: .4em;
+        margin: 0 0 3px 8px;
+        border-width: 1px 1px 0 0;
+        border-radius: 0;
+        transform: rotate(135deg);
+        transition: border-color $transition-time, color $transition-time;
+      }
+      
+      &:hover {
+        > .child-items {
+           position: absolute;
+           top: 2em;
+           display: block;
+         }
+       }
+    }
+
+    // Main menus, first level
+    .menu-level-0 {
+      display: inline-block;
+      height: 2em;
+      margin: 0 $gutter 0 0;
+
+      > a {
+        font-size: 15px;
+      }
+    }
+
+    .child-items {
+      padding: $gutter;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.14);
+      background: $white;
+    }
+  }
+}
+
+.block-search {
+  margin-left: auto;
+}
+
+.form-search {
+  display: none;
+}

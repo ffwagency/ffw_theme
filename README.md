@@ -6,9 +6,16 @@
 * git
 * node.js
 * npm
-* grunt 0.4.5
 * sass 3.4.13
-* compass 1.0.3
+* compass 0.1.1
+* csscomb 4.1.0 (Needs removing of some test code)
+* jshint 2.9.4
+* kss 3.0.0-beta.18 (Needs configuration and testing)
+* node-sass 4.5.3
+* nodemon 1.11.0
+* postcss 6.0.1
+* uglify-js 3.0.15
+* watch 1.0.2
 
 ## Startup guide
 
@@ -47,7 +54,12 @@ $ sudo npm install
 
 ```
 $ cd assets
+<<<<<<< HEAD
 $ grunt watch
+=======
+$ npm run watch-css OR npm run build-css
+$ npm run watch-js OR npm run build-js
+>>>>>>> feature/d8_update
 ```
 
 ## Style guide

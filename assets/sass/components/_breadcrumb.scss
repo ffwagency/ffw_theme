@@ -1,0 +1,64 @@
+/**
+ * @file
+ * Styles for breadcrumbs.
+ */
+
+// Breadcrumbs
+//
+// Markup:
+// <nav class="breadcrumb" role="navigation" aria-labelledby="system-breadcrumb">
+//   <h2 id="system-breadcrumb" class="visually-hidden">Breadcrumb</h2>
+//   <ol>
+//     <li>
+//       <a href="/">Home</a>
+//     </li>
+//     <li>
+//       <a href="/node">Node</a>
+//     </li>
+//   </ol>
+// </nav>
+//
+// Style guide: Components.breadcrumb
+
+.region-breadcrumb {
+  // Breadcrumb container
+}
+
+.breadcrumb {
+
+  ol {
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    display: inline-block;
+    list-style-type: none;
+    margin: 0;
+    padding: .8rem 0 .8rem 1.1rem;
+
+    /* IE8 does not support :not() and :last-child. */
+    &:before {
+      display: inline-block;
+      margin-right: .7rem;
+      content: ' \203a ';
+    }
+
+    &:first-child {
+      padding-left: 0;
+
+      &:before {
+        content: none;
+      }
+    }
+
+    a {
+      font-size: $font-small;
+    }
+  }
+}
+
+  [dir="rtl"] .breadcrumb ol {
+    /* This is required to win over specificity of [dir="rtl"] ol */
+    margin-right: 0;
+  }

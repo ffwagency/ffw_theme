@@ -1,0 +1,71 @@
+/* Variables used in SASS */
+
+/* Color variables */
+$white: #fff;
+$charcoal: #333;
+$blue: #00ade0;
+$light-blue: #68c7e4;
+$green: #65b55a;
+$yellow: #fad637;
+$tomato: #e53311;
+
+/* Colors */
+$body-color: $charcoal;
+$body-background-color: $white;
+$link-color: $blue;
+$link-hover-color: $light-blue;
+$input-bg: $white;
+$input-border: $body-color;
+$input-border-hover: $blue;
+$input-border-active: $blue;
+$selection-color: $body-background-color;
+$selection-bg: $body-color;
+
+$messages-ok: $green;
+$messages-warn: $yellow;
+$messages-error: $tomato;
+$messages-ok-background: lighten($messages-ok, 82%);
+$messages-warn-background: lighten($messages-warn, 70%);
+$messages-error-background: lighten($messages-error, 66%);
+
+/* Breakpoints */
+$tablet: 768px;
+$desktop: 1025px;
+$large: 1202px; // max-width + $gutter * 2 (1138px + 2 * 32px)
+
+/* Inputs and buttons */
+$input-radius: 3px;
+$input-line-height: 1.5em;
+$input-padding: .25em;
+$input-height: $input-line-height + ($input-padding * 2);
+
+/* Sizes */
+$max-width: 1138px;
+$space: 0.625rem; // 10px
+$form-space: 1rem; // 16px
+$gutter: 2rem; // 32px
+
+/* Font sizes */
+$base-font: 16px;
+$font-tiny: .75rem; // 12px
+$font-small: .875rem; // 14px
+$font-normal: 1rem; // 16px
+
+/* Font weight */
+$font-light: 300;
+$font-medium: 500;
+$font-bold: 700;
+
+/* Times */
+$transition-time: 400ms;
+
+/* More */
+$disabled-opacity: .5;
+
+/* Susy */
+$susy: (
+  'columns': susy-repeat(12),
+  'gutters': $gutter,
+  'spread': 'narrow',
+  'container-spread': 'narrow',
+);

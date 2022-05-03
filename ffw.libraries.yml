@@ -1,7 +1,27 @@
+<<<<<<< HEAD
 global-assets:
+=======
+ffw-style:
+>>>>>>> feature/d8_update
   version: VERSION
   css:
     theme:
       assets/css/styles.css: {}
+<<<<<<< HEAD
   js:
     assets/js-min/script.js: {}
+=======
+ffw-js:
+  js:
+    assets/js/script.js: {}
+  dependencies:
+  - core/jquery
+  - core/drupal
+
+# Layout libraries
+threecol_equal:
+  version: VERSION
+  css:
+    theme:
+      layouts/threecol_equal/threecol_equal.css: {}
+>>>>>>> feature/d8_update

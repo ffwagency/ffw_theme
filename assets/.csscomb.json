@@ -5,7 +5,11 @@
     "block-indent": "  ",
     "color-shorthand": true,
     "element-case": "lower",
+<<<<<<< HEAD
     "eof-newline": false,
+=======
+    "eof-newline": true,
+>>>>>>> feature/d8_update
     "leading-zero": false,
     "quotes": "double",
     "sort-order-fallback": "abc",

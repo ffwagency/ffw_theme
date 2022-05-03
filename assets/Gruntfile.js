@@ -106,14 +106,20 @@ module.exports = function(grunt) {
     kss: {
       options: {
         css: '../css/styles.css',
+<<<<<<< HEAD
         destination: 'ffw-styleguide',
         homepage: 'ffw-styleguide.md',
         builder: 'ffw-styleguide/ffw-template',
+=======
+        destination: 'styleguide',
+        homepage: 'styleguide.md',
+        builder: 'styleguide/template',
+>>>>>>> feature/d8_update
         title: 'Style guide',
       },
       dist: {
         files: {
-          'ffw-styleguide': ['sass/']
+          'styleguide': ['sass/']
         }
       }
     },

@@ -1,5 +1,6 @@
 {
   "name": "ffw_theme",
+<<<<<<< HEAD
   "version": "0.0.1",
   "description": "FFW theme",
   "dependencies": {
@@ -16,5 +17,29 @@
   },
   "devDependencies": {
     "grunt-csscomb": "^3.1.1"
+=======
+  "version": "2.0.0",
+  "repository": "https://github.com/ffwagency/ffw_theme",
+  "license": "ISC",
+  "description": "FFW theme with NPM as a build tool",
+  "devDependencies": {
+    "autoprefixer": "^9.7.4",
+    "csscomb": "^4.3.0",
+    "jshint": "^2.11.0",
+    "kss": "^3.0.0-beta.23",
+    "node-sass": "^4.10.0",
+    "nodemon": "^1.18.6",
+    "susy": "^3.0.5",
+    "watch": ""
+  },
+  "scripts": {
+    "csscomb": "csscomb sass/*",
+    "build": "npm run build:js && npm run build:css",
+    "build-kss": "kss --source \"sass/\" --css \"../css/styles.css\" --destination \"styleguide\" --homepage \"styleguide.md\" --builder \"styleguide/template\" --title \"Style guide\"",
+    "build-js": "jshint js/**.js",
+    "build-css": "node-sass  -r sass/styles.scss -o css/ --output-style=compressed",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\" && \"npm run csscomb\"",
+    "watch-js": "nodemon -e js -x \"npm run build-js\""
+>>>>>>> feature/d8_update
   }
 }
