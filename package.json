@@ -69,6 +69,6 @@
     "stylelint": "^14.9.1",
     "stylelint-order": "^5.0.0",
     "stylelint-scss": "^4.3.0",
-    "svg-sprite": "^1.5.4"
+    "svg-sprite": "^2.0.0"
   }
 }
